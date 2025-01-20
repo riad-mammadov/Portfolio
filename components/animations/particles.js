@@ -21,10 +21,10 @@ const ParticlesComponent = ({ ...props }) => {
     () => ({
       background: {
         color: {
-          value: "#000000",
+          value: "#080808",
         },
       },
-      fullScreen: { enable: false },
+      fullScreen: { enable: true, zIndex: -1 },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -49,10 +49,10 @@ const ParticlesComponent = ({ ...props }) => {
       },
       particles: {
         color: {
-          value: "#181818",
+          value: "#737373",
         },
         links: {
-          color: "#FFFFFF",
+          color: "#737373",
           distance: 150,
           enable: true,
           opacity: 0.5,

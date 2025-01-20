@@ -15,6 +15,7 @@ import {
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
+import ParticlesComponent from "../animations/particles";
 
 const navBars = [
   {
@@ -42,15 +43,8 @@ function Navigation() {
 
   const [hidden, setHidden] = useState(false);
 
-  const [currentTab, setCurrentTab] = useState("Home");
-
-  function handleTabSelect(tab) {
-    setCurrentTab(tab);
-  }
-
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious();
-    console.log(prev, latest);
     if (latest > prev && latest > 50) {
       setHidden(true);
     } else if (prev > latest + 4) {
@@ -62,9 +56,6 @@ function Navigation() {
     setHandleMenu((prevHandleMenu) => !prevHandleMenu);
   }
 
-  const selectedCss =
-    "underline underline-offset-4 text-blue-500 font-semibold";
-
   return (
     <>
       <motion.nav
@@ -74,7 +65,7 @@ function Navigation() {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className=" md:flex-row md:h-20 min-h-20 bg-transparent sticky flex top-0 z-50  md:w-full justify-end md:justify-center md:items-center md:my-1 md:px-10"
+        className="md:flex-row md:h-20 min-h-20 bg-none sticky flex top-0 z-50  md:w-full justify-end md:justify-center md:items-center md:my-1 md:px-10"
       >
         <motion.div
           initial="hidden"
@@ -145,23 +136,14 @@ function Navigation() {
                         scale: 1.2,
                         transition: { duration: 0.2 },
                       }}
-                      onClick={() => handleTabSelect(item.title)}
                       className="font-sans font-bold"
                     >
-                      <span>
-                        <motion.span
-                          animate={{
-                            color:
-                              currentTab === item.title ? "#ffffff" : "#a0aec0",
-                            fontSize:
-                              currentTab === item.title ? "16px" : "14px",
-                          }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="text-white text-sm hover:cursor-pointer"
-                        >
-                          {item.title}
-                        </motion.span>
-                      </span>
+                      <motion.a
+                        href={`#${item.title}`}
+                        className="text-white text-sm hover:cursor-pointer"
+                      >
+                        {item.title}
+                      </motion.a>
                     </motion.li>
                   ))}
                 </motion.ul>

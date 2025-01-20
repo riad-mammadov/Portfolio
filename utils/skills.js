@@ -9,7 +9,7 @@ export const skills = [
   },
   {
     title: "NodeJs",
-    img: "/react.svg",
+    img: "/nodejs.svg",
   },
   {
     title: "JavaScript",

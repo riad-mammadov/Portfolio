@@ -51,7 +51,7 @@ function ContactSection({ heading }) {
         ))}
       </motion.h1>
       <motion.ul
-        className="flex flex-wrap gap-2 h-full text-white justify-center mt-2"
+        className="flex flex-wrap gap-2 h-full text-black justify-center mt-2"
         initial="hidden"
         animate="show"
       >

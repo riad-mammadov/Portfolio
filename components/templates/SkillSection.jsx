@@ -3,8 +3,6 @@ import splitString from "@/utils/split";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { skills } from "@/utils/skills";
-import { RiNextjsFill } from "react-icons/ri";
-import Image from "next/image";
 
 function SkillSection({ heading }) {
   const headingChars = splitString(heading);
@@ -55,7 +53,7 @@ function SkillSection({ heading }) {
       >
         {skills.map((skill, index) => (
           <motion.li key={index} custom={index} variants={charVariants}>
-            <Button className="px-2 py-1 bg-accent/10 font-rubik rounded-md text-sm hover:cursor-default font-bold">
+            <Button className="px-2 py-1 bg-transparent font-rubik rounded-md text-sm hover:cursor-default font-bold">
               <img src={skill.img} className="w-5 h-5" />
               <p>{skill.title}</p>
             </Button>
