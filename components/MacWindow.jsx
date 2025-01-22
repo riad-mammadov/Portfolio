@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function MacWindow({ children }) {
-  const ref = useRef(null);
+  const ref = useRef();
 
   return (
     <motion.div ref={ref} className="w-full max-w-7xl mx-auto p-2 sm:p-4">
@@ -12,7 +12,7 @@ export default function MacWindow({ children }) {
         initial="hidden"
         whileInView="visible"
         variants={slideInFromLeft(0)}
-        viewport={{ once: true, root: ref, amount: 0.3 }}
+        viewport={{ once: true, root: ref, amount: 0.6 }}
         className="rounded-lg bg-[#2f2f2f] bg-opacity-80 overflow-hidden border border-gray-800"
       >
         <div className="h-8 sm:h-12 bg-[#2D2D2D] flex items-center px-2 sm:px-4 gap-1 sm:gap-2">

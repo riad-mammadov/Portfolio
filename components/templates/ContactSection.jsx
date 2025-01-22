@@ -57,6 +57,7 @@ function ContactSection({ heading }) {
       >
         {contacts.map((contact, index) => (
           <motion.li key={index} custom={index} variants={charVariants}>
+            {/* maps each item in the contacts array to its logo */}
             <section className="px-2 py-1 flex flex-row gap-2 font-rubik text-sm">
               <div className="pl-1 space-y-4 font-mono">
                 <div className="flex items-center space-x-2 text-muted/80">

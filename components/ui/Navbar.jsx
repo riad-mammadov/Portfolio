@@ -39,11 +39,12 @@ const navBars = [
 function Navigation() {
   const { scrollY } = useScroll();
 
-  const [handleMenu, setHandleMenu] = useState(false);
+  const [handleMenu, setHandleMenu] = useState(false); // For mobile screens
 
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(false); // State to hide the navbar on scroll down
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    // Compares previous position on screen to latest position, if latest > prev then navbar is hidden
     const prev = scrollY.getPrevious();
     if (latest > prev && latest > 50) {
       setHidden(true);
@@ -52,6 +53,7 @@ function Navigation() {
     }
   });
 
+  // Toggle menu state on click
   function handleToggleMenu() {
     setHandleMenu((prevHandleMenu) => !prevHandleMenu);
   }
@@ -63,7 +65,7 @@ function Navigation() {
           visible: { y: 0 },
           hidden: { y: "-100%" },
         }}
-        animate={hidden ? "hidden" : "visible"}
+        animate={hidden ? "hidden" : "visible"} // If hidden state is true, then hide navbar
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className="md:flex-row md:h-20 min-h-20 bg-none sticky flex top-0 z-50  md:w-full justify-end md:justify-center md:items-center md:my-1 md:px-10"
       >
@@ -126,6 +128,7 @@ function Navigation() {
                     </a>
                   </motion.li>
                   {navBars.map((item, index) => (
+                    // Maps array to the navbar
                     <motion.li
                       key={index}
                       variants={{
@@ -156,9 +159,10 @@ function Navigation() {
           animate="visible"
           variants={slideInFromTop(2)}
           onClick={handleToggleMenu}
+          // Menu for mobile / smaller screens as a button instead of a list
         >
           <HiOutlineMenuAlt4
-            className="md:hidden my-6 mx-5 text-2xl flex items-center justify-center"
+            className="md:hidden z-50 my-6 mx-5 text-2xl flex items-center justify-center"
             color="white"
           />
         </motion.button>

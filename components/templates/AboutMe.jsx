@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 function AboutMe({ heading, text }) {
   const headingChars = splitString(heading);
   const textChars = splitString(text);
+  // pass the text into the splitString function
 
   const headingCharVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -15,6 +16,7 @@ function AboutMe({ heading, text }) {
     },
   };
 
+  // text to be animated as if its being typed
   const charVariants = {
     hidden: { opacity: 0, x: -5, borderRight: "0px solid white" },
     show: (i) => ({

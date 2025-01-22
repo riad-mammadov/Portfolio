@@ -12,19 +12,19 @@ export default function ProjectCard({
   image,
   githubUrl,
   detailsUrl,
-  index,
+  custom,
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.01, type: "tween" }}
-      whileHover={{ scale: 1.05 }}
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.2, delay: custom }}
+      // Div for staggered animation effect
       className="flex-shrink-0 w-fit sm:w-[280px] md:w-[280px] lg:w-[280px] bg-gradient-to-br from-stone-400 to-stone-500 rounded-xl shadow-xl"
     >
       <motion.div className="relative h-[150px] sm:h-[200px] rounded-lg overflow-hidden">
         <Image
-          src={image || "/placeholder.svg"}
+          src={image || "/javascript.svg"}
           alt={title}
           fill
           className="object-cover transition-transform duration-300 ease-in-out transform rounded-xl"

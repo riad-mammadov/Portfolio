@@ -15,11 +15,13 @@ import Link from "next/link";
 function MainSection() {
   return (
     <>
-      <ParticlesComponent id="particles" />
+      <ParticlesComponent id="particles" />{" "}
+      {/* Particle Background Component */}
       <div
         id="Home"
         className="relative flex flex-row min-h-screen sm:h-lvh justify-center items-start md:pt-10 md:px-4 overflow-hidden"
       >
+        {/* Introduction section + animations */}
         <motion.div
           className="text-white flex flex-col justify-start items-start space-y-6 p-8 w-full max-w-2xl"
           initial="hidden"
@@ -59,13 +61,15 @@ function MainSection() {
             Software Development.
           </motion.p>
 
+          {/* Buttons below introduction section */}
+
           <motion.div
             variants={slideInFromLeft(1.6)}
             className="flex flex-col sm:flex-row gap-4 md:justify-start items-start z-10 pt-4"
           >
             <Link
               href="/projects"
-              className="group relative md:min-w-[12rem] justify-center px-8 py-4 bg-blue-600 overflow-hidden rounded-xl inline-flex items-center transition-transform hover:scale-[1.02]"
+              className="group relative md:min-w-[12rem] justify-center px-8 py-4 bg-blue-600 overflow-hidden rounded-xl inline-flex items-center"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-800/50 transition-transform duration-500 group-hover:translate-x-0 -translate-x-full"></div>
               <span className="relative z-10 text-white font-sans font-semibold">
@@ -74,7 +78,7 @@ function MainSection() {
             </Link>
             <Link
               href="/contact"
-              className="group px-8 min-w-40 py-4 rounded-xl bg-stone-600/20 border border-foreground/10 inline-flex items-center justify-center overflow-hidden relative transition-transform hover:scale-[1.02]"
+              className="group px-8 min-w-40 py-4 rounded-xl bg-stone-600/20 border border-foreground/10 inline-flex items-center justify-center overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-stone-800/40 transition-transform duration-500 group-hover:translate-x-0 translate-x-full"></div>
               <span className="relative text-white z-10 font-sans tracking-wide font-semibold">
@@ -83,7 +87,7 @@ function MainSection() {
             </Link>
           </motion.div>
         </motion.div>
-
+        {/* Terminal section on the right - to appear after the introduction animation is finished */}
         <motion.div
           variants={slideInFromRight(2.4)}
           initial="hidden"
@@ -95,6 +99,7 @@ function MainSection() {
         >
           <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/20 to-accent/20 rounded-3xl opacity-50" />
 
+          {/* Window display  */}
           <div className="flex gap-x-2 items-center">
             <div className="w-3 h-3 bg-red-400 rounded-full border border-red-700/50 shadow-lg shadow-red-500/20" />
             <div className="w-3 h-3 bg-yellow-400 rounded-full border border-yellow-700/50 shadow-lg shadow-yellow-500/20" />
@@ -102,6 +107,7 @@ function MainSection() {
           </div>
 
           <div className="mt-6 rounded-xl z-50 h-full space-y-6">
+            {/* Sections to be displayed inside the terminal with the relevant props */}
             <AboutMe
               text="Riad Mammadov - Aspiring Software Engineer & Tech Enthusiast"
               heading="$ whoami"

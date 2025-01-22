@@ -9,69 +9,63 @@ import { slideInFromLeft, slideInFromTop } from "@/utils/motion";
 const skills = [
   {
     name: "JavaScript",
-    description:
-      "I have a great knowledge with JavaScript, particularly ES6+ features. In order to gain a deep understanding of JS, I focus on what is happening under the hood.",
+    description: "Info",
     icon: "/javascript.svg",
     gradient: "from-yellow-500/5 to-yellow-500/10",
     color: "yellow",
   },
   {
     name: "React.js",
-    description:
-      "I'm experienced with React, which I have used for many projects. I'm familiar with common concepts of React. My principle is to write clean and maintainable code.",
+    description: "Info",
     icon: "/javascript.svg",
     gradient: "from-blue-500/5 to-blue-500/10",
     color: "blue",
   },
   {
     name: "TypeScript",
-    description:
-      '"Fix Bugs in Development instead of Production". This is my reason why I should use TypeScript. TypeScript is my main language to start a new project.',
+    description: "Info",
     icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-16%20at%2016.54.58-XTaRXG0tienpHsRtmsHCAZyJZa475C.png#x=858,y=290,w=40,h=40",
     gradient: "from-blue-600/5 to-blue-600/10",
     color: "blue",
   },
   {
     name: "Next.js",
-    description:
-      "I used Next.js for most of my client's projects. Useful especialy for its SSR properties and ease of routes. Amazing framework ",
+    description: "Info",
     icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-16%20at%2016.54.58-XTaRXG0tienpHsRtmsHCAZyJZa475C.png#x=426,y=494,w=40,h=40",
     gradient: "from-gray-500/5 to-gray-500/10",
     color: "gray",
   },
   {
     name: "Node.js",
-    description:
-      "I use Node.js for building scalable network applications and APIs.",
+    description: "Info",
     icon: "/nodejs.svg",
     gradient: "from-green-500/5 to-green-500/10",
     color: "green",
   },
   {
     name: "PostgreSQL",
-    description:
-      "Python is my go-to language for data analysis and machine learning projects.",
+    description: "Info",
     icon: "/postgresql.svg",
     gradient: "from-blue-300/5 to-blue-300/10",
     color: "blue",
   },
   {
     name: "Tailwind CSS",
-    description:
-      "I leverage GraphQL for efficient data fetching in complex applications.",
+    description: "Info",
     icon: "/tailwindcss.svg",
     gradient: "from-pink-500/5 to-pink-500/10",
     color: "pink",
   },
   {
     name: "Redux",
-    description:
-      "I use Docker for creating, deploying, and running applications in containers.",
+    description: "Info",
     icon: "/redux.svg",
     gradient: "from-blue-400/5 to-blue-400/10",
     color: "blue",
   },
 ];
+
+/* Section TBC possible (?)*/
 
 export default function SecondSection() {
   const [showAll, setShowAll] = useState(false);

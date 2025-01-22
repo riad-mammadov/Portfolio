@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Search, Mic } from "lucide-react";
 import splitString from "@/utils/split";
+import { useRef } from "react";
 
 export default function SearchBar({ isTyping, onComplete }) {
   const textChars = splitString("My Projects");
@@ -14,7 +15,7 @@ export default function SearchBar({ isTyping, onComplete }) {
       x: 0,
       borderRight: "1px solid gray",
       transition: {
-        delay: i * 0.07,
+        delay: i * 0.09,
         duration: 0.08,
       },
       transitionEnd: {
@@ -37,15 +38,17 @@ export default function SearchBar({ isTyping, onComplete }) {
         </div>
         <motion.div className="w-full bg-slate-200 dark:bg-[#333] rounded-full shadow-lg px-12 py-3">
           <motion.p
-            className="text-black font-serif font-semibold text-sm sm:text-md"
+            className="text-black font-sans font-semibold text-md"
             initial="hidden"
             animate="show"
           >
             {isTyping ? (
               textChars.map((char, index) => (
+                // If isTyping is true (set from the project section) then start the typing animation on the search bar
                 <motion.span
                   onAnimationComplete={
                     index === textChars.length - 1 ? onComplete : undefined
+                    // If the current index is the same length as the full string length, trigger the onComplete function in project section
                   }
                   key={index}
                   custom={index}
