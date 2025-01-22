@@ -1,4 +1,3 @@
-"use client";
 import splitString from "@/utils/split";
 import { motion } from "framer-motion";
 

@@ -1,4 +1,3 @@
-"use client";
 import splitString from "@/utils/split";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ function SkillSection({ heading }) {
 
   const headingCharVariants = {
     hidden: { opacity: 0, x: -100 },
-    show: (i) => ({
+    show: {
       opacity: 1,
       x: 0,
       transition: {
@@ -17,7 +16,7 @@ function SkillSection({ heading }) {
         duration: 0.5,
       },
       transitionEnd: { borderRight: "0px solid white" },
-    }),
+    },
   };
 
   const charVariants = {
@@ -54,7 +53,7 @@ function SkillSection({ heading }) {
         {skills.map((skill, index) => (
           // Maps each item in skills array to the terminal, with a staggered effect
           <motion.li key={index} custom={index} variants={charVariants}>
-            <Button className="px-2 py-1 bg-transparent font-rubik rounded-md text-sm hover:cursor-default font-bold">
+            <Button className="px-2 py-1 bg-transparent font-rubik rounded-md text-sm hover:cursor-default font-semibold">
               <img src={skill.img} className="w-5 h-5" />
               <p>{skill.title}</p>
             </Button>

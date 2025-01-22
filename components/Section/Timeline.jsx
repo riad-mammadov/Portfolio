@@ -67,7 +67,7 @@ export default function Timeline() {
         initial={{ y: -50, opacity: 0 }}
         whileInView={"visible"}
         variants={slideInFromTop(0)}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1 }}
         className="absolute right-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-500"
       />
       <div className="space-y-12">
@@ -96,7 +96,7 @@ export default function Timeline() {
               <motion.div
                 whileInView={{ opacity: 0.9, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-[#2f2f2f] text-card-foreground p-6 rounded-lg shadow-lg bg-gradient-to-r from-purple-500/20 to-accent/20 opacity-50"
+                className="bg-[#2f2f2f]  p-6 rounded-lg shadow-lg bg-gradient-to-r from-purple-500/20 to-accent/20 opacity-50"
               >
                 <div className="text-sm font-medium text-stone-200 mb-2">
                   {item.date}

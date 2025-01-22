@@ -20,7 +20,7 @@ export default function ProjectCard({
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.2, delay: custom }}
       // Div for staggered animation effect
-      className="flex-shrink-0 w-fit sm:w-[280px] md:w-[280px] lg:w-[280px] bg-gradient-to-br from-stone-400 to-stone-500 rounded-xl shadow-xl"
+      className="flex-shrink-0 w-fit sm:w-[280px] md:w-[280px] lg:w-[280px] bg-gradient-to-br from-stone-600 to-stone-700 rounded-xl shadow-xl"
     >
       <motion.div className="relative h-[150px] sm:h-[200px] rounded-lg overflow-hidden">
         <Image

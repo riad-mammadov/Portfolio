@@ -1,12 +1,7 @@
-"use client";
 import splitString from "@/utils/split";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { MdOutlinePushPin } from "react-icons/md";
-import { TfiEmail } from "react-icons/tfi";
 import { contacts } from "@/utils/contacts";
 import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 
 function ContactSection({ heading }) {
   const headingChars = splitString(heading);

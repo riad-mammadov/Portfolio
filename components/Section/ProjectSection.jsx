@@ -18,28 +18,28 @@ const projects = [
   {
     title: "Project Two",
     description: "React Native mobile app with custom animations",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/javascript.svg",
     githubUrl: "https://github.com/username/project-two",
     detailsUrl: "/projects/project-two",
   },
   {
     title: "Project Three",
     description: "UI/UX design and frontend development, Using Next.js",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/javascript.svg",
     githubUrl: "https://github.com/username/project-three",
     detailsUrl: "/projects/project-three",
   },
   {
     title: "Project 4",
     description: "UI/UX design and frontend development, Using Next.js",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/javascript.svg",
     githubUrl: "https://github.com/username/project-four",
     detailsUrl: "/projects/project-four",
   },
   {
     title: "Project 5",
     description: "UI/UX design and frontend development, Using Next.js",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/javascript.svg",
     githubUrl: "https://github.com/username/project-five",
     detailsUrl: "/projects/project-five",
   },
@@ -85,6 +85,7 @@ export default function ProjectSection() {
     }, 600);
   }
 
+  const scrollContainerRef = useRef();
   const handleScroll = (direction) => {
     /* Function for the scroll left/right buttons */
 
@@ -108,7 +109,7 @@ export default function ProjectSection() {
         {!showProjects ? (
           // If the showProjects state is false, display the SearchBar and its animation
           <motion.div
-            className="flex justify-center items-center min-h-[400px]"
+            className="flex  justify-center items-center min-h-[400px]"
             viewport={{ root: scrollRef, amount: 0.7, once: true }}
             // Use the container ref as the viewport root, make it visible when 70% of the div is in the viewport, and animate once
             whileInView={() => handleSetTyping()}
@@ -136,7 +137,7 @@ export default function ProjectSection() {
               >
                 <ChevronLeft className="w-6 h-6 text-white" />
               </button>
-              <div className="overflow-x-auto pb-6">
+              <div ref={scrollContainerRef} className="overflow-x-auto pb-6">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -145,12 +146,17 @@ export default function ProjectSection() {
                 >
                   {projects.map((project, index) => (
                     // For each item in projects array, create a Project Card
-                    <ProjectCard
+                    <motion.span
                       key={project.title}
-                      {...project}
-                      index={index}
-                      custom={index * 0.2}
-                    />
+                      transition={{ type: "tween", duration: 0.3 }}
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      <ProjectCard
+                        {...project}
+                        index={index}
+                        custom={index * 0.2}
+                      />
+                    </motion.span>
                   ))}
                 </motion.div>
               </div>

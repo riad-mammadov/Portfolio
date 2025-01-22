@@ -12,6 +12,7 @@ import ParticlesComponent from "../animations/particles";
 import ContactSection from "../templates/ContactSection";
 import Link from "next/link";
 
+import TextBlink from "../templates/TextBlink";
 function MainSection() {
   return (
     <>
@@ -116,6 +117,8 @@ function MainSection() {
             <SkillSection heading="$ skills --list" />
 
             <ContactSection heading="$ contact --info" />
+
+            <TextBlink />
           </div>
         </motion.div>
       </div>

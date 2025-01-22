@@ -14,6 +14,7 @@ export default function Home() {
       <section id="timeline-section" className="mt-48 h-fit ">
         <Timeline />
       </section>
+      <section></section>
     </main>
   );
 }
