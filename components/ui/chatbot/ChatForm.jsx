@@ -1,4 +1,5 @@
-// Ensure this is the complete and correct import statement for ArrowUp
+"use client";
+
 import { ArrowUp } from "lucide-react";
 import { useRef } from "react";
 
@@ -8,21 +9,23 @@ function ChatForm({ setChatHistory }) {
   function handleFormSubmit(e) {
     e.preventDefault();
     const userMessage = inputRef.current.value.trim();
-    if (!userMessage) return;
 
-    console.log(userMessage);
+    if (!userMessage) {
+      console.log("Error");
+      return;
+    }
 
-    inputRef.current.value = "";
-
-    //Updates the chat history with new message by spreading old state and adding the new message
-    setChatHistory((history) => [
-      ...history,
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
       { role: "user", text: userMessage },
     ]);
+
+    inputRef.current.value = "";
   }
 
   return (
     <form
+      action="#"
       onSubmit={handleFormSubmit}
       className="flex items-center bg-white outline outline-gray-400 rounded-lg"
     >
@@ -31,12 +34,9 @@ function ChatForm({ setChatHistory }) {
         type="text"
         placeholder="Message..."
         required
-        className="border-none outline-none w-full bg-none h-[47px] p-2 text-sml"
+        className="border-none outline-none flex-grow bg-none h-[47px] p-2 text-sm"
       />
-      <button
-        type="submit"
-        className="flex justify-center items-center text-white h-8 w-8 border-none outline-none cursor-pointer shrink-0 mr-2 rounded-full bg-gray-700"
-      >
+      <button className="flex justify-center items-center text-white h-8 w-8 border-none outline-none cursor-pointer shrink-0 mr-2 rounded-full bg-gray-700">
         <ArrowUp className="w-6 h-5" />
       </button>
     </form>
