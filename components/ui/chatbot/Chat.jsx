@@ -1,27 +1,67 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ChatForm from "./chatform";
 import ChatMessage from "./ChatMessage";
 import { Bot } from "lucide-react";
+import { aiPrompt } from "@/utils/ai";
 
 function Chatbox() {
   const [chatHistory, setChatHistory] = useState([]);
+  const ref = useRef(null);
 
-  // Thinking... display for the bot each time user sends message as placeholder
-  useEffect(() => {
-    if (
-      chatHistory.length > 0 &&
-      chatHistory[chatHistory.length - 1].role === "user"
-    ) {
-      const timer = setTimeout(() => {
-        setChatHistory((prevHistory) => [
-          ...prevHistory,
-          { role: "bot", text: "Thinking..." },
-        ]);
-      }, 500);
+  function updateHistory(text, isError = false) {
+    setChatHistory((prev) => [...prev, { role: "model", text, isError }]);
+  }
 
-      return () => clearTimeout(timer);
+  async function generateBotResponse(history) {
+    history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
+
+    console.log(history);
+
+    const question = history[history.length - 1].parts[0].text;
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              {
+                text: aiPrompt(question),
+              },
+            ],
+          },
+        ],
+      }),
+    };
+
+    try {
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_API_URL,
+        requestOptions
+      );
+      const data = await response.json();
+      if (!response.ok)
+        throw new Error(data.error.message || "Something went wrong!");
+
+      const regex = /\*\*(.*?)\*\*/g;
+      const apiRequestText = data.candidates[0].content.parts[0].text
+        .replace(regex, "$1")
+        .trim();
+      updateHistory(apiRequestText);
+    } catch (error) {
+      updateHistory(error.message, true);
     }
+  }
+
+  useEffect(() => {
+    ref.current?.scrollTo({
+      top: ref.current.scrollHeight,
+      behavior: "smooth",
+    });
   }, [chatHistory]);
 
   return (
@@ -33,7 +73,10 @@ function Chatbox() {
           </div>
         </div>
 
-        <div className="p-5 overflow-y-auto flex flex-col gap-4 flex-grow">
+        <div
+          ref={ref}
+          className="p-5 overflow-y-auto flex flex-col gap-4 flex-grow"
+        >
           <div className="flex items-center gap-5">
             <Bot color="white" />
             <p className="break-words p-2 whitespace-pre-line border-2 border-gray-500 rounded-lg text-sm text-white">
@@ -46,7 +89,11 @@ function Chatbox() {
         </div>
 
         <div className="w-full bg-white p-3">
-          <ChatForm setChatHistory={setChatHistory} />
+          <ChatForm
+            chatHistory={chatHistory}
+            setChatHistory={setChatHistory}
+            generateBotResponse={generateBotResponse}
+          />
         </div>
       </div>
     </div>

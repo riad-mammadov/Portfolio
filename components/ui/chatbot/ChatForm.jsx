@@ -3,7 +3,7 @@
 import { ArrowUp } from "lucide-react";
 import { useRef } from "react";
 
-function ChatForm({ setChatHistory }) {
+function ChatForm({ chatHistory, setChatHistory, generateBotResponse }) {
   const inputRef = useRef();
 
   function handleFormSubmit(e) {
@@ -15,12 +15,22 @@ function ChatForm({ setChatHistory }) {
       return;
     }
 
-    setChatHistory((prevHistory) => [
-      ...prevHistory,
+    inputRef.current.value = "";
+
+    setChatHistory((history) => [
+      ...history,
       { role: "user", text: userMessage },
     ]);
 
-    inputRef.current.value = "";
+    function updateHistory(text, isError = false) {
+      setChatHistory((prev) => [...prev, { role: "model", text, isError }]);
+    }
+
+    // Calls function that generates the response
+    generateBotResponse(
+      [...chatHistory, { role: "user", text: userMessage }],
+      updateHistory
+    );
   }
 
   return (
