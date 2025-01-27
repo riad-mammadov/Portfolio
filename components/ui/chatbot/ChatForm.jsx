@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Forward } from "lucide-react";
+import { Dot, Forward } from "lucide-react";
 import { useRef } from "react";
 
 function ChatForm({
@@ -67,10 +67,7 @@ function ChatForm({
     // </form>
 
     <form onSubmit={handleFormSubmit} className="w-full">
-      <div className="relative mt-4 flex">
-        <div className="absolute top-0 flex w-full justify-center">
-          <div className="h-[1px] w-full animate-border-width rounded-full  bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all duration-1000" />
-        </div>
+      <div className="relative mt-8 flex">
         <input
           ref={inputRef}
           name="question"
@@ -84,7 +81,15 @@ function ChatForm({
           }`}
           disabled={loading}
         >
-          <Forward className="text-white" />
+          {loading ? (
+            <div className="flex flex-row w-full justify-center items-center">
+              <Dot className="animate-bounce text-white" />
+              <Dot className="animate-bounce text-white" />
+              <Dot className="animate-bounce text-white" />
+            </div>
+          ) : (
+            <Forward className="text-white" />
+          )}
         </button>
       </div>
     </form>

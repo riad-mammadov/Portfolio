@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import ChatForm from "./chatform";
 import ChatMessage from "./ChatMessage";
-import { Bot, Dot } from "lucide-react";
+import { Bot, BotIcon, Dot } from "lucide-react";
 import { aiPrompt } from "@/utils/ai";
 import { motion } from "framer-motion";
 
@@ -106,7 +106,7 @@ function Chatbox() {
         </div>
       </div> */}
 
-      <section className="p-4">
+      {/* <section className="p-4">
         <div className="m-auto flex flex-col gap-4  max-w-3xl bg-gray-400/20 p-4 rounded-md ">
           <div
             ref={ref}
@@ -139,7 +139,39 @@ function Chatbox() {
             loading={loading}
           />
         </div>
-      </section>
+      </section> */}
+
+      <div className="flex items-center justify-center h-[600px]">
+        <article
+          ref={ref}
+          className="w-[80%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-r from-black/70 to-slate-950/80 shadow-md p-6"
+        >
+          <div
+            className="flex flex-col gap-2"
+            style={{ minHeight: "calc(100% - 80px)" }}
+          >
+            {chatHistory.map((chat, index) => (
+              <div
+                key={index}
+                className={`max-w-[80%] size-fit rounded-xl flex ${
+                  chat.role === "model"
+                    ? "rounded-bl-none bg-gray-700 justify-start"
+                    : "ml-auto rounded-br-none bg-cyan-700 justify-end"
+                } p-3 text-gray-50`}
+              >
+                {chat.text}
+              </div>
+            ))}
+          </div>
+
+          <ChatForm
+            chatHistory={chatHistory}
+            setChatHistory={setChatHistory}
+            generateBotResponse={generateBotResponse}
+            loading={loading}
+          />
+        </article>
+      </div>
     </>
   );
 }
