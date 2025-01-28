@@ -79,17 +79,16 @@ function Chatbox() {
 
   return (
     <>
-      <span className="text-white flex gap-4 justify-center mb-6 items-center">
-        <User />
-        <h1 className="text-center text-xl tracking-wide sm:text-2xl text-stone-300 font-semibold">
+      <span className="flex items-center justify-center gap-4 mb-10 z-10 ">
+        <User className="animate-bounce text-cyan-700" />
+        <h1 className="text-center text-xl tracking-wide sm:text-3xl text-white font-semibold">
           About Me
         </h1>
       </span>
-
-      <div className="flex items-center justify-center h-[500px]">
+      <div className="flex items-center justify-center h-[400px]">
         <article
           ref={ref}
-          className="w-[90%] sm:w-[60%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-bl from-gray-200/20 to-gray-400/20 shadow-md p-6"
+          className="w-[90%] md:w-[75%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-bl from-gray-200/20 to-gray-400/20 shadow-md p-6"
         >
           <div
             className="flex flex-col gap-2"
