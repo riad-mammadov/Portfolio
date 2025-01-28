@@ -3,15 +3,10 @@
 import { delay, motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, FolderOpenDot } from "lucide-react";
-import MacWindow from "../../MacWindow";
-import ProjectCard from "../../ui/ProjectCard";
-import SearchBar from "../../ui/SearchBar";
+import MacWindow from "@/components/ui/MacWindow";
+import ProjectCard from "@/components/ui/ProjectCard";
+import SearchBar from "@/components/ui/SearchBar";
 import { projects } from "@/utils/projects";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
 
 function ProjectSection() {
   const [isTyping, setIsTyping] = useState(false);
@@ -82,11 +77,11 @@ function ProjectSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.span className="flex flex-row items-center justify-center gap-2 text-stone-300 mb-6">
+              <motion.span className="flex flex-row items-center justify-center gap-3 mb-6">
                 <span>
-                  <FolderOpenDot />
+                  <FolderOpenDot className="animate-bounce text-cyan-700" />
                 </span>
-                <motion.h1 className="text-center text-xl tracking-wide sm:text-2xl text-stone-300 font-semibold">
+                <motion.h1 className="text-center text-xl tracking-wide sm:text-2xl text-white font-semibold">
                   Projects
                 </motion.h1>
               </motion.span>
