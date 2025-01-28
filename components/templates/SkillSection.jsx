@@ -1,6 +1,6 @@
 import splitString from "@/utils/split";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/shadcn/Button";
 import { skills } from "@/utils/skills";
 
 function SkillSection({ heading }) {

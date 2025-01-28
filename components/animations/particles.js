@@ -24,13 +24,13 @@ const ParticlesComponent = ({ ...props }) => {
           value: "#080808",
         },
       },
-      fullScreen: { enable: true, zIndex: -1 },
+      fullScreen: { enable: true, zIndex: -50 },
       fpsLimit: 120,
       interactivity: {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "push",
           },
           onHover: {
             enable: true,
@@ -43,7 +43,7 @@ const ParticlesComponent = ({ ...props }) => {
             duration: 15,
           },
           grab: {
-            distance: 150,
+            distance: 100,
           },
         },
       },
@@ -56,7 +56,7 @@ const ParticlesComponent = ({ ...props }) => {
           distance: 150,
           enable: true,
           opacity: 0.5,
-          width: 1,
+          width: 0.5,
         },
         move: {
           direction: "none",
@@ -78,13 +78,13 @@ const ParticlesComponent = ({ ...props }) => {
           value: 0.5,
         },
         shape: {
-          type: "circle",
+          type: "none",
         },
         size: {
           value: { min: 1, max: 3 },
         },
       },
-      detectRetina: false,
+      detectRetina: true,
     }),
     []
   );

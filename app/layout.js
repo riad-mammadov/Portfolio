@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black h-[1000px] antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-black h-full antialiased`}
       >
         <React.StrictMode>
           <Navigation />

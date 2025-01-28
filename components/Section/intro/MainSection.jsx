@@ -1,22 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AboutMe from "../templates/AboutMe";
-import SkillSection from "../templates/SkillSection";
+import AboutMe from "../../templates/AboutMe";
+import SkillSection from "../../templates/SkillSection";
 import {
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
-import ParticlesComponent from "../animations/particles";
-import ContactSection from "../templates/ContactSection";
+import ParticlesComponent from "../../animations/particles";
+import ContactSection from "../../templates/ContactSection";
 import Link from "next/link";
 
-import TextBlink from "../templates/TextBlink";
+import TextBlink from "../../templates/TextBlink";
 function MainSection() {
   return (
     <>
-      <ParticlesComponent id="particles" />{" "}
+      <ParticlesComponent id="particles" />
       {/* Particle Background Component */}
       <div
         id="Home"
@@ -34,7 +34,7 @@ function MainSection() {
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             <span className="text-sm text-stone-300 font-medium text-accent">
-              Available for projects
+              Available for work
             </span>
           </motion.div>
 

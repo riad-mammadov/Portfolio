@@ -60,15 +60,15 @@ export default function Timeline() {
       className="container mx-auto p-4 relative"
     >
       {/* Animate once */}
-      <h1 className="text-center w-full mb-14 text-xl sm:text-3xl text-stone-300 font-mono font-semibold">
+      <h1 className="text-center w-full mb-8 text-xl sm:text-3xl text-stone-300 font-semibold">
         Experience & Education
       </h1>
       <motion.div
-        initial={{ y: -50, opacity: 0 }}
-        whileInView={"visible"}
-        variants={slideInFromTop(0)}
-        viewport={{ once: true, amount: 0.1 }}
-        className="absolute right-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-500"
+        // initial={{ y: -50, opacity: 0 }}
+        // whileInView={"visible"}
+        // variants={slideInFromTop(0)}
+        // viewport={{ once: true, amount: 0.1 }}
+        className="absolute right-1/2 transform -translate-x-1/2 w-0.5 h-[95%] bg-gray-500"
       />
       <div className="space-y-12">
         {timelineItems.map((item, index) => (

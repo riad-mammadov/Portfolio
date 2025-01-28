@@ -48,8 +48,9 @@ function Navigation() {
     const prev = scrollY.getPrevious();
     if (latest > prev && latest > 50) {
       setHidden(true);
-    } else if (prev > latest + 4) {
+    } else if (prev > latest + 2) {
       setHidden(false);
+      console.log("Navbar open");
     }
   });
 
@@ -67,13 +68,13 @@ function Navigation() {
         }}
         animate={hidden ? "hidden" : "visible"} // If hidden state is true, then hide navbar
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="md:flex-row md:h-20 min-h-20 bg-none sticky flex top-0 z-50  md:w-full justify-end md:justify-center md:items-center md:my-1 md:px-10"
+        className="md:flex-row md:h-20 min-h-20 bg-none sticky flex top-0 z-50 md:w-full justify-end md:justify-center md:items-center md:my-1 md:px-10"
       >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={slideInFromTop(6.9)}
-          className="hidden md:flex justify-center items-center px-6 py-2 h-fit border-2 border-white/10 md:bg-white/10 bg-opacity-10 md:backdrop-blur-md md:rounded-full"
+          className="hidden md:flex justify-center items-center px-6 py-2 z-50 h-fit border-2 border-white/10 md:bg-white/10 bg-opacity-10 md:backdrop-blur-md md:rounded-full"
         >
           <NavigationMenu>
             <NavigationMenuList>

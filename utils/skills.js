@@ -33,6 +33,10 @@ export const skills = [
     img: "tailwindcss.svg",
   },
   {
+    title: "HTML/CSS",
+    img: "tailwindcss.svg",
+  },
+  {
     title: "Framer Motion",
     img: "framer.png",
   },
