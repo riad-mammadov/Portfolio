@@ -1,0 +1,86 @@
+export const projects = [
+  {
+    title: "Project One",
+    description: "Full stack application with Next.js and React",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-one",
+    detailsUrl: "/projects/project-one",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/nextjs_icon_dark.svg" },
+    ],
+  },
+  {
+    title: "Project Two",
+    description: "React Native mobile app with custom animations",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-two",
+    detailsUrl: "/projects/project-two",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/next.svg" },
+    ],
+  },
+  {
+    title: "Project 3",
+    description: "React Native mobile app with custom animations",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-two",
+    detailsUrl: "/projects/project-two",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/next.svg" },
+    ],
+  },
+  {
+    title: "Project 4",
+    description: "React Native mobile app with custom animations",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-two",
+    detailsUrl: "/projects/project-two",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/next.svg" },
+    ],
+  },
+  {
+    title: "Project 5",
+    description: "React Native mobile app with custom animations",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-two",
+    detailsUrl: "/projects/project-two",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/next.svg" },
+    ],
+  },
+  {
+    title: "Project 6",
+    description: "React Native mobile app with custom animations",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-two",
+    detailsUrl: "/projects/project-two",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/next.svg" },
+    ],
+  },
+  {
+    title: "Project 7",
+    description: "React Native mobile app with custom animations",
+    image: "/javascript.svg",
+    githubUrl: "https://github.com/username/project-two",
+    detailsUrl: "/projects/project-two",
+    techStack: [
+      { name: "React", icon: "/react.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
+      { name: "Next.js", icon: "/next.svg" },
+    ],
+  },
+];
