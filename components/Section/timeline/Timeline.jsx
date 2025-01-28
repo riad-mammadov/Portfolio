@@ -52,70 +52,66 @@ const timelineItems = [
 
 export default function Timeline() {
   return (
-    <motion.div
-      initial={"hidden"}
-      whileInView={"visible"}
-      variants={slideInFromLeft(0)}
-      viewport={{ once: true }}
-      className="container mx-auto p-4 relative"
-    >
-      {/* Animate once */}
-      <h1 className="text-center w-full mb-8 text-xl sm:text-3xl text-stone-300 font-semibold">
-        Experience & Education
-      </h1>
-      <motion.div
-        // initial={{ y: -50, opacity: 0 }}
-        // whileInView={"visible"}
-        // variants={slideInFromTop(0)}
-        // viewport={{ once: true, amount: 0.1 }}
-        className="absolute right-1/2 transform -translate-x-1/2 w-0.5 h-[95%] bg-gray-500"
-      />
-      <div className="space-y-12">
-        {timelineItems.map((item, index) => (
-          // For each item in the array, creates a card, if index is divisible by 2, slides from left (for the left col), otherwise slides from right
-          <motion.div
-            key={index}
-            initial={"hidden"}
-            whileInView={"visible"}
-            viewport={{ once: true, amount: 0.6 }}
-            // Animate in once 60% of the card is visible
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            variants={
-              index % 2 === 0 ? slideInFromLeft(0) : slideInFromRight(0)
-            }
-            className="relative grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8"
+    <section id="experience" data-section="experience">
+      <div className="p-4 sm:px-4 md:px-32 lg:px-44">
+        <h2 className="mb-6 flex items-center justify-center gap-x-3 pt-12 text-3xl font-semibold text-black/80 dark:text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-layers3 animate-bounce text-cyan-700"
           >
-            <div
-              className={`${
-                index % 2 === 0
-                  ? "sm:col-start-1 md:text-right "
-                  : "sm:col-start-2 md:text-left"
-              }`}
-              // items placed in the array that are divisble by 2 go on the left, rest go on the right of the timeline
-            >
-              <motion.div
-                whileInView={{ opacity: 0.9, x: 0 }}
-                viewport={{ once: true }}
-                className="bg-[#2f2f2f]  p-6 rounded-lg shadow-lg bg-gradient-to-r from-purple-500/20 to-accent/20 opacity-50"
-              >
-                <div className="text-sm font-medium text-stone-200 mb-2">
-                  {item.date}
-                </div>
-                <h3 className="text-xl text-stone-200  font-bold mb-2">
-                  {item.title}
-                </h3>
-                <div className="text-base  text-stone-200 font-semibold mb-2">
-                  {item.institution}
-                </div>
-                <div className="text-sm text-stone-200 mb-4">
-                  {item.location}
-                </div>
-                <p className="text-sm text-stone-200 ">{item.description}</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        ))}
+            <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+            <path d="M6.08 9.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
+            <path d="M6.08 14.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
+          </svg>
+          <p className="text-white">Experience</p>
+        </h2>
+        <ol className="relative ml-3 border-l border-gray-200">
+          {timelineItems.map((item, index) => (
+            <li className="ml-4 pb-8" key={index}>
+              <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-700 ring-4 ring-gunmetal-blue"></span>
+              <time className="mb-1 ml-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                {item.date}
+              </time>
+              <h3 className="text-lg font-semibold italic text-white">
+                {item.title}
+              </h3>
+              <p className="mb-4 p-4 text-base font-normal text-white">
+                {item.description}
+              </p>
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                >
+                  Company site
+                  <svg
+                    className="ml-2 h-3 w-3 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    ></path>
+                  </svg>
+                </a>
+              )}
+            </li>
+          ))}
+        </ol>
       </div>
-    </motion.div>
+    </section>
   );
 }
