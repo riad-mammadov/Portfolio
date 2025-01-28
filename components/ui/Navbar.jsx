@@ -4,7 +4,7 @@ import {
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/shadcn/navigation-menu";
 import Link from "next/link";
 import {
   motion,
@@ -15,7 +15,6 @@ import {
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
-import ParticlesComponent from "../animations/particles";
 
 const navBars = [
   {
