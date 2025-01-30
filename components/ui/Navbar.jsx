@@ -5,7 +5,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
 } from "@/components/ui/shadcn/navigation-menu";
-import Link from "next/link";
 import {
   motion,
   useScroll,
@@ -15,7 +14,7 @@ import {
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
-
+import { Link } from "react-scroll";
 const navBars = [
   {
     title: "Home",
@@ -26,12 +25,12 @@ const navBars = [
     link: "/portfolio",
   },
   {
-    title: "About",
-    link: "/about",
+    title: "Experience",
+    link: "/experience",
   },
   {
-    title: "Contact",
-    link: "/contact",
+    title: "About",
+    link: "/about",
   },
 ];
 
@@ -47,9 +46,8 @@ function Navigation() {
     const prev = scrollY.getPrevious();
     if (latest > prev && latest > 50) {
       setHidden(true);
-    } else if (prev > latest + 2) {
+    } else {
       setHidden(false);
-      console.log("Navbar open");
     }
   });
 
@@ -72,7 +70,7 @@ function Navigation() {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={slideInFromTop(6.9)}
+          variants={slideInFromTop(0)}
           className="hidden md:flex justify-center items-center px-6 py-2 z-50 h-fit border-2 border-white/10 md:bg-white/10 bg-opacity-10 md:backdrop-blur-md md:rounded-full"
         >
           <NavigationMenu>
@@ -87,7 +85,7 @@ function Navigation() {
                     show: {
                       opacity: 1,
                       transition: {
-                        delay: 7,
+                        delay: 0,
                         staggerChildren: 0.1,
                         when: "beforeChildren",
                       },
@@ -141,12 +139,17 @@ function Navigation() {
                       }}
                       className="font-sans font-bold"
                     >
-                      <motion.a
-                        href={`#${item.title}`}
-                        className="text-white text-sm hover:cursor-pointer"
+                      <Link
+                        to={`${item.title}`}
+                        spy={true}
+                        smooth={true}
+                        offset={-100}
+                        duration={500}
+                        className={`text-white text-sm hover:cursor-pointer
+                      `}
                       >
                         {item.title}
-                      </motion.a>
+                      </Link>
                     </motion.li>
                   ))}
                 </motion.ul>
