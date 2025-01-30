@@ -18,10 +18,7 @@ function MainSection() {
     <>
       <ParticlesComponent id="particles" />
       {/* Particle Background Component */}
-      <div
-        id="Home"
-        className="relative flex flex-row min-h-screen sm:h-lvh justify-center items-start md:pt-10 md:px-4 overflow-hidden"
-      >
+      <div className="relative flex flex-row min-h-screen sm:h-lvh justify-center items-start md:pt-10 md:px-4 overflow-hidden">
         {/* Introduction section + animations */}
         <motion.div
           className="text-white flex flex-col justify-start items-start space-y-6 p-8 w-full max-w-2xl"
@@ -95,7 +92,7 @@ function MainSection() {
           animate="visible"
           className="hidden md:flex flex-col w-[45%] max-w-[32rem] min-w-[23rem] min-h-56 flex-shrink rounded-3xl py-6 px-6 bg-white/5 border border-white/10 backdrop-blur-xl relative group"
           style={{
-            boxShadow: "0 0 80px -20px rgba(168, 85, 247, 0.15)",
+            boxShadow: "0 0 80px -20px rgba(168, 85, 247, 0.25)",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/20 to-accent/20 rounded-3xl opacity-50" />

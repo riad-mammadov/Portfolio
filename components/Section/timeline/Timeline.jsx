@@ -5,7 +5,8 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const timelineItems = [
   {
@@ -51,10 +52,17 @@ const timelineItems = [
 ];
 
 export default function Timeline() {
+  const containerRef = useRef(null);
+
   return (
-    <section id="experience" data-section="experience">
-      <div className="p-4 sm:px-4 md:px-32 lg:px-44">
-        <h2 className="mb-6 flex items-center justify-center gap-x-3 pt-12 text-3xl font-semibold text-black/80 dark:text-white">
+    <section ref={containerRef} className="relative">
+      <div className="container mx-auto px-4 py-16">
+        <motion.h2
+          initial="hidden"
+          animate="visible"
+          variants={slideInFromRight(0)}
+          className="mb-12 flex items-center justify-center gap-x-3 sm:text-3xl text-xl font-semibold text-black/80 dark:text-white"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -72,45 +80,103 @@ export default function Timeline() {
             <path d="M6.08 14.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
           </svg>
           <p className="text-white">Experience</p>
-        </h2>
-        <ol className="relative ml-3 border-l border-gray-200">
-          {timelineItems.map((item, index) => (
-            <li className="ml-4 pb-8" key={index}>
-              <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-700 ring-4 ring-gunmetal-blue"></span>
-              <time className="mb-1 ml-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                {item.date}
-              </time>
-              <h3 className="text-lg font-semibold italic text-white">
-                {item.title}
-              </h3>
-              <p className="mb-4 p-4 text-base font-normal text-white">
-                {item.description}
-              </p>
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+        </motion.h2>
+        <div className="relative">
+          <div className="absolute left-0 sm:left-1/2 top-0 h-full w-0.5 sm:-translate-x-1/2 bg-gray-200" />
+          <ol className="relative">
+            {timelineItems.map((item, index) => (
+              <motion.li
+                key={index}
+                className={`mb-12 sm:w-1/2 relative ${
+                  index % 2 === 0
+                    ? "sm:mr-auto sm:pr-8 sm:text-right"
+                    : "sm:ml-auto sm:pl-8 sm:text-left"
+                } pl-8 text-left`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 1 }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, delay: 0.3 },
+                  },
+                }}
+              >
+                <motion.span
+                  className={`absolute top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-700 ring-4 ring-gunmetal-blue -left-3 ${
+                    index % 2 === 0 ? "sm:-right-3 sm:left-auto" : "sm:-left-3"
+                  }`}
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={slideInFromTop(0)}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                />
+                <motion.time
+                  className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                  initial="hidden"
+                  whileInView={"visible"}
+                  viewport={{ once: true }}
+                  variants={
+                    index % 2 === 0 ? slideInFromRight(0) : slideInFromLeft(0)
+                  }
                 >
-                  Company site
-                  <svg
-                    className="ml-2 h-3 w-3 rtl:rotate-180"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
+                  {item.date}
+                </motion.time>
+                <motion.h3
+                  className="mb-2 text-lg font-semibold italic text-white"
+                  initial="hidden"
+                  whileInView={"visible"}
+                  viewport={{ once: true }}
+                  variants={
+                    index % 2 === 0 ? slideInFromRight(0) : slideInFromLeft(0)
+                  }
+                >
+                  {item.title}
+                </motion.h3>
+                <motion.p
+                  className="mb-4 text-base font-normal text-white"
+                  initial="hidden"
+                  whileInView={"visible"}
+                  viewport={{ once: true }}
+                  variants={
+                    index % 2 === 0 ? slideInFromRight(0) : slideInFromLeft(0)
+                  }
+                >
+                  {item.description}
+                </motion.p>
+                {item.link && (
+                  <motion.a
+                    href={item.link}
+                    className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+                    initial="hidden"
+                    whileInView={"visible"}
+                    viewport={{ once: true }}
+                    variants={
+                      index % 2 === 0 ? slideInFromRight(0) : slideInFromLeft(0)
+                    }
                   >
-                    <path
-                      stroke="currentColor"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    ></path>
-                  </svg>
-                </a>
-              )}
-            </li>
-          ))}
-        </ol>
+                    Learn more{" "}
+                    <svg
+                      className="ml-2 h-3 w-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                  </motion.a>
+                )}
+              </motion.li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );
