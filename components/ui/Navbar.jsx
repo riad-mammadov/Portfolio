@@ -15,6 +15,7 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
 import { Link } from "react-scroll";
+import MobileNavbar from "./MobileNav";
 const navBars = [
   {
     title: "Home",
@@ -65,19 +66,19 @@ function Navigation() {
         }}
         animate={hidden ? "hidden" : "visible"} // If hidden state is true, then hide navbar
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="md:flex-row md:h-20 min-h-20 bg-none sticky flex top-0 z-50 md:w-full justify-end md:justify-center md:items-center md:my-1 md:px-10"
+        className="sm:flex-row sm:h-20 min-h-20 bg-none sticky flex top-0 z-50 md:w-full justify-end sm:justify-center sm:items-center sm:my-1 sm:px-10"
       >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={slideInFromTop(0)}
-          className="hidden md:flex justify-center items-center px-6 py-2 z-50 h-fit border-2 border-white/10 md:bg-white/10 bg-opacity-10 md:backdrop-blur-md md:rounded-full"
+          className="hidden sm:flex justify-center items-center px-6 py-2 z-50 h-fit border-2 border-white/10 sm:bg-white/10 bg-opacity-10 sm:backdrop-blur-md sm:rounded-full"
         >
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
                 <motion.ul
-                  className="hidden md:flex gap-8 items-center justify-center"
+                  className="hidden sm:flex gap-8 items-center justify-center"
                   initial="hidden"
                   animate="show"
                   variants={{
@@ -140,7 +141,8 @@ function Navigation() {
                       className="font-sans font-bold"
                     >
                       <Link
-                        to={`${item.title}`}
+                        key={item.title}
+                        to={item.title}
                         spy={true}
                         smooth={true}
                         offset={-100}
@@ -157,21 +159,10 @@ function Navigation() {
             </NavigationMenuList>
           </NavigationMenu>
         </motion.div>
-        <motion.button
-          initial="hidden"
-          animate="visible"
-          variants={slideInFromTop(2)}
-          onClick={handleToggleMenu}
-          // Menu for mobile / smaller screens as a button instead of a list
-        >
-          <HiOutlineMenuAlt4
-            className="md:hidden z-50 my-6 mx-5 text-2xl flex items-center justify-center"
-            color="white"
-          />
-        </motion.button>
+        <div className="sm:hidden">
+          <MobileNavbar />
+        </div>
       </motion.nav>
-
-      {handleMenu && <div className="text-white">Hello!</div>}
     </>
   );
 }
