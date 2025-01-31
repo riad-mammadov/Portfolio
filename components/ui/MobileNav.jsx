@@ -26,18 +26,21 @@ function MobileNavbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-end items-center bg-none">
-        <Button variant="ghost" className="text-white" onClick={toggleMenu}>
-          {!isOpen && <Menu />}
+        <Button
+          variant="ghost"
+          className="text-white z-50"
+          onClick={toggleMenu}
+        >
+          {!isOpen ? <Menu /> : <X />}
         </Button>
       </div>
       <div
         className={cn(
-          "fixed inset-0 bg-pink-600 ransition-transform duration-300 ease-in-out transform",
+          "fixed inset-0 bg-pink-600 transition-transform duration-300 ease-in-out transform z-50",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        {isOpen && <X className="h-6 absolute top-5 right-5 w-6 z-50" />}
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center justify-center h-full space-y-8 z-50">
           {navItems.map((item) => (
             <Link
               key={item.title}
