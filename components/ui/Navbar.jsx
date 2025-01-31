@@ -19,19 +19,15 @@ import MobileNavbar from "./MobileNav";
 const navBars = [
   {
     title: "Home",
-    link: "/",
   },
   {
-    title: "Portfolio",
-    link: "/portfolio",
+    title: "Projects",
   },
   {
     title: "Experience",
-    link: "/experience",
   },
   {
     title: "About",
-    link: "/about",
   },
 ];
 
@@ -51,11 +47,6 @@ function Navigation() {
       setHidden(false);
     }
   });
-
-  // Toggle menu state on click
-  function handleToggleMenu() {
-    setHandleMenu((prevHandleMenu) => !prevHandleMenu);
-  }
 
   return (
     <>
@@ -159,10 +150,10 @@ function Navigation() {
             </NavigationMenuList>
           </NavigationMenu>
         </motion.div>
-        <div className="sm:hidden">
-          <MobileNavbar />
-        </div>
       </motion.nav>
+      <div className="sm:hidden">
+        <MobileNavbar />
+      </div>
     </>
   );
 }
