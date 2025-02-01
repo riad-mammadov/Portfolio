@@ -20,7 +20,7 @@ export default function Home() {
         <section id="About">
           <Chatbox />
         </section>
-        <section id="Contact">
+        <section className="pt-12" id="Contact">
           <ContactForm />
         </section>
       </div>
