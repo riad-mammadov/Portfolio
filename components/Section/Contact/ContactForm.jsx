@@ -30,10 +30,10 @@ const ContactForm = () => {
       setDisabled(true);
       const templateParams = { name, email, subject, message };
       await emailjs.send(
-        process.env.NEXT_SERVICE_ID,
+        process.env.NEXT_PUBLIC_SERVICE_ID,
         process.env.NEXT_PUBLIC_TEMPLATE_ID,
         templateParams,
-        process.env.NEXT_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
       toggleAlert("Form submission was successful!", "success");
     } catch (e) {
