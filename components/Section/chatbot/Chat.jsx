@@ -32,33 +32,18 @@ function Chatbox() {
 
     const question = history[history.length - 1].parts[0].text;
 
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              {
-                text: aiPrompt(question),
-              },
-            ],
-          },
-        ],
-      }),
-    };
-
     try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL,
-        requestOptions
-      );
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question }),
+      });
       const data = await response.json();
-      if (!response.ok)
+      if (!response.ok) {
         throw new Error(data.error.message || "Something went wrong!");
-
+      }
       const regex = /\*\*(.*?)\*\*/g;
       const apiRequestText = data.candidates[0].content.parts[0].text
         .replace(regex, "$1")
