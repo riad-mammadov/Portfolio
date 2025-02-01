@@ -135,7 +135,7 @@ const ContactForm = () => {
 
           <button
             type="submit"
-            className="px-10 py-3 bg-blue-500 text-white font-bold rounded hover:bg-blue-600 disabled:opacity-50"
+            className="px-10 py-3 bg-blue-600 text-white font-bold rounded transition ease-in-out duration-200 hover:bg-blue-700 disabled:opacity-50"
             disabled={disabled}
           >
             Submit
