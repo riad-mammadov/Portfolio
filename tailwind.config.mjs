@@ -21,16 +21,10 @@ export default {
       "2xl": "1536px",
     },
     extend: {
-      backgroundImage: {
-        glass: "url('/glass.jpg')",
-      },
       fontFamily: {
         terminal: ["VT323", "serif"],
         rubik: ["Rubik", "mono"],
         roboto: ["Roboto", "serif"],
-      },
-      lineHeight: {
-        0: "0", // Adds a `line-height-0` utility class
       },
       colors: {
         background: "hsl(var(--background))",
