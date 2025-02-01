@@ -36,7 +36,6 @@ export default async function aiHandler(req, res) {
       res.status(500).json({ message: error.message });
     }
   } else {
-    res.setHeader("Allow", ["POST"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405);
   }
 }
