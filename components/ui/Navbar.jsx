@@ -34,8 +34,6 @@ const navBars = [
 function Navigation() {
   const { scrollY } = useScroll();
 
-  const [handleMenu, setHandleMenu] = useState(false); // For mobile screens
-
   const [hidden, setHidden] = useState(false); // State to hide the navbar on scroll down
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -53,7 +51,7 @@ function Navigation() {
       <motion.nav
         variants={{
           visible: { y: 0 },
-          hidden: { y: "-100%" },
+          hidden: { y: "-130%" },
         }}
         animate={hidden ? "hidden" : "visible"} // If hidden state is true, then hide navbar
         transition={{ duration: 0.35, ease: "easeInOut" }}
@@ -150,10 +148,10 @@ function Navigation() {
             </NavigationMenuList>
           </NavigationMenu>
         </motion.div>
+        <div className="sm:hidden">
+          <MobileNavbar />
+        </div>
       </motion.nav>
-      <div className="sm:hidden">
-        <MobileNavbar />
-      </div>
     </>
   );
 }

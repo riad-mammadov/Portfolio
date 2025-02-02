@@ -24,23 +24,21 @@ function MobileNavbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-end items-center bg-none">
+    <nav className="fixed top-0 right-0 z-50">
+      <div className="container mx-auto px-2 py-2 flex justify-end items-center bg-none">
         <Button
           variant="ghost"
-          className="text-white z-50"
+          className="z-50 text-white px-2 py-2"
           onClick={toggleMenu}
         >
           {!isOpen ? <Menu /> : <X />}
         </Button>
       </div>
       <div
-        className={cn(
-          "fixed inset-0 bg-pink-600 transition-transform duration-300 ease-in-out transform z-50",
-          isOpen ? "translate-x-0" : "translate-x-full"
-        )}
+        className={`fixed inset-0 h-fit  bg-gradient-to-bl from-gray-200/20 to-gray-400/20 transition-transform duration-300 ease-in-out transform z-50"
+          ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8 z-50">
+        <div className="flex flex-row items-center justify-center mt-12 mb-4 space-x-3 z-50">
           {navItems.map((item) => (
             <Link
               key={item.title}
@@ -50,7 +48,7 @@ function MobileNavbar() {
               offset={-20}
               duration={500}
               onClick={handleMenuClick}
-              className="text-3xl font-semibold hover:text-primary transition-colors cursor-pointer"
+              className="text-white font-roboto tracking-wide font-semibold hover:text-gray-400 transition-colors cursor-pointer"
             >
               {item.title}
             </Link>
