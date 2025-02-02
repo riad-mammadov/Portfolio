@@ -36,10 +36,7 @@ const ContactForm = () => {
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
-      toggleAlert(
-        "Email was sent succesfully! I will try to respond as soon as possible",
-        "success"
-      );
+      toggleAlert("Email was sent succesfully!", "success");
     } catch (e) {
       console.error(e);
       toggleAlert("Uh oh. Something went wrong.", "danger");
