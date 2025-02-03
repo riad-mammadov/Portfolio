@@ -24,6 +24,14 @@ function Chatbox() {
     setChatHistory((prev) => [...prev, { role: "model", text, isError }]);
   }
 
+  function formatApiResponse(apiResponseText) {
+    // Double newlines indicate a new paragraph
+    return apiResponseText
+      .split("\n\n")
+      .map((paragraph) => `<p>${paragraph.trim()}</p>`)
+      .join("<br>");
+  }
+
   async function generateBotResponse(history) {
     setIsLoading(true);
     history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
@@ -44,11 +52,9 @@ function Chatbox() {
       if (!response.ok) {
         throw new Error(data.error.message || "Something went wrong!");
       }
-      const regex = /\*\*(.*?)\*\*/g;
-      const apiRequestText = data.candidates[0].content.parts[0].text
-        .replace(regex, "$1")
-        .trim();
-      updateHistory(apiRequestText);
+      const apiResponseText = data.candidates[0].content.parts[0].text;
+      const formattedResponse = formatApiResponse(apiResponseText);
+      updateHistory(formattedResponse);
     } catch (error) {
       updateHistory(error.message, true);
     }
@@ -82,14 +88,13 @@ function Chatbox() {
             {chatHistory.map((chat, index) => (
               <div
                 key={index}
-                className={`max-w-[100%] sm:max-w-[80%] text-sm sm:text-base font-italic size-fit rounded-xl flex ${
+                dangerouslySetInnerHTML={{ __html: chat.text }}
+                className={`max-w-[100%] sm:max-w-[80%] text-sm sm:text-base font-italic size-fit rounded-xl ${
                   chat.role === "model"
                     ? "rounded-bl-none bg-gray-700 justify-start"
                     : "ml-auto rounded-br-none bg-cyan-700 justify-end"
                 } p-3 text-gray-50`}
-              >
-                {chat.text}
-              </div>
+              ></div>
             ))}
           </div>
           {loading && (
