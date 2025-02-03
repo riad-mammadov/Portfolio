@@ -1,5 +1,3 @@
-import { Bot } from "lucide-react";
-
 function ChatMessage({ chat }) {
   const isBot = chat.role === "model";
 
@@ -7,7 +5,6 @@ function ChatMessage({ chat }) {
     <div
       className={`flex ${isBot ? "items-center gap-5" : "justify-end"} w-full`}
     >
-      {isBot && <Bot color="white" />}
       <div
         className={`${
           isBot
