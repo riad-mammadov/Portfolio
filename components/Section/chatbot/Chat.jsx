@@ -1,10 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import ChatForm from "./chatform";
-import ChatMessage from "./ChatMessage";
-import { Bot, BotIcon, Dot, User } from "lucide-react";
-import { aiPrompt } from "@/utils/ai";
-import { motion } from "framer-motion";
+import { Dot, User } from "lucide-react";
 
 function Chatbox() {
   const [chatHistory, setChatHistory] = useState([
