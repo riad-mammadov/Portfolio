@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { Button } from "@/components/ui/shadcn/Button";
+import { Contact } from "lucide-react";
 
 const ContactForm = () => {
   const {
@@ -48,12 +48,14 @@ const ContactForm = () => {
 
   return (
     <div className=" pt-20 p-8 sm:p-6">
-      <div className="flex items-center justify-center mb-6">
-        <h1 className="text-white font-bold text-2xl">Contact Me</h1>
-      </div>
+      <span className="flex items-center justify-center gap-4 mb-10 z-10 ">
+        <Contact className="animate-bounce text-cyan-700" />
+        <h1 className="text-center text-xl tracking-wide sm:text-3xl text-white font-semibold">
+          Contact Me
+        </h1>
+      </span>
       <div className="mx-auto max-w-4xl">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-          {/* Each input and its error message in separate divs for proper spacing */}
           <div className="flex flex-col space-y-3 sm:flex-row sm:space-x-3 sm:space-y-0">
             <div className="flex-1 flex flex-col">
               <input
@@ -132,17 +134,20 @@ const ContactForm = () => {
 
           <button
             type="submit"
-            className="px-10 py-3 bg-blue-600 text-white font-bold rounded transition ease-in-out duration-200 hover:bg-blue-700 disabled:opacity-50"
             disabled={disabled}
+            className="group relative justify-center px-10 py-3 bg-blue-600 overflow-hidden rounded-xl inline-flex items-center"
           >
-            Submit
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-800/50 transition-transform duration-500 group-hover:translate-x-0 -translate-x-full"></div>
+            <span className="relative z-10 text-white font-sans font-semibold">
+              Submit
+            </span>
           </button>
         </form>
       </div>
       {alertInfo.display && (
         <div className="flex justify-center items-center">
           <div
-            className={`alert fixed top-0 right-1/2 sm:top-2 sm:right-2 alert-${
+            className={`alert fixed top-0 text-sm sm:text-base sm:top-2 sm:right-2 alert-${
               alertInfo.type
             } mt-5 p-4 rounded-2xl text-white ${
               alertInfo.type === "success" ? "bg-green-600" : "bg-red-700"
