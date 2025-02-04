@@ -4,11 +4,10 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/shadcn/Button";
-import { cn } from "@/lib/utils";
 
 const navItems = [
   { title: "Home" },
-  { title: "Portfolio" },
+  { title: "Projects" },
   { title: "Experience" },
   { title: "About" },
 ];
