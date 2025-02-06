@@ -16,20 +16,7 @@ import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
 import { Link } from "react-scroll";
 import MobileNavbar from "./MobileNav";
-const navBars = [
-  {
-    title: "Home",
-  },
-  {
-    title: "Projects",
-  },
-  {
-    title: "Experience",
-  },
-  {
-    title: "About",
-  },
-];
+import { navBars } from "@/utils/links";
 
 function Navigation() {
   const { scrollY } = useScroll();
@@ -116,7 +103,6 @@ function Navigation() {
                     </a>
                   </motion.li>
                   {navBars.map((item, index) => (
-                    // Maps array to the navbar
                     <motion.li
                       key={index}
                       variants={{

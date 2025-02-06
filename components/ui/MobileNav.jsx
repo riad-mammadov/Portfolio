@@ -4,13 +4,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/shadcn/Button";
-
-const navItems = [
-  { title: "Home" },
-  { title: "Projects" },
-  { title: "Experience" },
-  { title: "About" },
-];
+import { navBars } from "@/utils/links";
 
 function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,8 +31,8 @@ function MobileNavbar() {
         className={`fixed inset-0 h-fit  bg-gradient-to-t from-black to-gray-400/40 transition-transform duration-300 ease-in-out transform z-50"
           ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="flex flex-row items-center justify-center mt-12 mb-4 space-x-3 z-50">
-          {navItems.map((item) => (
+        <div className="flex flex-row items-center justify-center mt-12 mb-4 gap-2 overflow-scroll z-50">
+          {navBars.map((item) => (
             <Link
               key={item.title}
               to={item.title}
@@ -47,7 +41,7 @@ function MobileNavbar() {
               offset={-20}
               duration={500}
               onClick={handleMenuClick}
-              className="text-white font-roboto tracking-wide font-semibold hover:text-gray-400 transition-colors cursor-pointer"
+              className="text-white text-sm font-roboto font-semibold hover:text-gray-400 transition-colors cursor-pointer"
             >
               {item.title}
             </Link>
