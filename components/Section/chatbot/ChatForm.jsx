@@ -27,7 +27,6 @@ function ChatForm({
       { role: "user", text: userMessage },
     ]);
 
-    // Calls function that generates the response
     generateBotResponse([...chatHistory, { role: "user", text: userMessage }]);
   }
 
