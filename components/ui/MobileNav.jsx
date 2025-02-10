@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/shadcn/Button";
 import { navBars } from "@/utils/links";
+import { AnimatePresence, motion } from "framer-motion";
 
 function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,42 +13,64 @@ function MobileNavbar() {
   function toggleMenu() {
     setIsOpen(!isOpen);
   }
+
   function handleMenuClick() {
     setIsOpen(false);
   }
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isOpen]);
   return (
-    <nav className="fixed top-0 right-0 z-50">
-      <div className="container mx-auto px-2 py-2 flex justify-end items-center bg-none">
+    <nav className={`fixed top-0 right-0 z-50 w-full`}>
+      <div className="container mx-auto px-4 py-4 flex justify-end items-center bg-transparent">
         <Button
           variant="ghost"
-          className="z-50 text-white px-2 py-2"
+          size="icon"
+          className="text-white z-50"
           onClick={toggleMenu}
         >
-          {!isOpen ? <Menu /> : <X />}
+          {!isOpen ? <Menu size={24} /> : <X size={24} />}
         </Button>
       </div>
-      <div
-        className={`fixed inset-0 h-fit  bg-gradient-to-t from-black to-gray-400/40 transition-transform duration-300 ease-in-out transform z-50"
-          ${isOpen ? "translate-y-0" : "-translate-y-full"}`}
-      >
-        <div className="flex flex-row items-center justify-center mt-12 mb-4 gap-2 overflow-scroll z-50">
-          {navBars.map((item) => (
-            <Link
-              key={item.title}
-              to={item.title}
-              spy={true}
-              smooth={true}
-              offset={-20}
-              duration={500}
-              onClick={handleMenuClick}
-              className="text-white text-sm font-roboto font-semibold hover:text-gray-400 transition-colors cursor-pointer"
-            >
-              {item.title}
-            </Link>
-          ))}
-        </div>
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-40"
+          >
+            <div className="flex flex-col items-center justify-center gap-6">
+              {navBars.map((item) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <Link
+                    to={item.title}
+                    spy={true}
+                    smooth={true}
+                    offset={-20}
+                    duration={500}
+                    onClick={handleMenuClick}
+                    className="text-white text-2xl font-roboto font-semibold hover:text-cyan-500 transition-colors cursor-pointer"
+                  >
+                    {item.title}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

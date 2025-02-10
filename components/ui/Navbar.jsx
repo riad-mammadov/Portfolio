@@ -3,15 +3,8 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuLink,
 } from "@/components/ui/shadcn/navigation-menu";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  easeInOut,
-} from "framer-motion";
-import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
 import { Link } from "react-scroll";
