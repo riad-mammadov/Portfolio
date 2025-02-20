@@ -53,10 +53,10 @@ function MainSection() {
             variants={slideInFromLeft(1.5)}
             className="text-gray-300 text-md md:text-lg font-sans z-10 leading-relaxed"
           >
-            A passionate developer dedicated to creating unique applications and
-            digital experiences. With a strong track record of client
-            satisfaction, I am eager to advance my career in the field of
-            Software Development.
+            A recently-graduated, passionate developer dedicated to creating
+            unique applications and digital experiences. Feel free to explore my
+            projects and don't hesitate to ask my chatbot any questions you
+            might have!
           </motion.p>
 
           {/* Buttons below introduction section */}
