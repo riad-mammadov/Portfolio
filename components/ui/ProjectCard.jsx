@@ -18,7 +18,6 @@ export default function ProjectCard({
   description,
   image,
   githubUrl,
-  detailsUrl,
   liveUrl,
   techStack,
   custom,
@@ -28,7 +27,7 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: custom * 0.1 }}
-      className="flex flex-col w-full sm:w-[320px] bg-stone-600 rounded-xl shadow-lg overflow-hidden"
+      className="flex flex-col w-[250px] sm:w-[320px] bg-stone-600 rounded-xl shadow-lg overflow-hidden"
     >
       <div className="relative h-[200px] overflow-hidden">
         <Image
@@ -45,14 +44,19 @@ export default function ProjectCard({
           {techStack.map((tech) => (
             <TooltipProvider key={tech.name}>
               <Tooltip>
-                <TooltipTrigger>
-                  <Badge variant="primary" className="p-1">
-                    <Image
-                      src={tech.icon || "/placeholder.svg"}
-                      alt={tech.name}
-                      width={20}
-                      height={20}
-                    />
+                <TooltipTrigger asChild>
+                  <Badge
+                    variant="primary"
+                    className="h-6 w-6 sm:w-8 sm:h-8 rounded-full p-0 transition-transform hover:scale-110"
+                  >
+                    <div className="relative h-full w-full overflow-hidden rounded-full">
+                      <Image
+                        src={tech.icon || "/placeholder.svg"}
+                        alt={tech.name}
+                        fill
+                        className="object-fit"
+                      />
+                    </div>
                   </Badge>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -69,12 +73,7 @@ export default function ProjectCard({
               GitHub
             </Link>
           </Button>
-          <Button asChild size="sm" className="flex-1">
-            <Link href={detailsUrl}>
-              <Code2 className="w-4 h-4 mr-2" />
-              Details
-            </Link>
-          </Button>
+
           {liveUrl && (
             <Button asChild size="icon" variant="secondary">
               <Link href={liveUrl}>
