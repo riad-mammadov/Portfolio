@@ -27,7 +27,7 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: custom * 0.1 }}
-      className="flex flex-col w-[250px] sm:w-[320px] bg-stone-600 rounded-xl shadow-lg overflow-hidden"
+      className="flex flex-col w-[250px] sm:w-[320px] h-full bg-stone-600 rounded-xl shadow-lg overflow-hidden"
     >
       <div className="relative h-[200px] overflow-hidden">
         <Image
@@ -38,15 +38,19 @@ export default function ProjectCard({
         />
       </div>
       <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-2xl font-bold text-stone-200 mb-2">{title}</h3>
-        <p className="text-stone-300 text-sm mb-4 flex-grow">{description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <h3 className="text-2xl font-bold text-stone-200 text-center mb-2">
+          {title}
+        </h3>
+        <p className="text-stone-300 text-sm mb-4 text-left flex-grow">
+          {description}
+        </p>
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
           {techStack.map((tech) => (
             <TooltipProvider key={tech.name}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Badge
-                    variant="primary"
+                    variant="outline"
                     className="h-6 w-6 sm:w-8 sm:h-8 rounded-full p-0 transition-transform hover:scale-110"
                   >
                     <div className="relative h-full w-full overflow-hidden rounded-full">
