@@ -49,11 +49,8 @@ export default function ProjectCard({
             <TooltipProvider key={tech.name}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Badge
-                    variant="outline"
-                    className="h-6 w-6 sm:w-8 sm:h-8 rounded-full p-0 transition-transform hover:scale-110"
-                  >
-                    <div className="relative h-full w-full overflow-hidden rounded-full">
+                  <div className="h-6 w-6 sm:w-8 sm:h-8 rounded-full overflow-hidden transition-transform hover:scale-110 cursor-pointer">
+                    <div className="relative h-full w-full">
                       <Image
                         src={tech.icon || "/placeholder.svg"}
                         alt={tech.name}
@@ -61,7 +58,7 @@ export default function ProjectCard({
                         className="object-fit"
                       />
                     </div>
-                  </Badge>
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{tech.name}</p>
