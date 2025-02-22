@@ -11,9 +11,9 @@ import { useRef } from "react";
 const timelineItems = [
   {
     date: "09/2023 - Present",
-    title: "Web Development",
+    title: "Freelance Web Development",
     description:
-      "Developed responsive web applications that enhanced user satisfaction and streamlined business operations for clients, focusing on delivering high functionality and a seamless user experiences.",
+      "Develop responsive web applications that enhances user satisfaction and streamlines operations for clients, while focusing on delivering high functionality and a seamless user experiences.",
     institution: "Freelance",
     type: "work",
   },
@@ -21,15 +21,15 @@ const timelineItems = [
     date: "09/2021 - 09/2024",
     title: "BSc Honours in Computer Science",
     description:
-      "Graduated with an Upper Second-Class Honors (2:1) from City University of London.",
+      "Graduated with Upper Second-Class Honors (2:1) from City University of London.",
     institution: "City University of London",
     type: "education",
   },
   {
     date: "01/2020 - 01-2020",
-    title: "Software Development Programme",
+    title: "KPMG Software Development Programme",
     description:
-      "Gained valuable insights into the daily operations of a Big Four firm through a voluntary work experience program during my sixth form studies",
+      "Through a voluntary work experience programme during my studies, I gained invaluable insights into the daily operations of a Big Four firm. This opportunity was extremely insightful due to its comprehensive mentorship, which allowed me to expand my professional network and enhance both my technical abilities and soft skills.",
     institution: "KPMG",
     type: "work",
   },
@@ -39,14 +39,6 @@ const timelineItems = [
     description:
       "Completed my A-levels, achieving an A*,B,C in Digital Game Development, Computer Science and Graphics",
     institution: "Stoke Newington Sixth Form",
-    type: "education",
-  },
-
-  {
-    date: "09/2014 - 06/2019",
-    title: "GCSE's",
-    description: "Achieved all GCSE's, ranging from grades 9-5",
-    institution: "Stoke Newington School",
     type: "education",
   },
 ];
@@ -82,15 +74,15 @@ export default function Timeline() {
           <p className="text-white font-serif">Experience & Education</p>
         </motion.h2>
         <div className="relative">
-          <div className="absolute left-0 sm:left-1/2 top-0 h-full w-0.5 sm:-translate-x-1/2 bg-gray-200" />
+          <div className="absolute left-0 md:left-1/2 top-0 h-full w-0.5 md:-translate-x-1/2 bg-gray-200" />
           <ol className="relative">
             {timelineItems.map((item, index) => (
               <motion.li
                 key={index}
-                className={`mb-12 sm:w-1/2 relative ${
+                className={`mb-12 md:w-1/2 relative ${
                   index % 2 === 0
-                    ? "sm:mr-auto sm:pr-8 sm:text-right"
-                    : "sm:ml-auto sm:pl-8 sm:text-left"
+                    ? "md:mr-auto md:pr-8 md:text-right"
+                    : "md:ml-auto md:pl-8 md:text-left"
                 } pl-8 text-left`}
                 initial="hidden"
                 whileInView="visible"
@@ -106,7 +98,7 @@ export default function Timeline() {
               >
                 <motion.span
                   className={`absolute top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-700 ring-4 ring-gunmetal-blue -left-3 ${
-                    index % 2 === 0 ? "sm:-right-3 sm:left-auto" : "sm:-left-3"
+                    index % 2 === 0 ? "md:-right-3 md:left-auto" : "md:-left-3"
                   }`}
                   initial="hidden"
                   whileInView="visible"
@@ -115,7 +107,7 @@ export default function Timeline() {
                   transition={{ duration: 0.5 }}
                 />
                 <motion.time
-                  className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                  className="text-sm text-center font-normal leading-none text-gray-400 dark:text-gray-500"
                   initial="hidden"
                   whileInView={"visible"}
                   viewport={{ once: true }}
@@ -126,7 +118,7 @@ export default function Timeline() {
                   {item.date}
                 </motion.time>
                 <motion.h3
-                  className="mb-2 text-lg font-semibold italic text-white"
+                  className="mb-4 mt-4 text-lg text-center font-semibold italic text-stone-300"
                   initial="hidden"
                   whileInView={"visible"}
                   viewport={{ once: true }}
@@ -137,7 +129,7 @@ export default function Timeline() {
                   {item.title}
                 </motion.h3>
                 <motion.p
-                  className="mb-4 text-base font-normal text-white"
+                  className="mb-4 text-center font-normal text-slate-300"
                   initial="hidden"
                   whileInView={"visible"}
                   viewport={{ once: true }}
