@@ -111,7 +111,7 @@ const ContactForm = () => {
                 },
               })}
               className="w-full p-3 h-12 border text-white border-gray-300 rounded"
-              placeholder="Subject"
+              placeholder="Email Subject"
             />
             {errors.subject && (
               <p className="text-red-500 text-sm mt-2">
@@ -121,13 +121,13 @@ const ContactForm = () => {
           </div>
 
           <div className="flex flex-col">
-            <Input
+            <textarea
               type="textarea"
               {...register("message", { required: "Please enter a message" })}
-              className="w-full p-3 h-12 border border-gray-300 rounded text-white"
+              className="w-full p-3 sm:h-32 h-20 border  border-gray-300 rounded text-white placeholder-gray-500 placeholder:text-sm bg-transparent outline-none"
               rows="4"
               placeholder="Message"
-            ></Input>
+            ></textarea>
             {errors.message && (
               <p className="text-red-500 text-sm mt-2">
                 {errors.message.message}
