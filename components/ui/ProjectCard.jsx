@@ -20,6 +20,7 @@ export default function ProjectCard({
   githubUrl,
   liveUrl,
   techStack,
+  certification,
   custom,
 }) {
   return (
@@ -38,10 +39,10 @@ export default function ProjectCard({
         />
       </div>
       <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-2xl font-bold text-stone-200 text-center mb-2">
+        <h3 className="text-xl font-serif font-bold text-stone-200 text-center mb-2">
           {title}
         </h3>
-        <p className="text-stone-300 text-sm mb-4 text-left flex-grow">
+        <p className="text-stone-300 font-serif text-sm mb-4 text-left flex-grow">
           {description}
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-4">
@@ -75,9 +76,9 @@ export default function ProjectCard({
             </Link>
           </Button>
 
-          {liveUrl && (
+          {certification && (
             <Button asChild size="icon" variant="secondary">
-              <Link href={liveUrl}>
+              <Link href={certification}>
                 <ExternalLink className="w-4 h-4" />
               </Link>
             </Button>
