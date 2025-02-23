@@ -81,8 +81,8 @@ function ProjectSection() {
                 <span>
                   <FolderOpenDot className="animate-bounce text-cyan-700" />
                 </span>
-                <motion.h1 className="text-center font-serif text-xl tracking-wide sm:text-3xl text-white font-semibold">
-                  Projects
+                <motion.h1 className="text-center font-serif sm:text-2xl text-xl text-white font-semibold">
+                  Projects & Courses
                 </motion.h1>
               </motion.span>
               <div className="relative">

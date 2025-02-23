@@ -69,7 +69,7 @@ function Chat() {
     <>
       <span className="flex items-center justify-center gap-4 mb-10 z-10 ">
         <User className="animate-bounce text-cyan-700" />
-        <h1 className="text-center font-serif text-xl tracking-wide sm:text-3xl text-white font-semibold">
+        <h1 className="text-center font-serif text-xl tracking-wide sm:text-2xl text-white font-semibold">
           About Me
         </h1>
       </span>

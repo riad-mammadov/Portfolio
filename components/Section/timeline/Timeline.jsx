@@ -53,7 +53,7 @@ export default function Timeline() {
           initial="hidden"
           animate="visible"
           variants={slideInFromRight(0)}
-          className="mb-12 flex items-center justify-center gap-x-3 sm:text-3xl text-xl font-semibold text-black/80 dark:text-white"
+          className="mb-12 flex items-center justify-center gap-x-3 sm:text-2xl text-xl font-semibold text-black/80 dark:text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
