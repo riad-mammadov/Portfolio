@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import ChatForm from "./chatform";
+import ChatForm from "./ChatForm";
 import { Dot, User } from "lucide-react";
 
 function Chat() {
