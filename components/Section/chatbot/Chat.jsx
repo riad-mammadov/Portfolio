@@ -33,8 +33,6 @@ function Chat() {
     setIsLoading(true);
     history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
 
-    console.log(history);
-
     const question = history[history.length - 1].parts[0].text;
 
     try {
