@@ -11,7 +11,7 @@ function Chat() {
     },
     {
       role: "model",
-      text: "Feel free to ask anything about me, my education, projects and hobbies, i'm happy to share!",
+      text: "Feel free to ask anything about me, my education, and projects that i have worked on, i'm happy to share!",
     },
   ]);
   const ref = useRef(null);
