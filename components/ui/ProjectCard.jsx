@@ -30,14 +30,16 @@ export default function ProjectCard({
       transition={{ duration: 0.3, delay: custom * 0.1 }}
       className="flex flex-col w-[250px] sm:w-[320px] h-full bg-stone-600 rounded-xl shadow-lg overflow-hidden"
     >
-      <div className="relative h-[200px] overflow-hidden">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
-        />
-      </div>
+      {image && (
+        <div className="relative h-[150px]">
+          <Image
+            src={image || "/placeholder.svg"}
+            alt={title}
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
       <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-serif font-bold text-stone-200 text-center mb-2">
           {title}
