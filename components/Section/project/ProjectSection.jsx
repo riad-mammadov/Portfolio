@@ -98,7 +98,7 @@ function ProjectSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ staggerChildren: 0.5, delayChildren: 0.5 }}
-                    className="flex gap-5 px-4"
+                    className="flex gap-5 px-4 "
                   >
                     {projects.map((project, index) => (
                       // For each item in projects array, creates a Project Card
