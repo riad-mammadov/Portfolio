@@ -57,7 +57,7 @@ function ProjectSection() {
           {!showProjects ? (
             // If the showProjects state is false, display the SearchBar and its animation
             <motion.div
-              className="flex  justify-center items-center min-h-[468px]"
+              className="flex  justify-center items-center min-h-[360px]"
               viewport={{ root: scrollRef, amount: 0.7, once: true }}
               // Use the container ref as the viewport root, make it visible when 70% of the div is in the viewport, and animate once
               whileInView={() => handleSetTyping()}
