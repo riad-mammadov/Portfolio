@@ -42,3 +42,5 @@ next-env.d.ts
 
 # ai prompt
 utils/ai.js
+
+

@@ -1,7 +1,7 @@
 import MainSection from "@/components/Section/intro/MainSection";
 import ProjectSection from "@/components/Section/project/ProjectSection.jsx";
 import Timeline from "@/components/Section/timeline/Timeline";
-import Chatbox from "@/components/Section/chatbot/Chat";
+import Chat from "@/components/Section/chatbot/Chat";
 import Footer from "@/components/ui/Footer";
 import ContactForm from "@/components/Section/Contact/ContactForm";
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
           <Timeline />
         </section>
         <section id="About">
-          <Chatbox />
+          <Chat />
         </section>
         <section className="pt-12" id="Contact">
           <ContactForm />

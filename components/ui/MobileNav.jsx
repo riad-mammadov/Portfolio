@@ -25,6 +25,7 @@ function MobileNavbar() {
       document.body.style.overflow = "";
     }
   }, [isOpen]);
+
   return (
     <nav className={`fixed top-0 right-0 z-50 w-full`}>
       <div className="container mx-auto px-4 py-4 flex justify-end items-center bg-transparent">

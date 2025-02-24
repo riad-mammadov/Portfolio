@@ -30,7 +30,7 @@ const ParticlesComponent = ({ ...props }) => {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            mode: "repulse",
           },
           onHover: {
             enable: true,
@@ -39,25 +39,26 @@ const ParticlesComponent = ({ ...props }) => {
         },
         modes: {
           push: {
-            distance: 200,
-            duration: 15,
+            distance: 100,
+            duration: 1,
           },
           grab: {
-            distance: 100,
+            distance: 200,
           },
         },
       },
       particles: {
         color: {
-          value: "#737373",
+          value: "#101010",
         },
         links: {
-          color: "#737373",
+          color: "#8f8f8f",
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.6,
           width: 0.5,
         },
+
         move: {
           direction: "none",
           enable: true,
@@ -78,7 +79,7 @@ const ParticlesComponent = ({ ...props }) => {
           value: 0.5,
         },
         shape: {
-          type: "none",
+          type: "circle",
         },
         size: {
           value: { min: 1, max: 3 },
