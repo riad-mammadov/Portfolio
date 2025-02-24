@@ -4,11 +4,11 @@ export const skills = [
     img: "/react.svg",
   },
   {
-    title: "NextJs",
+    title: "Next.js",
     img: "/nextjs_icon_dark.svg",
   },
   {
-    title: "NodeJs",
+    title: "Node.js",
     img: "/nodejs.svg",
   },
   {
@@ -19,10 +19,13 @@ export const skills = [
     title: "TypeScript",
     img: "typescript.svg",
   },
-
   {
-    title: "PostgreSQL",
-    img: "postgresql.svg",
+    title: "Java",
+    img: "java.svg",
+  },
+  {
+    title: "PHP",
+    img: "php_dark.svg",
   },
   {
     title: "Redux",
@@ -32,12 +35,9 @@ export const skills = [
     title: "Tailwind CSS",
     img: "tailwindcss.svg",
   },
+
   {
-    title: "HTML/CSS",
-    img: "tailwindcss.svg",
-  },
-  {
-    title: "Framer Motion",
+    title: "Motion",
     img: "framer.png",
   },
   {
@@ -47,6 +47,15 @@ export const skills = [
   {
     title: "MongoDB",
     img: "mongodb.svg",
+  },
+
+  {
+    title: "PostgreSQL",
+    img: "postgresql.svg",
+  },
+  {
+    title: "MySQL",
+    img: "mysql.svg",
   },
   {
     title: "Figma",
