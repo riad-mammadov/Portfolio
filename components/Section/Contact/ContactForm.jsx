@@ -50,7 +50,9 @@ const ContactForm = () => {
       console.error(e);
       toggleAlert("Uh oh. Something went wrong.", "danger");
     } finally {
-      setDisabled(false);
+      setTimeout(() => {
+        setDisabled(false);
+      }, 60000);
       reset();
     }
   };
@@ -148,7 +150,11 @@ const ContactForm = () => {
             className="group relative justify-center px-10 py-3 bg-gray-800/20 overflow-hidden rounded-xl inline-flex items-center"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-800/50 transition-transform duration-500 group-hover:translate-x-0 -translate-x-full"></div>
-            <span className="relative z-10 text-white font-sans font-semibold">
+            <span
+              className={`${
+                disabled && `hover:cursor-not-allowed`
+              } relative z-10 text-white font-sans font-semibold`}
+            >
               Submit
             </span>
           </button>
