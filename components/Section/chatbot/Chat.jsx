@@ -36,7 +36,7 @@ function Chat() {
     const question = history[history.length - 1].parts[0].text;
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch("https://riadmammadov.co.uk/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
