@@ -79,7 +79,7 @@ export default function ProjectCard({
 
           {certification && (
             <Button asChild size="icon" variant="secondary">
-              <Link href={certification}>
+              <Link href={certification} target="_blank">
                 <ExternalLink className="w-4 h-4" />
               </Link>
             </Button>
