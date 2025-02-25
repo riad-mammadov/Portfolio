@@ -7,9 +7,10 @@ import {
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import MobileNavbar from "./MobileNav";
 import { navBars } from "@/utils/links";
+import Link from "next/link";
 
 function Navigation() {
   const { scrollY } = useScroll();
@@ -73,12 +74,15 @@ function Navigation() {
                     }}
                     className="font-sans font-bold"
                   >
-                    <a>
+                    <Link
+                      href="http://www.linkedin.com/in/riadmammadov"
+                      target="_blank"
+                    >
                       <img
                         src="linkedin.png"
                         className="bg-white rounded-sm w-5 h-5"
                       ></img>
-                    </a>
+                    </Link>
                   </motion.li>
                   <motion.li
                     variants={{
@@ -91,9 +95,12 @@ function Navigation() {
                     }}
                     className="font-sans font-bold mr-6"
                   >
-                    <a>
+                    <Link
+                      href="https://github.com/riad-mammadov"
+                      target="_blank"
+                    >
                       <img className="h-5 w-5" src="github-dark.svg"></img>
-                    </a>
+                    </Link>
                   </motion.li>
                   {navBars.map((item, index) => (
                     <motion.li
@@ -108,7 +115,7 @@ function Navigation() {
                       }}
                       className="font-sans font-bold"
                     >
-                      <Link
+                      <ScrollLink
                         key={item.title}
                         to={item.title}
                         spy={true}
@@ -119,7 +126,7 @@ function Navigation() {
                       `}
                       >
                         {item.title}
-                      </Link>
+                      </ScrollLink>
                     </motion.li>
                   ))}
                 </motion.ul>
