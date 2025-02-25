@@ -20,9 +20,9 @@ function MobileNavbar() {
 
   useEffect(() => {
     if (isOpen) {
-      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     }
   }, [isOpen]);
 
