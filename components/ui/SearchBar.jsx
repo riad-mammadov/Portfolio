@@ -38,7 +38,7 @@ export default function SearchBar({ isTyping, onComplete }) {
         </div>
         <motion.div className="w-full bg-slate-200 dark:bg-[#333] rounded-full shadow-lg px-12 py-3">
           <motion.p
-            className="text-black font-sans font-semibold text-md"
+            className="text-black font-serif font-semibold text-md"
             initial="hidden"
             animate="show"
           >
