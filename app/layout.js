@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/ui/Navbar";
 import React from "react";
 
 const geistSans = Geist({
@@ -15,7 +14,14 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Riad Mammadov",
-  description: "Portfolio created using NextJs",
+  description: "Created by Riad Mammadov",
+  icons: {
+    icon: [
+      {
+        url: "/images/logo.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
