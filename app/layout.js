@@ -15,13 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Riad Mammadov",
   description: "Created by Riad Mammadov",
-  icons: {
-    icon: [
-      {
-        url: "/images/logo.png",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({ children }) {
