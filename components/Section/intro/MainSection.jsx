@@ -10,7 +10,7 @@ import {
 } from "@/utils/motion";
 import ParticlesComponent from "../../animations/particles";
 import ContactSection from "../../templates/ContactSection";
-import Link from "next/link";
+import { Link } from "react-scroll";
 
 import TextBlink from "../../templates/TextBlink";
 function MainSection() {
@@ -66,8 +66,13 @@ function MainSection() {
             className="flex flex-col sm:flex-row gap-4 md:justify-start items-start z-10 pt-4"
           >
             <Link
-              href="/projects"
-              className="group relative md:min-w-[12rem] justify-center px-8 py-4 bg-blue-600 overflow-hidden rounded-xl inline-flex items-center"
+              key={"Projects"}
+              to={"Projects"}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className="group relative md:min-w-[12rem] hover:cursor-pointer justify-center px-8 py-4 bg-blue-600 overflow-hidden rounded-xl inline-flex items-center"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-800/50 transition-transform duration-500 group-hover:translate-x-0 -translate-x-full"></div>
               <span className="relative z-10 text-white font-sans font-semibold">
@@ -75,8 +80,13 @@ function MainSection() {
               </span>
             </Link>
             <Link
-              href="/contact"
-              className="group px-8 min-w-40 py-4 rounded-xl bg-stone-600/20 border border-foreground/10 inline-flex items-center justify-center overflow-hidden relative"
+              key={"Contact"}
+              to={"Contact"}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className="group px-8 min-w-40 py-4 rounded-xl hover:cursor-pointer bg-stone-600/20 border border-foreground/10 inline-flex items-center justify-center overflow-hidden relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-stone-800/40 transition-transform duration-500 group-hover:translate-x-0 translate-x-full"></div>
               <span className="relative text-white z-10 font-sans tracking-wide font-semibold">
