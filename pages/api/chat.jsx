@@ -8,6 +8,7 @@ export default async function aiHandler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://riadmammadov.co.uk",
       },
       body: JSON.stringify({
         contents: [
