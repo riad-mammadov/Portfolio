@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Contact } from "lucide-react";
 import { Input } from "@/components/ui/shadcn/input";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ContactForm = () => {
   const {
@@ -23,7 +24,13 @@ const ContactForm = () => {
     setAlertInfo({ display: true, message, type });
     setTimeout(() => {
       setAlertInfo({ display: false, message: "", type: "" });
-    }, 5000);
+    }, 3000);
+  };
+
+  const alertVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 },
   };
 
   const onSubmit = async (data) => {
@@ -147,19 +154,27 @@ const ContactForm = () => {
           </button>
         </form>
       </div>
-      {alertInfo.display && (
-        <div className="flex justify-center items-center">
-          <div
-            className={`alert fixed top-0 text-sm sm:text-base sm:top-2 sm:right-2 alert-${
-              alertInfo.type
-            } mt-5 p-4 rounded-2xl text-white ${
-              alertInfo.type === "success" ? "bg-green-600" : "bg-red-700"
-            }`}
+      <AnimatePresence>
+        {alertInfo.display && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={alertVariants}
+            className="flex justify-center items-center"
           >
-            {alertInfo.message}
-          </div>
-        </div>
-      )}
+            <div
+              className={`alert fixed top-0 text-sm sm:text-base sm:top-2 sm:right-2 alert-${
+                alertInfo.type
+              } mt-5 p-4 rounded-2xl text-white ${
+                alertInfo.type === "success" ? "bg-green-600" : "bg-red-700"
+              }`}
+            >
+              {alertInfo.message}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
