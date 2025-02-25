@@ -28,33 +28,14 @@ export default async function aiHandler(req, res) {
         process.env.GEMINI_API_URL,
         requestOptions
       );
+      const data = await apiResponse.json();
+      if (!apiResponse.ok) throw new Error("Failed to fetch API");
 
-      if (apiResponse.ok) {
-        const data = await apiResponse.json();
-        res.status(200).json(data);
-      } else {
-        const errorData = await apiResponse.json();
-        const errorMessage =
-          errorData.message ||
-          "Failed to fetch API with no specific error message";
-        res.status(apiResponse.status).json({ message: errorMessage });
-      }
+      res.status(200).json(data);
     } catch (error) {
-      if (error.name === "FetchError") {
-        res
-          .status(502)
-          .json({ message: "Network error when attempting to fetch API" });
-      } else if (error.name === "SyntaxError") {
-        res
-          .status(500)
-          .json({ message: "Error parsing JSON response from API" });
-      } else {
-        res
-          .status(500)
-          .json({ message: error.message || "Unexpected error occurred" });
-      }
+      res.status(500).json({ message: error.message });
     }
   } else {
-    res.status(405).json({ message: "Method not allowed" });
+    res.status(405);
   }
 }
