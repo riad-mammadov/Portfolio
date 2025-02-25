@@ -28,9 +28,9 @@ export default async function aiHandler(req, res) {
         requestOptions
       );
       const data = await apiResponse.json();
-      if (!apiResponse.ok) {
+      if (!apiResponse.ok)
         throw new Error(data.message || "Failed to fetch API");
-      }
+
       res.status(200).json(data);
     } catch (error) {
       res.status(500).json({ message: error.message });
