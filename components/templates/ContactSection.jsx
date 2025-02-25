@@ -2,6 +2,7 @@ import splitString from "@/utils/split";
 import { motion } from "framer-motion";
 import { contacts } from "@/utils/contacts";
 import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
 
 function ContactSection({ heading }) {
   const headingChars = splitString(heading);
@@ -71,12 +72,13 @@ function ContactSection({ heading }) {
                   <span role="img" aria-label="github" className="font-emoji">
                     <FaGithub />
                   </span>
-                  <a
+                  <Link
+                    target="_blank"
                     href={contact.github}
                     className="underline underline-offset-4"
                   >
                     {contact.github}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </section>
