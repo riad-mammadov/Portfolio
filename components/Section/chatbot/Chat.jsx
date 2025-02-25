@@ -45,7 +45,6 @@ function Chat() {
       });
       const data = await response.json();
       if (!response.ok) {
-        console.log(data.error);
         throw new Error(data.error.message || "Something went wrong!");
       }
       const apiResponseText = data.candidates[0].content.parts[0].text;
