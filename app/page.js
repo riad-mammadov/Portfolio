@@ -7,7 +7,7 @@ import ContactForm from "@/components/Section/Contact/ContactForm";
 import Navigation from "@/components/ui/Navbar";
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Navigation />
 
       <section id="Home">
