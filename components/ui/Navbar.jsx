@@ -134,10 +134,10 @@ function Navigation() {
             </NavigationMenuList>
           </NavigationMenu>
         </motion.div>
-        <div className="sm:hidden">
-          <MobileNavbar />
-        </div>
       </motion.nav>
+      <div className="sm:hidden">
+        <MobileNavbar />
+      </div>
     </>
   );
 }
