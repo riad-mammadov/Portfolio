@@ -26,7 +26,7 @@ const timelineItems = [
     type: "education",
   },
   {
-    date: "01/2020 - 01-2020",
+    date: "01/2020 - 01/2020",
     title: "KPMG Software Development Programme",
     description:
       "Through a voluntary work experience programme during my studies, I gained invaluable insights into the daily operations of a Big Four firm. This opportunity was extremely insightful due to its comprehensive mentorship, which allowed me to expand my professional network and enhance both my technical abilities and soft skills.",
