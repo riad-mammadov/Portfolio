@@ -21,7 +21,7 @@ function MainSection() {
       <div className="relative flex flex-row min-h-screen sm:h-lvh justify-center items-start sm:px-4 overflow-hidden">
         {/* Introduction section + animations */}
         <motion.div
-          className="text-white flex flex-col justify-start items-start space-y-6 p-8 w-full max-w-2xl"
+          className="text-white flex flex-col justify-start items-start space-y-6 sm:p-8 px-4 w-full max-w-2xl"
           initial="hidden"
           animate="visible"
         >
