@@ -13,7 +13,7 @@ const timelineItems = [
     date: "09/2023 - Present",
     title: "Freelance Web Development",
     description:
-      "Develop responsive web applications that enhances user satisfaction and streamlines operations for clients, while focusing on delivering high functionality and a seamless user experiences.",
+      "Developed responsive web applications that enhance user satisfaction and streamlines operations for clients, while focusing on delivering high functionality and a seamless user experiences.",
     institution: "Freelance",
     type: "work",
   },
