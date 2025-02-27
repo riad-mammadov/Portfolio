@@ -51,7 +51,7 @@ function Chat() {
       const formattedResponse = formatApiResponse(apiResponseText);
       updateHistory(formattedResponse);
     } catch (error) {
-      updateHistory(error.message, true);
+      updateHistory("Something went wrong, please try again!", true);
     }
     setIsLoading(false);
   }
