@@ -36,7 +36,7 @@ function Navigation() {
         }}
         animate={hidden ? "hidden" : "visible"} // If hidden state is true, then hide navbar
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="sm:flex-row sm:h-20 min-h-20 bg-none sticky flex top-0 z-50 md:w-full justify-end sm:justify-center sm:items-center sm:my-1 sm:px-10"
+        className="sm:flex-row min-h-20 bg-none fixed flex top-0 z-50 md:w-full justify-end sm:justify-center sm:items-center sm:my-1 sm:px-10"
       >
         <motion.div
           initial="hidden"
@@ -48,7 +48,7 @@ function Navigation() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <motion.ul
-                  className="hidden sm:flex gap-8 items-center justify-center"
+                  className="hidden sm:flex sm:flex-row space-x-6 items-center justify-center"
                   initial="hidden"
                   animate="show"
                   variants={{
@@ -72,7 +72,7 @@ function Navigation() {
                       scale: 1.2,
                       transition: { duration: 0.2 },
                     }}
-                    className="font-sans font-bold"
+                    className="font-sans font-bold "
                   >
                     <Link
                       href="http://www.linkedin.com/in/riadmammadov"
@@ -80,7 +80,7 @@ function Navigation() {
                     >
                       <img
                         src="linkedin.png"
-                        className="bg-white rounded-sm w-5 h-5"
+                        className="bg-white rounded-sm max-h-5 max-w-5 min-h-5 min-w-5"
                       ></img>
                     </Link>
                   </motion.li>
@@ -99,7 +99,10 @@ function Navigation() {
                       href="https://github.com/riad-mammadov"
                       target="_blank"
                     >
-                      <img className="h-5 w-5" src="github-dark.svg"></img>
+                      <img
+                        className="h-5 w-5 max-h-5 max-w-5 min-h-5 min-w-5"
+                        src="github-dark.svg"
+                      ></img>
                     </Link>
                   </motion.li>
                   {navBars.map((item, index) => (

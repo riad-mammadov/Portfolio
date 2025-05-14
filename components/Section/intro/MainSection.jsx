@@ -18,7 +18,7 @@ function MainSection() {
     <>
       <ParticlesComponent id="particles" />
       {/* Particle Background Component */}
-      <div className="relative flex flex-row min-h-screen sm:h-lvh justify-center items-start sm:px-4 overflow-hidden">
+      <div className="relative flex flex-row justify-center items-start sm:px-4 overflow-hidden">
         {/* Introduction section + animations */}
         <motion.div
           className="text-white flex flex-col justify-start items-start space-y-6 sm:p-8 px-4 w-full max-w-2xl"

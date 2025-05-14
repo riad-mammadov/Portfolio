@@ -38,7 +38,7 @@ export default function SearchBar({ isTyping, onComplete }) {
         </div>
         <motion.div className="w-full bg-slate-200 dark:bg-[#333] rounded-full shadow-lg px-12 py-3">
           <motion.p
-            className="text-black font-serif font-semibold text-md"
+            className="text-black font-serif font-semibold text-sm sm:text-base"
             initial="hidden"
             animate="show"
           >
@@ -58,7 +58,9 @@ export default function SearchBar({ isTyping, onComplete }) {
                 </motion.span>
               ))
             ) : (
-              <span className="text-gray-400">Search or type URL</span>
+              <span className="text-gray-400 text-sm sm:text-base">
+                Search or type URL
+              </span>
             )}
           </motion.p>
         </motion.div>
@@ -66,7 +68,7 @@ export default function SearchBar({ isTyping, onComplete }) {
       <div className="flex items-center justify-center mt-5 space-x-4">
         <motion.button
           whileHover={{ boxShadow: "0 0 0 2px #626161" }}
-          className="bg-[#303134] text-white text-sm py-3 px-4 rounded shadow transition duration-150 ease-in-out"
+          className="bg-[#303134] text-white text-sm text-nowrap py-3 px-4 rounded shadow transition duration-150 ease-in-out"
           type="button"
         >
           Google Search
@@ -74,7 +76,7 @@ export default function SearchBar({ isTyping, onComplete }) {
 
         <motion.button
           whileHover={{ boxShadow: "0 0 0 2px #626161" }}
-          className="bg-[#303134] text-white text-sm py-3 px-4 rounded shadow transition duration-150 ease-in-out"
+          className="bg-[#303134] text-white text-sm text-nowrap py-3 px-4 rounded shadow transition duration-150 ease-in-out"
           type="button"
         >
           Im Feeling Lucky

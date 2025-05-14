@@ -8,12 +8,11 @@ import Navigation from "@/components/ui/Navbar";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      <Navigation />
-
-      <section id="Home">
-        <MainSection />
-      </section>
-      <div className="sm:space-y-20 mb-12">
+      <div className="space-y-20">
+        <Navigation />
+        <section id="Home">
+          <MainSection />
+        </section>
         <section id="Projects">
           <ProjectSection />
         </section>
@@ -23,7 +22,7 @@ export default function Home() {
         <section id="About">
           <Chat />
         </section>
-        <section className="pt-12" id="Contact">
+        <section id="Contact">
           <ContactForm />
         </section>
       </div>
