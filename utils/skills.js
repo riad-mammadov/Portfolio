@@ -1,4 +1,25 @@
 export const skills = [
+  // 🧠 Programming Languages
+  {
+    title: "JavaScript",
+    img: "javascript.svg",
+  },
+  {
+    title: "Python",
+    img: "python.svg",
+  },
+  {
+    title: "Java",
+    img: "java.svg",
+  },
+  {
+    title: "C++",
+    img: "cpp.svg",
+  },
+  {
+    title: "PHP",
+    img: "php_dark.svg",
+  },
   {
     title: "React",
     img: "/react.svg",
@@ -8,26 +29,6 @@ export const skills = [
     img: "/nextjs_icon_dark.svg",
   },
   {
-    title: "Node.js",
-    img: "/nodejs.svg",
-  },
-  {
-    title: "JavaScript",
-    img: "javascript.svg",
-  },
-  {
-    title: "TypeScript",
-    img: "typescript.svg",
-  },
-  {
-    title: "Java",
-    img: "java.svg",
-  },
-  {
-    title: "PHP",
-    img: "php_dark.svg",
-  },
-  {
     title: "Redux",
     img: "redux.svg",
   },
@@ -35,10 +36,17 @@ export const skills = [
     title: "Tailwind CSS",
     img: "tailwindcss.svg",
   },
-
   {
     title: "Motion",
     img: "framer.png",
+  },
+  {
+    title: "Vite",
+    img: "vitejs.svg",
+  },
+  {
+    title: "Node.js",
+    img: "/nodejs.svg",
   },
   {
     title: "Express",
@@ -48,7 +56,6 @@ export const skills = [
     title: "MongoDB",
     img: "mongodb.svg",
   },
-
   {
     title: "PostgreSQL",
     img: "postgresql.svg",
@@ -57,16 +64,13 @@ export const skills = [
     title: "MySQL",
     img: "mysql.svg",
   },
-  {
-    title: "Figma",
-    img: "figma.svg",
-  },
-  {
-    title: "Vite",
-    img: "vitejs.svg",
-  },
+
   {
     title: "Git",
     img: "/github-dark.svg",
+  },
+  {
+    title: "Figma",
+    img: "figma.svg",
   },
 ];
