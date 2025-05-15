@@ -78,7 +78,7 @@ function ProjectSection() {
               transition={{ duration: 0.5 }}
               className="h-[350px] space-y-4"
             >
-              <motion.span className="flex flex-row items-center justify-center gap-2">
+              <motion.span className="flex items-center justify-center flex-row gap-2">
                 <span>
                   <FolderOpenDot className="animate-bounce text-cyan-700" />
                 </span>
@@ -99,14 +99,13 @@ function ProjectSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ staggerChildren: 0.5, delayChildren: 0.5 }}
-                    className="flex gap-5 px-4 "
+                    className="flex gap-5"
                   >
                     {projects.map((project, index) => (
                       // For each item in projects array, creates a Project Card
                       <motion.span
                         key={project.title}
                         transition={{ type: "tween", duration: 0.3 }}
-                        whileHover={{ scale: 1.02 }}
                       >
                         <ProjectCard
                           {...project}

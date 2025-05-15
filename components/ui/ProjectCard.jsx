@@ -27,7 +27,7 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: custom * 0.1 }}
-      className="flex flex-col w-[240px] sm:w-[320px] h-full bg-stone-600 rounded-xl shadow-lg overflow-hidden"
+      className="flex flex-col w-[260px] sm:w-[320px] h-full bg-stone-600 rounded-xl shadow-lg overflow-hidden"
     >
       {image && (
         <div className="relative h-[150px]">
@@ -46,7 +46,10 @@ export default function ProjectCard({
         <p className="text-stone-300 font-serif text-sm mb-2 text-left flex-grow">
           {description}
         </p>
-        <div className="flex flex-wrap justify-start items-center gap-2 mb-4">
+        <div
+          className={`flex flex-nowrap
+          } sm:justify-center items-center gap-2 mb-4`}
+        >
           {techStack.map((tech) => (
             <TooltipProvider key={tech.name}>
               <Tooltip>
@@ -69,10 +72,15 @@ export default function ProjectCard({
             </TooltipProvider>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          <Button asChild variant="outline" size="sm" className="flex-1">
+        <div className="flex justify-center items-center gap-2">
+          <Button
+            asChild
+            variant=""
+            size=""
+            className="bg-[#2b3137] hover:bg-[#2dba4e] transition duration-300 "
+          >
             <Link href={githubUrl}>
-              <Github className="w-4 h-4 mr-2" />
+              <Github className="w-4 h-4 mr-2 " />
               GitHub
             </Link>
           </Button>
