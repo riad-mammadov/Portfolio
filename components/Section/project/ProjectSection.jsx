@@ -53,11 +53,11 @@ function ProjectSection() {
   return (
     <>
       <MacWindow>
-        <motion.div ref={scrollRef} className="space-y-8 z-10">
+        <motion.div ref={scrollRef} className="space-y-8 z-10 sm:h-[350px]">
           {!showProjects ? (
             // If the showProjects state is false, display the SearchBar and its animation
             <motion.div
-              className="flex  justify-center items-center min-h-[360px]"
+              className="flex  justify-center items-center min-h-[350px]"
               viewport={{ root: scrollRef, amount: 0.7, once: true }}
               // Use the container ref as the viewport root, make it visible when 70% of the div is in the viewport, and animate once
               whileInView={() => handleSetTyping()}
@@ -76,8 +76,9 @@ function ProjectSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="h-[350px] space-y-4"
             >
-              <motion.span className="flex flex-row items-center justify-center gap-3 mb-6">
+              <motion.span className="flex flex-row items-center justify-center gap-2">
                 <span>
                   <FolderOpenDot className="animate-bounce text-cyan-700" />
                 </span>

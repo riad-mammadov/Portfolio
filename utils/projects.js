@@ -23,7 +23,6 @@ export const projects = [
       { name: "React", icon: "/react.svg" },
       { name: "JavaScript", icon: "/javascript.svg" },
       { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
-      { name: "Quran API", icon: "/quranAPI.png" },
       { name: "Git", icon: "/git.svg" },
     ],
   },
