@@ -37,7 +37,7 @@ export const projects = [
       { name: "Node.Js", icon: "/nodejs.svg" },
       { name: "Express.Js", icon: "/expressjs.svg" },
       { name: "PHP", icon: "/php_dark.svg" },
-      { name: "MySQL", icon: "/mysql.svg" },
+      { name: "MySQL", icon: "/mysql2.svg" },
       { name: "Stripe", icon: "/stripe.svg" },
     ],
   },
@@ -62,7 +62,7 @@ export const projects = [
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
       { name: "Java", icon: "/java.svg" },
-      { name: "MySQL", icon: "/mysql.svg" },
+      { name: "MySQL", icon: "/mysql2.svg" },
     ],
   },
   {
