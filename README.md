@@ -1,4 +1,4 @@
-# Riad Mammadov — Personal Portfolio
+# Personal Portfolio
 
 ⚡ Built with **Next.js**, React, TailwindCSS, and includes a custom AI chatbot.
 
