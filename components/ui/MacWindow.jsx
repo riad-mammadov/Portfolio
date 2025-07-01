@@ -7,7 +7,10 @@ export default function MacWindow({ children }) {
   const ref = useRef();
 
   return (
-    <motion.div ref={ref} className=" w-full max-w-7xl mx-auto p-2 sm:p-4 z-10">
+    <motion.div
+      ref={ref}
+      className=" w-full max-w-7xl mx-auto backdrop-blur-lg p-2 sm:p-4 z-10"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
