@@ -82,6 +82,7 @@ function ProjectSection() {
                 <span>
                   <FolderOpenDot className="animate-bounce text-cyan-400" />
                 </span>
+
                 <motion.h1 className="text-center font-serif sm:text-2xl text-xl text-white font-semibold">
                   Projects & Courses
                 </motion.h1>
@@ -89,7 +90,7 @@ function ProjectSection() {
               <div className="relative">
                 <button
                   onClick={() => handleScroll("left")}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 bg-opacity-70 p-1 rounded-full z-10 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 backdrop-blur-lg bg-opacity-70 p-1 rounded-full z-10 focus:outline-none focus:ring-2 focus:ring-gray-400"
                   aria-label="Scroll left"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
