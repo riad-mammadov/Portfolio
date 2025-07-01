@@ -80,7 +80,7 @@ function ProjectSection() {
             >
               <motion.span className="flex items-center justify-center flex-row gap-2">
                 <span>
-                  <FolderOpenDot className="animate-bounce text-cyan-700" />
+                  <FolderOpenDot className="animate-bounce text-cyan-400" />
                 </span>
                 <motion.h1 className="text-center font-serif sm:text-2xl text-xl text-white font-semibold">
                   Projects & Courses

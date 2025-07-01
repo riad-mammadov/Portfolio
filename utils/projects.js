@@ -14,19 +14,6 @@ export const projects = [
     ],
   },
   {
-    title: "QAHub",
-    description:
-      "A hub for muslims to read the Quran, track their progress and test their arabic skills (still in development).",
-    githubUrl: "https://github.com/riad-mammadov/QAHub",
-    techStack: [
-      { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
-      { name: "React", icon: "/react.svg" },
-      { name: "JavaScript", icon: "/javascript.svg" },
-      { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
-      { name: "Git", icon: "/git.svg" },
-    ],
-  },
-  {
     title: "Serve2U",
     description:
       "Web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and manage orders.",
@@ -63,6 +50,19 @@ export const projects = [
       { name: "HTML", icon: "/html5.svg" },
       { name: "Java", icon: "/java.svg" },
       { name: "MySQL", icon: "/mysql2.svg" },
+    ],
+  },
+  {
+    title: "QAHub",
+    description:
+      "A hub for muslims to read the Quran, track their progress and test their arabic skills (still in development).",
+    githubUrl: "https://github.com/riad-mammadov/QAHub",
+    techStack: [
+      { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
+      { name: "React", icon: "/react.svg" },
+      { name: "JavaScript", icon: "/javascript.svg" },
+      { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
+      { name: "Git", icon: "/git.svg" },
     ],
   },
   {

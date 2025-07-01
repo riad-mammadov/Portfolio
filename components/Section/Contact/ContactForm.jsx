@@ -60,7 +60,7 @@ const ContactForm = () => {
   return (
     <div className=" pt-20 p-8 sm:p-6">
       <span className="flex items-center justify-center gap-4 mb-10 z-10 ">
-        <Contact className="animate-bounce text-cyan-700" />
+        <Contact className="animate-bounce text-cyan-400" />
         <h1 className="text-center text-xl font-serif tracking-wide sm:text-2xl text-white font-semibold">
           Contact Me
         </h1>
