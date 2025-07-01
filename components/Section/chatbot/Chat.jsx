@@ -74,7 +74,7 @@ function Chat() {
       <div className="flex flex-col items-center justify-center h-[400px]">
         <article
           ref={ref}
-          className="w-[90%] md:w-[75%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-bl backdrop-blur-lg from-slate-950/80 to-gray-950/80 shadow-md p-6"
+          className="w-[90%] md:w-[75%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-bl backdrop-blur-md from-slate-950/80 to-gray-950/80 shadow-md p-6"
         >
           <div
             className="flex flex-col gap-2"

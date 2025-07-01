@@ -5,6 +5,7 @@ import Chat from "@/components/Section/chatbot/Chat";
 import Footer from "@/components/ui/Footer";
 import ContactForm from "@/components/Section/Contact/ContactForm";
 import Navigation from "@/components/ui/Navbar";
+import MacWindow from "@/components/ui/MacWindow";
 export default function Home() {
   return (
     <main className="overflow-x-hidden">

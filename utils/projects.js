@@ -16,7 +16,7 @@ export const projects = [
   {
     title: "Serve2U",
     description:
-      "Web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and manage orders.",
+      "Web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
     githubUrl: "https://github.com/username/project-two",
     detailsUrl: "/projects/project-two",
     techStack: [
