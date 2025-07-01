@@ -65,16 +65,16 @@ function Chat() {
 
   return (
     <>
-      <span className="flex items-center justify-center gap-4 mb-10 z-10 ">
+      <span className="flex items-center justify-center gap-4 mb-6 z-10 ">
         <User className="animate-bounce text-cyan-400" />
-        <h1 className="text-center font-serif text-xl tracking-wide sm:text-2xl text-white font-semibold">
+        <h1 className="text-center font-serif text-xl sm:text-2xl text-white font-semibold">
           About Me
         </h1>
       </span>
-      <div className="flex items-center justify-center h-[400px]">
+      <div className="flex flex-col items-center justify-center h-[400px]">
         <article
           ref={ref}
-          className="w-[90%] md:w-[75%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-bl from-slate-950/80 to-gray-950/80 shadow-md p-6"
+          className="w-[90%] md:w-[75%] h-[100%] overflow-y-auto rounded-lg border border-gray-800 bg-gradient-to-bl backdrop-blur-lg from-slate-950/80 to-gray-950/80 shadow-md p-6"
         >
           <div
             className="flex flex-col gap-2"
@@ -101,7 +101,7 @@ function Chat() {
           )}
         </article>
       </div>
-      <div className="w-full px-[5%] sm:px-[20%]">
+      <div className="w-full px-[5%] sm:px-[20%] backdrop-blur-lg">
         <ChatForm
           chatHistory={chatHistory}
           setChatHistory={setChatHistory}

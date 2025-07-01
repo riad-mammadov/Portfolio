@@ -1,5 +1,6 @@
 "use client";
 
+import MacWindow from "@/components/ui/MacWindow";
 import { Forward } from "lucide-react";
 import { useRef } from "react";
 
@@ -32,7 +33,7 @@ function ChatForm({
 
   return (
     <form onSubmit={handleFormSubmit} className="w-full">
-      <div className="relative mt-8 flex">
+      <div className="relative mt-4 flex">
         <input
           ref={inputRef}
           name="question"
