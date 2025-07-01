@@ -1,6 +1,6 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, FolderOpenDot } from "lucide-react";
 import MacWindow from "@/components/ui/MacWindow";

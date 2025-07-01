@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
+import { slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
