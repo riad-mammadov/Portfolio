@@ -105,7 +105,7 @@ function MainSection() {
             boxShadow: "0 0 80px -20px rgba(168, 85, 247, 0.25)",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/20 to-accent/20 rounded-3xl opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-purple-500/20 to-slate-500/30 rounded-3xl opacity-50" />
 
           {/* Window display  */}
           <div className="flex gap-x-2 items-center">
