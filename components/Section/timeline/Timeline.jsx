@@ -85,9 +85,9 @@ export default function Timeline() {
 
   return (
     <section ref={containerRef} className="relative min-h-screen">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 space-y-8">
         {/* Header */}
-        <h2 className="mb-16 flex items-center justify-center gap-x-3 sm:text-3xl text-2xl font-semibold text-white">
+        <h2 className=" flex items-center justify-center gap-x-3 sm:text-3xl text-2xl font-semibold text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
@@ -104,7 +104,9 @@ export default function Timeline() {
             <path d="M6.08 9.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
             <path d="M6.08 14.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
           </svg>
-          <p className="text-white font-serif">Experience & Education</p>
+          <p className="text-white text-center font-serif sm:text-2xl text-xl">
+            Experience & Education
+          </p>
         </h2>
 
         {/* Timeline Container */}
@@ -139,12 +141,20 @@ export default function Timeline() {
                     item.type === "work"
                       ? "bg-cyan-500 ring-4 ring-cyan-500/20"
                       : "bg-purple-500 ring-4 ring-purple-500/20"
-                  } -left-4 md:left-auto ${
-                    index % 2 === 0 ? "md:-right-4" : "md:-left-4"
-                  } shadow-lg`}
+                  }
+                  // New logic for dot positioning based on index and breakpoint
+                  ${
+                    index % 2 === 0
+                      ? "left-[-16px] md:right-[-16px] md:left-auto"
+                      : "left-[-16px] md:left-[-16px] md:right-auto"
+                  }
+                  shadow-lg`}
                   initial="hidden"
                   whileInView="visible"
-                  variants={slideInFromTop(0.2)}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1, transition: { duration: 0.8 } },
+                  }}
                   viewport={{ once: true }}
                 >
                   <div
@@ -158,7 +168,7 @@ export default function Timeline() {
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl p-3 sm:p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-slate-800/70 ml-6 sm:ml-8 md:ml-0">
                   {/* Type Badge */}
                   <motion.div
-                    className={`inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium mb-2 sm:mb-3 ${
+                    className={`inline-flex justify-center items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium mb-2 sm:mb-3 ${
                       item.type === "work"
                         ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
                         : "bg-purple-500/20 text-purple-300 border border-purple-500/30"
@@ -171,9 +181,7 @@ export default function Timeline() {
                       visible: { opacity: 1, transition: { duration: 0.8 } },
                     }}
                   >
-                    {item.type === "work"
-                      ? "💼 Work Experience"
-                      : "🎓 Education"}
+                    {item.type === "work" ? "💼 Experience" : "🎓 Education"}
                   </motion.div>
 
                   {/* Date */}
