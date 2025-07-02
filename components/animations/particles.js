@@ -1,10 +1,13 @@
+"use client";
+
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
-const ParticlesComponent = ({ ...props }) => {
+const ParticlesComponent = ({ id = "tsparticles", className, ...props }) => {
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
+
+  // Initialize particles engine only once
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -14,81 +17,134 @@ const ParticlesComponent = ({ ...props }) => {
   }, []);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    console.log("Particles loaded:", container);
   };
 
   const options = useMemo(
     () => ({
       background: {
         color: {
-          value: "#080808",
+          value: "#transparent", // Use transparent background to allow custom positioning
         },
       },
-      fullScreen: { enable: true, zIndex: -50 },
-      fpsLimit: 120,
+      fullScreen: {
+        enable: true, // Disable fullscreen to allow custom positioning
+        zIndex: -1,
+      },
+      fpsLimit: 70,
       interactivity: {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "push",
           },
           onHover: {
             enable: true,
             mode: "grab",
           },
+          resize: false,
         },
         modes: {
           push: {
-            distance: 100,
-            duration: 1,
+            quantity: 1,
           },
-          grab: {
+          attract: {
             distance: 200,
+            duration: 0.6,
+            easing: "ease-out-quad",
+            factor: 1.5,
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4,
           },
         },
       },
       particles: {
         color: {
-          value: "#101010",
+          value: ["#3b82f6", "#6366f1", "#8b5cf6", "#06b6d4", "#10b981"],
         },
         links: {
-          color: "#8f8f8f",
-          distance: 150,
+          color: "#3b82f6",
+          distance: 120,
           enable: true,
-          opacity: 0.6,
-          width: 0.5,
+          opacity: 0.3,
+          width: 1,
+          triangles: {
+            enable: false,
+          },
         },
-
         move: {
           direction: "none",
           enable: true,
           outModes: {
-            default: "bounce",
+            default: "out",
           },
-          random: true,
-          speed: 1,
+          random: false,
+          speed: 0.4,
           straight: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200,
+          },
         },
         number: {
           density: {
             enable: true,
+            area: 1000,
           },
-          value: 150,
+          value: 120,
         },
         opacity: {
-          value: 0.5,
+          value: 0.6,
+          random: {
+            enable: true,
+            minimumValue: 0.3,
+          },
+          animation: {
+            enable: true,
+            speed: 1,
+            minimumValue: 0.3,
+            sync: false,
+          },
         },
         shape: {
-          type: "circle",
+          type: ["circle", "triangle"],
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 4 },
+          random: {
+            enable: true,
+            minimumValue: 1,
+          },
+          animation: {
+            enable: true,
+            speed: 2,
+            minimumValue: 1,
+            sync: false,
+          },
+        },
+        twinkle: {
+          particles: {
+            enable: true,
+            frequency: 0.05,
+            opacity: 1,
+            color: {
+              value: "#ffffff",
+            },
+          },
         },
       },
       detectRetina: true,
+      smooth: true,
     }),
     []
   );
+
+  if (!init) {
+    return null;
+  }
 
   return <Particles id={props.id} init={particlesLoaded} options={options} />;
 };
