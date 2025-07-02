@@ -101,7 +101,7 @@ function Chat() {
           )}
         </article>
       </div>
-      <div className="w-full px-[5%] sm:px-[20%]">
+      <div className="w-full px-[5%] sm:px-[20%] ">
         <ChatForm
           chatHistory={chatHistory}
           setChatHistory={setChatHistory}
