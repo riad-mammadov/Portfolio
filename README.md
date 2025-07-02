@@ -2,7 +2,7 @@
 
 ⚡ Built with **Next.js**, React, TailwindCSS, and includes a custom AI chatbot.
 
-## 🚀 Live Demo
+## 🚀 Live Link
 [riadmammadov.co.uk](https://riadmammadov.co.uk)
 
 ## 🛠️ Tech Stack
