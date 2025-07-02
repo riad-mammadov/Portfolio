@@ -17,6 +17,7 @@ function MainSection() {
   return (
     <>
       <ParticlesComponent id="particles" />
+
       {/* Particle Background Component */}
       <div className="relative flex flex-row justify-center items-start sm:px-4 overflow-hidden">
         {/* Introduction section + animations */}
@@ -86,9 +87,9 @@ function MainSection() {
               smooth={true}
               offset={-100}
               duration={500}
-              className="group px-8 min-w-40 py-4 rounded-xl hover:cursor-pointer bg-stone-600/20 border border-foreground/10 inline-flex items-center justify-center overflow-hidden relative"
+              className="group px-8 min-w-40 py-4 rounded-xl hover:cursor-pointer bg-slate-800/100 border border-foreground/10 inline-flex items-center justify-center overflow-hidden relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-stone-800/40 transition-transform duration-500 group-hover:translate-x-0 translate-x-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-slate-800/40 transition-transform duration-500 group-hover:translate-x-0 translate-x-full"></div>
               <span className="relative text-white z-10 font-sans tracking-wide font-semibold">
                 Contact Me
               </span>
