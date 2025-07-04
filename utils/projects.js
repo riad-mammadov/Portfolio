@@ -17,7 +17,8 @@ export const projects = [
     title: "Serve2U",
     description:
       "Web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
-    githubUrl: "https://github.com/username/project-two",
+    githubUrl:
+      "https://github.com/riad-mammadov/Serve2U-Cloud-Based-Application",
     detailsUrl: "/projects/project-two",
     techStack: [
       { name: "JavaScript", icon: "/javascript.svg" },
@@ -32,7 +33,7 @@ export const projects = [
     title: "Clinic Express",
     description:
       "Web based cloud application to manage patient data & book appointments, utilising GCP technologies.",
-    githubUrl: "https://github.com/username/project-two",
+    githubUrl: "https://github.com/riad-mammadov/Clinic-Cloud-Application",
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
       { name: "CSS", icon: "/css.svg" },
@@ -51,6 +52,13 @@ export const projects = [
       { name: "Java", icon: "/java.svg" },
       { name: "MySQL", icon: "/mysql2.svg" },
     ],
+  },
+  {
+    title: "Java Game",
+    description:
+      "A 2D game in Java built during my time at university, featuring a custom GUI and three progressive levels of gameplay.",
+    githubUrl: "https://github.com/riad-mammadov/java-game",
+    techStack: [{ name: "Java", icon: "/java.svg" }],
   },
   {
     title: "QAHub",
@@ -73,7 +81,6 @@ export const projects = [
       "https://github.com/riad-mammadov/React-The-Complete-Guide-Course",
     certification:
       "https://www.udemy.com/certificate/UC-3db88c29-e8d2-49a2-9534-b23db38d27d6/",
-    detailsUrl: "/projects/project-two",
     techStack: [
       { name: "React", icon: "/react.svg" },
       { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
@@ -82,6 +89,18 @@ export const projects = [
       { name: "TypeScript", icon: "/typescript.svg" },
       { name: "Redux", icon: "/redux.svg" },
       { name: "Framer Motion", icon: "/framer.png" },
+    ],
+  },
+  {
+    title: "Python and Algorithms Course",
+    description:
+      "A 61-hour Udemy course covering Python, Data Structures, and Algorithms, supplemented with personal practice, projects and coding. (Ongoing)",
+    githubUrl: "https://github.com/riad-mammadov/Python-DSA-Course",
+    certification: "",
+    techStack: [
+      { name: "Python", icon: "/python.svg" },
+      { name: "Flask", icon: "/flask.svg" },
+      { name: "MySQL", icon: "/mysql2.svg" },
     ],
   },
   {
