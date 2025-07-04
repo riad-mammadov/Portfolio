@@ -79,7 +79,7 @@ export default function ProjectCard({
             size=""
             className="bg-[#2b3137] hover:bg-[#2dba4e] transition duration-300 "
           >
-            <Link href={githubUrl}>
+            <Link href={githubUrl} target="_blank">
               <Github className="w-4 h-4 mr-2 " />
               GitHub
             </Link>
