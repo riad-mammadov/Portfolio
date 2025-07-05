@@ -16,7 +16,7 @@ export const projects = [
   {
     title: "Serve2U",
     description:
-      "Web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
+      "Coded a web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
     githubUrl:
       "https://github.com/riad-mammadov/Serve2U-Cloud-Based-Application",
     detailsUrl: "/projects/project-two",
@@ -32,7 +32,7 @@ export const projects = [
   {
     title: "Clinic Express",
     description:
-      "Web based cloud application to manage patient data & book appointments, utilising GCP technologies.",
+      "Developed a web based cloud application to manage patient data & book appointments, utilising GCP technologies.",
     githubUrl: "https://github.com/riad-mammadov/Clinic-Cloud-Application",
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
@@ -45,7 +45,7 @@ export const projects = [
   {
     title: "AirVia TMS",
     description:
-      "A ticket sales management system to streamline & automate the process of managing ticket sales",
+      "Built a ticket sales management system to streamline & automate the process of managing ticket sales for a fictional airline.",
     githubUrl: "https://github.com/riad-mammadov/AirVia-TicketSalesSystem",
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
@@ -56,14 +56,14 @@ export const projects = [
   {
     title: "Java Game",
     description:
-      "A 2D game in Java built during my time at university, featuring a custom GUI and three progressive levels of gameplay.",
+      "Developed a Java-based platform game featuring multiple levels, animations, and interactive mechanics. Developed with object-oriented programming to handle gameplay logic, and leveraging the CityEngine library for visuals and physics.",
     githubUrl: "https://github.com/riad-mammadov/java-game",
     techStack: [{ name: "Java", icon: "/java.svg" }],
   },
   {
     title: "QAHub",
     description:
-      "A hub for muslims to read the Quran, track their progress and test their arabic skills (still in development).",
+      "Currently building a hub for muslims to read the Quran, track their progress and test their arabic skills.",
     githubUrl: "https://github.com/riad-mammadov/QAHub",
     techStack: [
       { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
@@ -76,7 +76,7 @@ export const projects = [
   {
     title: "React: The Complete Guide",
     description:
-      "A comprehensive 71 hour React course on Udemy, going into detail on all things React & NextJs",
+      "Completed a comprehensive 71 hour React course on Udemy, going into detail on all things React & NextJs",
     githubUrl:
       "https://github.com/riad-mammadov/React-The-Complete-Guide-Course",
     certification:
@@ -94,7 +94,7 @@ export const projects = [
   {
     title: "Python and Algorithms Course",
     description:
-      "A 61-hour Udemy course covering Python, Data Structures, and Algorithms, supplemented with personal practice, projects and coding. (Ongoing)",
+      "Currently completing a 61-hour Udemy course covering Python, Data Structures, and Algorithms, supplemented with personal practice, projects and coding.",
     githubUrl: "https://github.com/riad-mammadov/Python-DSA-Course",
     certification: "",
     techStack: [
@@ -105,7 +105,8 @@ export const projects = [
   },
   {
     title: "Ultimate Web Development Course",
-    description: "A 61 hour full stack Web Development course on Udemy",
+    description:
+      "Completed a 61 hour full stack Web Development course on Udemy",
     githubUrl:
       "https://github.com/riad-mammadov/The-Complete-Web-Development-Course",
     certification:
