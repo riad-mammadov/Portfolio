@@ -73,18 +73,19 @@ export default function ProjectCard({
           ))}
         </div>
         <div className="flex justify-center items-center gap-2">
-          <Button
-            asChild
-            variant=""
-            size=""
-            className="bg-[#2b3137] hover:bg-[#2dba4e] transition duration-300 "
-          >
-            <Link href={githubUrl} target="_blank">
-              <Github className="w-4 h-4 mr-2 " />
-              GitHub
-            </Link>
-          </Button>
-
+          {githubUrl && (
+            <Button
+              asChild
+              variant=""
+              size=""
+              className="bg-[#2b3137] hover:bg-[#2dba4e] transition duration-300 "
+            >
+              <Link href={githubUrl} target="_blank">
+                <Github className="w-4 h-4 mr-2 " />
+                GitHub
+              </Link>
+            </Button>
+          )}
           {certification && (
             <Button asChild size="icon" variant="secondary">
               <Link href={certification} target="_blank">
