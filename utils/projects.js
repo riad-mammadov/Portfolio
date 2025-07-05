@@ -16,7 +16,7 @@ export const projects = [
   {
     title: "Serve2U",
     description:
-      "Coded a web application for football fans to order drinks and snacks directly to their seats, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
+      "Programmed a web application for football fans to order drinks and snacks directly to their seats at football stadiums, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
     githubUrl:
       "https://github.com/riad-mammadov/Serve2U-Cloud-Based-Application",
     detailsUrl: "/projects/project-two",
@@ -59,6 +59,16 @@ export const projects = [
       "Developed a Java-based platform game featuring multiple levels, animations, and interactive mechanics. Developed with object-oriented programming to handle gameplay logic, and leveraging the CityEngine library for visuals and physics.",
     githubUrl: "https://github.com/riad-mammadov/java-game",
     techStack: [{ name: "Java", icon: "/java.svg" }],
+  },
+  {
+    title: "3D Stealth FPS Game",
+    description:
+      "Developed a 3D stealth-based FPS game in Unity as my A-Level final project, earning an A*. Built three uniquely designed maps, implemented AI-driven enemy behavior, and scripted mechanics in C#. Created 3D assets and animations using Autodesk Maya to enhance player experience.",
+    techStack: [
+      { name: "Unity", icon: "/unity.svg" },
+      { name: "C#", icon: "/csharp.svg" },
+      { name: "Maya", icon: "/maya.png" },
+    ],
   },
   {
     title: "QAHub",
