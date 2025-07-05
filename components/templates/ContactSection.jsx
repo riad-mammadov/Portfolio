@@ -13,7 +13,7 @@ function ContactSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 6.2,
+        delay: 6.5,
         duration: 0.5,
       },
     }),
@@ -25,7 +25,7 @@ function ContactSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: headingChars.length * 0.4 + i * 0.07,
+        delay: headingChars.length * 0.43 + i * 0.06,
         duration: 0.8,
         staggerChildren: 0.2,
         ease: "easeOut",
