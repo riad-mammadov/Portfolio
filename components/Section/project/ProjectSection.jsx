@@ -1,136 +1,113 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
-import { useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, FolderOpenDot } from "lucide-react";
-import MacWindow from "@/components/ui/MacWindow";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Code2, Grid3X3, List } from "lucide-react";
 import ProjectCard from "@/components/ui/ProjectCard";
-import SearchBar from "@/components/ui/SearchBar";
 import { projects } from "@/utils/projects";
 
 function ProjectSection() {
-  const [isTyping, setIsTyping] = useState(false);
-  /* State to track when the typing animation begins */
+  const [viewMode, setViewMode] = useState("grid");
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
-  const [showProjects, setShowProjects] = useState(false);
-  /* State to track when the projects should be displayed */
-
-  const scrollRef = useRef(null);
-  /* Container ref for viewport */
-
-  function handleSetTyping() {
-    /* When the viewport is in view, begins typing animation after 1 second */
-    setTimeout(() => {
-      setIsTyping(true);
-    }, 1000);
-  }
-
-  function handleSearchComplete() {
-    /* When the typing animation completes, set showProjects to true and display after 0.6 seconds */
-    setTimeout(() => {
-      setShowProjects(true);
-    }, 600);
-  }
-
-  const scrollContainerRef = useRef();
-
-  const handleScroll = (direction) => {
-    /* Function for the scroll left/right buttons */
-    if (scrollContainerRef.current) {
-      const scrollAmount = 300;
-      const targetScroll =
-        scrollContainerRef.current.scrollLeft +
-        (direction === "left" ? -scrollAmount : scrollAmount);
-      /* If scroll direction is left, subtract the scroll amount, otherwise increase it */
-
-      scrollContainerRef.current.scrollTo({
-        left: targetScroll,
-        behavior: "smooth",
-      });
+  const getProjectsToShow = () => {
+    if (showAllProjects) {
+      return projects;
     }
+    return projects;
   };
 
-  return (
-    <>
-      <MacWindow>
-        <motion.div ref={scrollRef} className="space-y-8 z-10 sm:h-[400px]">
-          {!showProjects ? (
-            // If the showProjects state is false, display the SearchBar and its animation
-            <motion.div
-              className="flex  justify-center items-center min-h-[350px]"
-              viewport={{ root: scrollRef, amount: 0.7, once: true }}
-              // Use the container ref as the viewport root, make it visible when 70% of the div is in the viewport, and animate once
-              whileInView={() => handleSetTyping()}
-              // Begin the animation when in viewport
-              exit={{ opacity: 0, y: -20 }}
-            >
-              <SearchBar
-                isTyping={isTyping}
-                onComplete={handleSearchComplete}
-              />
-              {/* Mount the SearchBar Component */}
-            </motion.div>
-          ) : (
-            // If showProjects state is true, then display the projects
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="h-[350px] sm:h-[400px] space-y-4"
-            >
-              <motion.span className="flex items-center justify-center flex-row gap-2">
-                <span>
-                  <FolderOpenDot className="animate-bounce text-cyan-400" />
-                </span>
+  const projectsToShow = getProjectsToShow();
+  const hasMoreProjects = !showAllProjects && projects.length > 4;
 
-                <motion.h1 className="text-center font-serif sm:text-2xl text-xl text-white font-semibold">
-                  Projects & Courses
-                </motion.h1>
-              </motion.span>
-              <div className="relative">
-                <button
-                  onClick={() => handleScroll("left")}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 backdrop-blur-lg bg-opacity-70 p-1 rounded-full z-10 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  aria-label="Scroll left"
-                >
-                  <ChevronLeft className="w-6 h-6 text-white" />
-                </button>
-                <div ref={scrollContainerRef} className="overflow-x-auto pb-6">
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ staggerChildren: 0.5, delayChildren: 0.5 }}
-                    className="flex gap-5"
-                  >
-                    {projects.map((project, index) => (
-                      // For each item in projects array, creates a Project Card
-                      <motion.span
-                        key={project.title}
-                        transition={{ type: "tween", duration: 0.3 }}
-                      >
-                        <ProjectCard
-                          {...project}
-                          techStack={project.techStack}
-                          index={index}
-                          custom={index * 0.2}
-                        />
-                      </motion.span>
-                    ))}
-                  </motion.div>
-                </div>
-                <button
-                  onClick={() => handleScroll("right")}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-500  bg-opacity-70 p-1 rounded-full z-10 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                  aria-label="Scroll right"
-                >
-                  <ChevronRight className="w-6 h-6 text-white" />
-                </button>
-              </div>
+  return (
+    <section className="w-full max-w-7xl mx-auto ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center"
+      >
+        <div className="inline-flex items-center space-x-3 mb-4">
+          <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10">
+            <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
+          </div>
+          <h2 className="text-2xl sm:text-5xl font-bold font-serif text-white">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Projects
+            </span>
+          </h2>
+        </div>
+        <p className="text-gray-300 text-md sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-0 leading-relaxed">
+          A collection of projects and certifications showcasing my skills in
+          various programming languages.
+        </p>
+      </motion.div>
+
+      <motion.div className="hidden sm:flex flex-col sm:flex-row justify-end items-center mb-8 gap-4">
+        <div className="flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
+          <button
+            onClick={() => setViewMode("grid")}
+            className={`p-2 rounded-xl transition-all duration-300 ${
+              viewMode === "grid"
+                ? "bg-white/20 text-white"
+                : "text-gray-400 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            <Grid3X3 className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => setViewMode("list")}
+            className={`p-2 rounded-xl transition-all duration-300 ${
+              viewMode === "list"
+                ? "bg-white/20 text-white"
+                : "text-gray-400 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            <List className="w-4 h-4" />
+          </button>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className={`${
+          viewMode === "grid"
+            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            : "flex flex-col space-y-6"
+        }`}
+      >
+        {projectsToShow.map((project, index) => {
+          // On mobile/tablet: only show first 4 projects initially
+          const shouldShow = showAllProjects || index < 4;
+
+          return (
+            <motion.div
+              key={project.title}
+              className={`md:block ${shouldShow ? "block" : "hidden"}`}
+            >
+              <ProjectCard {...project} viewMode={viewMode} index={index} />
             </motion.div>
-          )}
+          );
+        })}
+      </motion.div>
+
+      {/* Load More button - only visible on mobile/tablet and when there are more projects */}
+      {hasMoreProjects && (
+        <motion.div
+          className="md:hidden flex justify-center mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <button
+            onClick={() => setShowAllProjects(true)}
+            className="px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-2xl text-white font-medium hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300"
+          >
+            Load More Projects ({projects.length - 4} more)
+          </button>
         </motion.div>
-      </MacWindow>
-    </>
+      )}
+    </section>
   );
 }
 
