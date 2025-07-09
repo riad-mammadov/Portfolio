@@ -12,10 +12,10 @@ export default function TerminalWindow({ children }) {
 
   return (
     <motion.div
-      variants={slideInFromRight(1.4)}
+      variants={slideInFromRight(1.2)}
       initial="hidden"
       animate="visible"
-      className="hidden lg:flex flex-col w-[45%] max-w-[36rem] min-w-[28rem] min-h-[32rem] flex-shrink rounded-3xl p-6 bg-gray-900/40 border border-white/10 backdrop-blur-2xl relative group shadow-2xl"
+      className="hidden md:flex flex-col w-[45%] max-w-[36rem] min-w-[25rem] min-h-[32rem] flex-shrink rounded-3xl p-6 bg-gray-900/40 border border-white/10 backdrop-blur-2xl relative group shadow-2xl"
       style={{
         boxShadow: "0 0 100px -20px rgba(168, 85, 247, 0.2)",
       }}
