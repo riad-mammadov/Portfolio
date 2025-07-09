@@ -24,11 +24,11 @@ const ParticlesComponent = ({ id = "tsparticles", className, ...props }) => {
     () => ({
       background: {
         color: {
-          value: "#transparent", // Use transparent background to allow custom positioning
+          value: "#070B14",
         },
       },
       fullScreen: {
-        enable: true, // Disable fullscreen to allow custom positioning
+        enable: true,
         zIndex: -1,
       },
       fpsLimit: 70,
