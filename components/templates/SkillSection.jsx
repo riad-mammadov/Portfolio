@@ -12,7 +12,7 @@ function SkillSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 4.3,
+        delay: 3.8,
         duration: 0.5,
       },
       transitionEnd: { borderRight: "0px solid white" },
@@ -25,7 +25,7 @@ function SkillSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: headingChars.length * 0.3 + i * 0.07,
+        delay: headingChars.length * 0.28 + i * 0.07,
         duration: 0.5,
       },
       transitionEnd: { borderRight: "0px solid white" },
