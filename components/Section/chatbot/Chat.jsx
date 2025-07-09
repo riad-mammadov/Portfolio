@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import ChatForm from "./ChatForm";
 import { Dot, User } from "lucide-react";
+import { motion } from "framer-motion";
 
 function Chat() {
   const [chatHistory, setChatHistory] = useState([
@@ -65,11 +66,29 @@ function Chat() {
 
   return (
     <>
-      <span className="flex items-center justify-center gap-4 mb-6 z-10 ">
-        <User className="animate-bounce text-cyan-400" />
-        <h1 className="text-center font-serif text-xl sm:text-2xl text-white font-semibold">
-          About Me
-        </h1>
+      <span className="flex items-center justify-center mb-6 z-10 ">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <div className="inline-flex items-center space-x-3">
+            <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10">
+              <User className="w-6 h-6 text-blue-400" />
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold font-serif text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                About Me
+              </span>
+            </h2>
+          </div>
+          <p className="text-gray-300 text-md sm:text-lg max-w-2xl mx-auto leading-relaxed mb-4">
+            Curious to learn more? My AI Assistant is here to help! Ask
+            questions about my background, education, skills, or any of the
+            projects I’ve worked on.
+          </p>
+        </motion.div>
       </span>
       <div className="flex flex-col items-center justify-center h-[400px]">
         <article

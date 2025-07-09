@@ -59,43 +59,42 @@ const ContactForm = () => {
 
   return (
     <div className="pt-20 p-8 sm:p-6">
-      {/* Header with enhanced styling */}
       <motion.div
-        className="flex items-center justify-center gap-4 mb-8 z-10"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-8 mt-8"
       >
-        <div className="relative">
-          <Contact
-            className="animate-bounce text-cyan-400 drop-shadow-lg"
-            size={28}
-          />
-          <div className="absolute inset-0 text-cyan-400 blur-sm animate-pulse opacity-50">
-            <Contact size={28} />
+        <div className="inline-flex items-center space-x-3 mb-4">
+          <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10">
+            <Contact className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
           </div>
+          <h2 className="text-2xl sm:text-5xl font-bold font-serif text-white">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Contact Me
+            </span>
+          </h2>
         </div>
-        <h1 className="text-center text-xl font-serif sm:text-2xl text-white font-semibold ">
-          Contact Me
-        </h1>
+        <p className="text-gray-300 text-md sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+          Interested in collaborating or have any questions? I’d love to hear
+          from you. Whether it’s about a project, opportunity, or just to
+          connect, feel free to reach out.
+        </p>
       </motion.div>
 
       <div className="mx-auto max-w-4xl">
-        {/* Enhanced form container */}
         <motion.div
           className="relative backdrop-blur-xl bg-slate-900/30 border border-slate-700/50 rounded-2xl p-8 shadow-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {/* Subtle background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 rounded-2xl" />
 
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-6 relative z-10"
           >
-            {/* Name and Email Row */}
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <motion.div
                 className="flex-1 flex flex-col group"
@@ -169,7 +168,6 @@ const ContactForm = () => {
               </motion.div>
             </div>
 
-            {/* Subject Field */}
             <motion.div
               className="flex flex-col group"
               whileHover={{ scale: 1.01 }}
@@ -205,7 +203,6 @@ const ContactForm = () => {
               </AnimatePresence>
             </motion.div>
 
-            {/* Message Field */}
             <motion.div
               className="flex flex-col group"
               whileHover={{ scale: 1.01 }}
@@ -237,7 +234,6 @@ const ContactForm = () => {
               </AnimatePresence>
             </motion.div>
 
-            {/* Enhanced Submit Button */}
             <motion.button
               type="submit"
               disabled={disabled}
