@@ -25,7 +25,7 @@ function ContactSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: headingChars.length * 0.4 + i * 0.09,
+        delay: headingChars.length * 0.382 + i * 0.08,
         duration: 0.8,
         ease: "easeOut",
       },
