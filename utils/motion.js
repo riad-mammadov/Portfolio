@@ -21,6 +21,7 @@ export function slideInFromRight(delay) {
       opacity: 1,
       transition: {
         delay: delay,
+        duration: 0.8,
         duration: 0.5,
       },
     },
@@ -29,13 +30,28 @@ export function slideInFromRight(delay) {
 
 export function slideInFromTop(delay) {
   return {
-    hidden: { y: -100, opacity: 0 },
+    hidden: { y: -50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
         delay: delay,
-        duration: 0.5,
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+}
+
+export function appear(delay) {
+  return {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 0.8,
+        ease: "easeOut",
       },
     },
   };
