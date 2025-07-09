@@ -1,9 +1,5 @@
 "use client";
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-} from "@/components/ui/shadcn/navigation-menu";
+
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { slideInFromTop } from "@/utils/motion";
@@ -11,14 +7,13 @@ import { Link as ScrollLink } from "react-scroll";
 import MobileNavbar from "./MobileNav";
 import { navBars } from "@/utils/links";
 import Link from "next/link";
+import { Github, Linkedin } from "lucide-react";
 
 function Navigation() {
   const { scrollY } = useScroll();
-
-  const [hidden, setHidden] = useState(false); // State to hide the navbar on scroll down
+  const [hidden, setHidden] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Compares previous position on screen to latest position, if latest > prev then navbar is hidden
     const prev = scrollY.getPrevious();
     if (latest > prev && latest > 50) {
       setHidden(true);
@@ -34,110 +29,95 @@ function Navigation() {
           visible: { y: 0 },
           hidden: { y: "-130%" },
         }}
-        animate={hidden ? "hidden" : "visible"} // If hidden state is true, then hide navbar
+        animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="sm:flex-row min-h-20 bg-none fixed flex top-0 z-50 md:w-full justify-end sm:justify-center sm:items-center sm:my-1 sm:px-10"
+        className="fixed top-0 z-50 w-full flex justify-center items-center py-4 px-4"
       >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={slideInFromTop(0)}
-          className="hidden sm:flex justify-center items-center px-6 py-2 z-50 h-fit border-2 border-white/10 sm:bg-white/10 bg-opacity-10 sm:backdrop-blur-md sm:rounded-full"
+          className="hidden sm:flex items-center justify-center px-6 py-3 bg-black/20 backdrop-blur-md border border-white/10 rounded-full shadow-lg"
         >
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <motion.ul
-                  className="hidden sm:flex sm:flex-row space-x-6 items-center justify-center"
-                  initial="hidden"
-                  animate="show"
+          <div className="flex items-center space-x-8">
+            {/* Social Icons */}
+            <div className="flex items-center space-x-4">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link
+                  href="http://www.linkedin.com/in/riadmammadov"
+                  target="_blank"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link
+                  href="https://github.com/riad-mammadov"
+                  target="_blank"
+                  className="text-white/80 hover:text-white transition-colors"
+                >
+                  <Github className="h-5 w-5" />
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Separator */}
+            <div className="h-6 w-px bg-white/20"></div>
+
+            {/* Navigation Links */}
+            <motion.ul
+              className="flex items-center space-x-8"
+              initial="hidden"
+              animate="show"
+              variants={{
+                hidden: { opacity: 0 },
+                show: {
+                  opacity: 1,
+                  transition: {
+                    delay: 0.1,
+                    staggerChildren: 0.1,
+                    when: "beforeChildren",
+                  },
+                },
+              }}
+            >
+              {navBars.map((item, index) => (
+                <motion.li
+                  key={index}
                   variants={{
-                    hidden: { opacity: 0 },
-                    show: {
-                      opacity: 1,
-                      transition: {
-                        delay: 0,
-                        staggerChildren: 0.1,
-                        when: "beforeChildren",
-                      },
-                    },
+                    hidden: { y: 20, opacity: 0 },
+                    show: { y: 0, opacity: 1 },
+                  }}
+                  whileHover={{
+                    transition: { duration: 0.2 },
                   }}
                 >
-                  <motion.li
-                    variants={{
-                      hidden: { y: 20, opacity: 0 },
-                      show: { y: 0, opacity: 1 },
-                    }}
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.2 },
-                    }}
-                    className="font-sans font-bold "
+                  <ScrollLink
+                    to={item.title}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    className="text-white/80 hover:text-white text-sm font-medium cursor-pointer transition-colors relative group"
                   >
-                    <Link
-                      href="http://www.linkedin.com/in/riadmammadov"
-                      target="_blank"
-                    >
-                      <img
-                        src="linkedin.png"
-                        className="bg-white rounded-sm max-h-5 max-w-5 min-h-5 min-w-5"
-                      ></img>
-                    </Link>
-                  </motion.li>
-                  <motion.li
-                    variants={{
-                      hidden: { y: 20, opacity: 0 },
-                      show: { y: 0, opacity: 1 },
-                    }}
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.2 },
-                    }}
-                    className="font-sans font-bold mr-6"
-                  >
-                    <Link
-                      href="https://github.com/riad-mammadov"
-                      target="_blank"
-                    >
-                      <img
-                        className="h-5 w-5 max-h-5 max-w-5 min-h-5 min-w-5"
-                        src="github-dark.svg"
-                      ></img>
-                    </Link>
-                  </motion.li>
-                  {navBars.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      variants={{
-                        hidden: { y: 20, opacity: 0 },
-                        show: { y: 0, opacity: 1 },
-                      }}
-                      whileHover={{
-                        scale: 1.2,
-                        transition: { duration: 0.2 },
-                      }}
-                      className="font-sans font-bold"
-                    >
-                      <ScrollLink
-                        key={item.title}
-                        to={item.title}
-                        spy={true}
-                        smooth={true}
-                        offset={-100}
-                        duration={500}
-                        className={`text-white text-sm hover:cursor-pointer
-                      `}
-                      >
-                        {item.title}
-                      </ScrollLink>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                    {item.title}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                  </ScrollLink>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </div>
         </motion.div>
       </motion.nav>
+
       <div className="sm:hidden">
         <MobileNavbar />
       </div>
