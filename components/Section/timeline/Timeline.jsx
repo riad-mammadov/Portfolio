@@ -2,6 +2,7 @@
 
 import { slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
+import { FileStack } from "lucide-react";
 import { useRef } from "react";
 
 const timelineItems = [
@@ -87,27 +88,24 @@ export default function Timeline() {
     <section ref={containerRef} className="relative min-h-screen">
       <div className="container mx-auto px-4 py-16 space-y-8">
         {/* Header */}
-        <h2 className=" flex items-center justify-center gap-x-3 sm:text-3xl text-2xl font-semibold text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-layers3 animate-bounce text-cyan-400"
-          >
-            <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
-            <path d="M6.08 9.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
-            <path d="M6.08 14.5l-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59" />
-          </svg>
-          <p className="text-white text-center font-serif sm:text-2xl text-xl">
-            Experience & Education
-          </p>
-        </h2>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <div className="inline-flex items-center space-x-3">
+            <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10">
+              <FileStack className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
+            </div>
+            <h2 className="text-2xl sm:text-5xl font-bold font-serif text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent  mb-2">
+                Experience
+              </span>
+            </h2>
+          </div>
+        </motion.div>
 
         {/* Timeline Container */}
         <div className="relative max-w-6xl mx-auto">
