@@ -3,14 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Code2 } from "lucide-react";
-import { Button } from "@/components/ui/shadcn/Button";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/shadcn/tooltip";
+import { Github, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/shadcn/button";
 
 export default function ProjectCard({
   title,
@@ -20,76 +14,148 @@ export default function ProjectCard({
   liveUrl,
   techStack,
   certification,
-  custom,
+  viewMode = "grid",
+  date,
 }) {
+  if (viewMode === "list") {
+    return (
+      <motion.div className="group bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-white/10 rounded-3xl p-6 hover:border-white/20 transition-all duration-300">
+        <div className="flex flex-col lg:flex-row gap-6">
+          {image && (
+            <div className="relative w-full lg:w-80 h-48 lg:h-32 rounded-2xl overflow-hidden flex-shrink-0">
+              <Image
+                src={image || "/placeholder.svg"}
+                alt={title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
+          <div className="flex-1 space-y-4">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-2xl font-bold text-white">{title}</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">{description}</p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {techStack?.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10 hover:border-white/20 transition-colors"
+                >
+                  <div className="w-4 h-4 relative">
+                    <Image
+                      src={tech.icon || "/placeholder.svg"}
+                      alt={tech.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-xs text-gray-300">{tech.name}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex-1 items-center space-x-3">
+              {githubUrl && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="flex-1 bg-gray-400 hover:bg-[#2dba4e] transition duration-300"
+                >
+                  <Link href={githubUrl} target="_blank">
+                    <Github className="w-4 h-4 mr-1" />
+                    Code
+                  </Link>
+                </Button>
+              )}
+              {(liveUrl || certification) && (
+                <Button
+                  asChild
+                  size="sm"
+                  className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+                >
+                  <Link href={liveUrl || certification} target="_blank">
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    {liveUrl ? "Demo" : "Certification"}
+                  </Link>
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: custom * 0.1 }}
-      className="flex flex-col w-[260px] sm:w-[320px] h-full bg-stone-600 rounded-xl shadow-lg overflow-hidden"
-    >
+    <motion.div className="group bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 h-full flex flex-col">
       {image && (
-        <div className="relative h-[150px]">
+        <div className="relative h-48 overflow-hidden flex-shrink-0">
           <Image
             src={image || "/placeholder.svg"}
             alt={title}
             fill
             className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       )}
-      <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-serif font-bold text-stone-200 text-center mb-2">
-          {title}
-        </h3>
-        <p className="text-stone-300 font-serif text-xs sm:text-sm mb-2 text-left flex-grow">
-          {description}
-        </p>
-        <div
-          className={`flex flex-nowrap
-          } sm:justify-center items-center gap-2 mb-4`}
-        >
-          {techStack.map((tech) => (
-            <TooltipProvider key={tech.name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div className="h-6 w-6 sm:w-8 sm:h-8 rounded-full overflow-hidden transition-transform hover:scale-110 cursor-pointer">
-                    <div className="relative h-full w-full">
-                      <Image
-                        src={tech.icon || "/placeholder.svg"}
-                        alt={tech.name}
-                        fill
-                        className="object-fit"
-                      />
-                    </div>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{tech.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ))}
+
+      <div className="p-6 flex flex-col flex-1">
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-xl font-bold text-white">{title}</h3>
+          </div>
+          <p className="text-gray-300 text-sm font-sans">{description}</p>
         </div>
-        <div className="flex justify-center items-center gap-2">
+
+        <div className="flex-1 mb-4">
+          <div className="flex flex-wrap gap-2">
+            {techStack?.map((tech) => (
+              <div
+                key={tech.name}
+                className="flex items-center space-x-1 bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/10 hover:border-white/20 transition-colors"
+                title={tech.name}
+              >
+                <div className="w-3 h-3 relative">
+                  <Image
+                    src={tech.icon || "/placeholder.svg"}
+                    alt={tech.name}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-xs text-gray-300">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center space-x-2 mt-auto">
           {githubUrl && (
             <Button
               asChild
-              variant=""
-              size=""
-              className="bg-[#2b3137] hover:bg-[#2dba4e] transition duration-300 "
+              variant="outline"
+              size="sm"
+              className="flex-1 bg-gray-400 hover:bg-[#2dba4e] transition duration-300"
             >
               <Link href={githubUrl} target="_blank">
-                <Github className="w-4 h-4 mr-2 " />
-                GitHub
+                <Github className="w-4 h-4 mr-1" />
+                Code
               </Link>
             </Button>
           )}
-          {certification && (
-            <Button asChild size="icon" variant="secondary">
-              <Link href={certification} target="_blank">
-                <ExternalLink className="w-4 h-4" />
+          {(liveUrl || certification) && (
+            <Button
+              asChild
+              size="sm"
+              className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+            >
+              <Link href={liveUrl || certification} target="_blank">
+                <ExternalLink className="w-4 h-4 mr-1" />
+                {liveUrl ? "Demo" : "Cert"}
               </Link>
             </Button>
           )}
