@@ -62,7 +62,10 @@ function MainSection() {
           <span className="text-purple-400 font-semibold">
             engaging digital experiences
           </span>
-          . Every project is an opportunity to learn, grow, and push boundaries.
+          , treating each project as a chance to learn and push boundaries. Feel
+          free to explore my work, get in touch, or chat with my{" "}
+          <span className="text-blue-400 font-semibold">AI Assistant</span> for
+          any questions or insights!{" "}
         </motion.p>
 
         <motion.div
