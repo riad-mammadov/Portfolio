@@ -12,7 +12,7 @@ import TerminalWindow from "@/components/ui/TerminalWindow";
 
 function MainSection() {
   return (
-    <div className="relative flex sm:flex-row justify-center items-start sm:px-4 overflow-hidden">
+    <div className="relative flex sm:flex-row justify-center items-start sm:px-8 overflow-hidden">
       <motion.div
         className="text-white flex flex-col justify-center items-start space-y-4 px-4 w-full max-w-3xl lg:w-[55%]"
         initial="hidden"
@@ -31,7 +31,7 @@ function MainSection() {
         <div className="space-y-4">
           <motion.h1
             variants={appear(0.4)}
-            className="text-6xl sm:text-7xl lg:text-8xl font-bold font-serif z-10 leading-tight"
+            className="text-5xl sm:text-6xl font-bold font-serif z-10 leading-tight"
           >
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">
@@ -41,10 +41,10 @@ function MainSection() {
           </motion.h1>
 
           <motion.div variants={appear(0.6)} className="space-y-2">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-sans font-semibold text-gray-200 z-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-semibold text-gray-200 z-10">
               Software Engineer &
             </h2>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-sans font-semibold text-gray-200 z-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-semibold text-gray-200 z-10">
               Computer Science Graduate
             </h2>
           </motion.div>
@@ -69,7 +69,7 @@ function MainSection() {
         </motion.p>
 
         <motion.div
-          variants={appear(1.3)}
+          variants={appear(0.9)}
           className="flex flex-col sm:flex-row gap-4 md:justify-start items-start z-10 pt-4"
         >
           <Link
