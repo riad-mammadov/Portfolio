@@ -6,7 +6,7 @@ function TextBlink() {
       <motion.p
         initial={{ x: -5, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ type: "tween", delay: 7.6 }}
+        transition={{ type: "tween", delay: 7 }}
         className="text-blue-400 font-terminal tracking-widest text-md"
       >
         <motion.span

@@ -12,7 +12,7 @@ function SkillSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 5,
+        delay: 4.3,
         duration: 0.5,
       },
       transitionEnd: { borderRight: "0px solid white" },
@@ -25,7 +25,7 @@ function SkillSection({ heading }) {
       opacity: 1,
       x: 0,
       transition: {
-        delay: headingChars.length * 0.35 + i * 0.07,
+        delay: headingChars.length * 0.3 + i * 0.07,
         duration: 0.5,
       },
       transitionEnd: { borderRight: "0px solid white" },
@@ -53,7 +53,7 @@ function SkillSection({ heading }) {
         {skills.map((skill, index) => (
           // Maps each item in skills array to the terminal, with a staggered effect
           <motion.li key={index} custom={index} variants={charVariants}>
-            <Button className="px-1 py-0 bg-transparent font-sans rounded-md text-sm hover:cursor-default font-semibold">
+            <Button className="px-1 py-0 bg-transparent font-roboto rounded-md text-sm hover:cursor-default font-semibold">
               <img src={skill.img} className="w-3 h-3" />
               <p>{skill.title}</p>
             </Button>

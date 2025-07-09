@@ -8,26 +8,25 @@ function ContactSection({ heading }) {
   const headingChars = splitString(heading);
 
   const headingCharVariants = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { opacity: 0, x: -10 },
     show: (i) => ({
       opacity: 1,
       x: 0,
       transition: {
-        delay: 6.5,
+        delay: 5.8,
         duration: 0.5,
       },
     }),
   };
 
   const charVariants = {
-    hidden: { opacity: 0, x: -10 },
+    hidden: { opacity: 0, x: 0 },
     show: (i) => ({
       opacity: 1,
       x: 0,
       transition: {
-        delay: headingChars.length * 0.43 + i * 0.06,
+        delay: headingChars.length * 0.4 + i * 0.09,
         duration: 0.8,
-        staggerChildren: 0.2,
         ease: "easeOut",
       },
     }),
@@ -38,7 +37,7 @@ function ContactSection({ heading }) {
       <motion.h1 initial="hidden" animate="show">
         {headingChars.map((char, index) => (
           <motion.span
-            className="text-blue-400 text-md tracking-wider font-terminal"
+            className="text-blue-400 text-md font-terminal tracking-wider"
             key={index}
             variants={headingCharVariants}
           >
@@ -54,8 +53,8 @@ function ContactSection({ heading }) {
         {contacts.map((contact, index) => (
           <motion.li key={index} custom={index} variants={charVariants}>
             {/* maps each item in the contacts array to its logo */}
-            <section className="px-2 py-1 flex flex-row gap-2 font-rubik text-sm">
-              <div className="pl-1 space-y-4 font-mono">
+            <section className="px-2 py-1 flex flex-row gap-2 font-roboto font-semibold text-sm">
+              <div className="pl-1 space-y-4">
                 <div className="flex items-center space-x-2 text-muted/80">
                   <span role="img" aria-label="location" className="font-emoji">
                     📍
