@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/shadcn/button";
+import { Button } from "@/components/ui/shadcn/Button";
 
 export default function ProjectCard({
   title,
