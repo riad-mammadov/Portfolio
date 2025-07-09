@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black h-full antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#070B14] h-full antialiased`}
       >
         <React.StrictMode>{children}</React.StrictMode>
       </body>
