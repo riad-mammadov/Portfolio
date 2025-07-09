@@ -73,7 +73,7 @@ function Chat() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <div className="inline-flex items-center space-x-3">
+          <div className="inline-flex items-center space-x-3 mb-4">
             <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10">
               <User className="w-6 h-6 text-blue-400" />
             </div>
