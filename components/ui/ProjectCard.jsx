@@ -43,7 +43,7 @@ export default function ProjectCard({
         <h3 className="text-xl font-serif font-bold text-stone-200 text-center mb-2">
           {title}
         </h3>
-        <p className="text-stone-300 font-serif text-sm mb-2 text-left flex-grow">
+        <p className="text-stone-300 font-serif text-xs sm:text-sm mb-2 text-left flex-grow">
           {description}
         </p>
         <div
