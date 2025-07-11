@@ -77,7 +77,6 @@ function ProjectSection() {
         }`}
       >
         {projectsToShow.map((project, index) => {
-          // On mobile/tablet: only show first 4 projects initially
           const shouldShow = showAllProjects || index < 4;
 
           return (
@@ -91,7 +90,6 @@ function ProjectSection() {
         })}
       </motion.div>
 
-      {/* Load More button - only visible on mobile/tablet and when there are more projects */}
       {hasMoreProjects && (
         <motion.div
           className="md:hidden flex justify-center mt-8"
@@ -101,7 +99,7 @@ function ProjectSection() {
         >
           <button
             onClick={() => setShowAllProjects(true)}
-            className="px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-2xl text-white font-medium hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300"
+            className="px-6 py-3 bg-gradient-to-r text-sm from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-2xl text-white font-medium hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300"
           >
             Load More Projects ({projects.length - 4} more)
           </button>
