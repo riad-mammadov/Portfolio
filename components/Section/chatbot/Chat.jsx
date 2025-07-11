@@ -1,8 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import ChatForm from "./ChatForm";
-import { Dot, User } from "lucide-react";
+import { Dot, Info, User } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/shadcn/tooltip";
 
 function Chat() {
   const [chatHistory, setChatHistory] = useState([
@@ -17,6 +23,7 @@ function Chat() {
   ]);
   const ref = useRef(null);
   const [loading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function updateHistory(text, isError = false) {
     setChatHistory((prev) => [...prev, { role: "model", text, isError }]);
@@ -57,7 +64,10 @@ function Chat() {
       }
     } catch (error) {
       console.error("Chat Error:", error);
-      updateHistory("Sorry, something went wrong, please try again!", true);
+      updateHistory(
+        "Apologies — something went wrong on our end. Please try again in a moment.",
+        true
+      );
     }
 
     setIsLoading(false);
@@ -88,6 +98,31 @@ function Chat() {
                 About Me
               </span>
             </h2>
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button className="w-6 h-6 rounded-full bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 hover:border-blue-500/50 flex items-center justify-center transition-all duration-200">
+                        <Info className="w-4 h-4 text-blue-400" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-72 bg-gray-800 border-gray-600 text-white mb-4">
+                      <p className="text-center leading-relaxed text-xs">
+                        Gemini may occasionally encounter issues beyond my
+                        control, which can result in errors. If you have any
+                        questions, feel free to reach out using the contact form
+                        below.
+                        <br />
+                        <br />
+                        Please note: The responses may occasionally contain
+                        inaccuracies.
+                      </p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
+            </div>
           </div>
           <p className="text-gray-300 text-md sm:text-lg max-w-2xl mx-auto leading-relaxed mb-4">
             Curious to learn more? My AI Assistant is here to help! Ask
