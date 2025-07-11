@@ -32,10 +32,7 @@ function Chat() {
 
   async function generateBotResponse(history) {
     setIsLoading(true);
-    history = history.map(({ role, text }) => ({ role, parts: [{ text }] }));
-
-    const question = history[history.length - 1].parts[0].text;
-
+    const question = history[history.length - 1].text;
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -44,16 +41,25 @@ function Chat() {
         },
         body: JSON.stringify({ question }),
       });
+
       const data = await response.json();
+
       if (!response.ok) {
-        throw new Error(data.error.message || "Something went wrong!");
+        throw new Error(data.error?.message || "Something went wrong!");
       }
-      const apiResponseText = data.candidates[0].content.parts[0].text;
-      const formattedResponse = formatApiResponse(apiResponseText);
-      updateHistory(formattedResponse);
+
+      if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+        const apiResponseText = data.candidates[0].content.parts[0].text;
+        const formattedResponse = formatApiResponse(apiResponseText);
+        updateHistory(formattedResponse);
+      } else {
+        throw new Error("Unexpected response format");
+      }
     } catch (error) {
-      updateHistory("Something went wrong, please try again!", true);
+      console.error("Chat Error:", error);
+      updateHistory("Sorry, something went wrong, please try again!", true);
     }
+
     setIsLoading(false);
   }
 
