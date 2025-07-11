@@ -60,7 +60,7 @@ export default function ProjectCard({
               {githubUrl && (
                 <Button
                   asChild
-                  variant="outline"
+                  variant="secondary"
                   size="sm"
                   className="flex-1 bg-gray-400 hover:bg-[#2dba4e] transition duration-300"
                 >
@@ -137,9 +137,9 @@ export default function ProjectCard({
           {githubUrl && (
             <Button
               asChild
-              variant="outline"
+              variant="secondary"
               size="sm"
-              className="flex-1 bg-gray-400 hover:bg-[#2dba4e] transition duration-300"
+              className="flex-1 bg-gray-400 hover:bg-[#2dba4e] hover:text-white transition-all ease-in-out duration-300 font-medium"
             >
               <Link href={githubUrl} target="_blank">
                 <Github className="w-4 h-4 mr-1" />
@@ -151,11 +151,11 @@ export default function ProjectCard({
             <Button
               asChild
               size="sm"
-              className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+              className="flex-1 bg-gray-800 hover:bg-gray-700 text-white border-0 shadow-sm hover:shadow-md transition-all duration-300 ease-out font-medium"
             >
               <Link href={liveUrl || certification} target="_blank">
-                <ExternalLink className="w-4 h-4 mr-1" />
-                {liveUrl ? "Demo" : "Cert"}
+                <ExternalLink className="w-4 h-4 mr-1 " />
+                {liveUrl ? "Demo" : "Certification"}
               </Link>
             </Button>
           )}
