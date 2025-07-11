@@ -7,22 +7,19 @@
 
 ## 🛠️ Tech Stack
 - **Frontend**: React, Next.js, TailwindCSS, Framer Motion
-- **Backend**: Next.js, Node.js, Express (for AI chatbot & email feature)
+- **Backend**: Next.js (for AI chatbot & email feature)
 - **AI Chatbot**: Google Gemini API
 - **Emailing Feature**: Email.js
 - **Deployment**: Vercel
+- **Component Libraries**: Shadcn, Lucide
 
 ## 📋 Features
 - Responsive design
-- AI-powered chatbot for queries
+- AI-powered chatbot for queries and any questions about me
 - Free emailing service to contact me
 - Smooth scroll animations
 - List of projects & contact details
+- Experience and History
 
-## 🔧 Getting Started
-```bash
-git clone https://github.com/riad-mammadov/portfolio
-cd portfolio
-npm install
-npm run dev
+
 
