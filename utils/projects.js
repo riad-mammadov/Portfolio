@@ -43,6 +43,13 @@ export const projects = [
     ],
   },
   {
+    title: "Football Manager Simulation",
+    description:
+      "Currently developing a football management simulator, allowing users to manage a team of their choice, including player transfers, match simulations, and financial management. Plan to implement a GUI and more features as i work on it.",
+    githubUrl: "https://github.com/riad-mammadov/Football-Manager-Simulation",
+    techStack: [{ name: "Python", icon: "/python.svg" }],
+  },
+  {
     title: "AirVia TMS",
     description:
       "Built a ticket sales management system to streamline & automate the process of managing ticket sales for a fictional airline.",
