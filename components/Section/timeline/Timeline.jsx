@@ -27,6 +27,16 @@ const timelineItems = [
       "Consistently delivered projects on time while expanding my knowledge through hands-on learning",
   },
   {
+    date: "05/2022 - Present",
+    title: "Technical Support Assistant",
+    description:
+      "Maintain and troubleshoot the shop’s point of sale systems, including barcode scanners, pricing software, and receipt printers, ensuring seamless daily operation and resolving technical failures with minimal downtime.",
+    institution: "Local Retail Shop",
+    type: "work",
+    achievements:
+      "Resolved technical issues swiftly and efficiently to minimise downtime, ensuring consistent operations and protecting the shop's core revenue stream.",
+  },
+  {
     date: "09/2021 - 09/2024",
     title: "BSc Honours Computer Science (2:1)",
     description:
