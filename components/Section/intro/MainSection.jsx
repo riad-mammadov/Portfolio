@@ -41,11 +41,8 @@ function MainSection() {
           </motion.h1>
 
           <motion.div variants={appear(0.6)} className="space-y-2">
-            <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-semibold text-gray-200 z-10">
-              Software Engineer &
-            </h2>
-            <h2 className="text-3xl sm:text-4xl lg:text-4xl font-sans font-semibold text-gray-200 z-10">
-              Computer Science Graduate
+            <h2 className="text-3xl sm:text-3xl lg:text-3xl font-sans font-semibold text-gray-200 z-10">
+              Technologist & Computer Science Graduate
             </h2>
           </motion.div>
         </div>
@@ -54,18 +51,17 @@ function MainSection() {
           variants={appear(0.8)}
           className="text-gray-300 text-lg md:text-xl font-sans z-10 leading-relaxed max-w-2xl"
         >
-          As a passionate, newly graduated developer, I'm eager to create{" "}
-          <span className="text-blue-400 font-semibold">
-            unique applications
-          </span>{" "}
-          and{" "}
+          As a curious and driven graduate with a background in computer
+          science, I’m passionate about building, learning, and contributing to
+          meaningful work - whether it’s in{" "}
+          <span className="text-blue-400 font-semibold"> technology</span> or{" "}
           <span className="text-purple-400 font-semibold">
-            engaging digital experiences
+            collaborating across disciplines
           </span>
-          , treating each project as a chance to learn and push boundaries. Feel
-          free to explore my work, get in touch, or chat with my{" "}
-          <span className="text-blue-400 font-semibold">AI Assistant</span> for
-          any questions or insights!{" "}
+          , I thrive when ideas meet execution. Feel free to explore my work,
+          reach out, or even chat with my{" "}
+          <span className="text-blue-400 font-semibold">AI Assistant</span> to
+          learn more about me!
         </motion.p>
 
         <motion.div
@@ -111,7 +107,7 @@ function MainSection() {
       <TerminalWindow>
         <div className="flex-1 rounded-2xl z-10 space-y-6 overflow-hidden">
           <AboutMe
-            text="Riad Mammadov - Aspiring Software Engineer & Tech Enthusiast"
+            text="Riad Mammadov — Exploring Technology with Curiosity, Creativity, and Purpose."
             heading="$ whoami"
           />
           <SkillSection heading="$ skills --list" />
