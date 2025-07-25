@@ -23,7 +23,7 @@ function AboutMe({ heading, text }) {
       x: 0,
       borderRight: "1px solid white",
       transition: {
-        delay: headingChars.length * 0.22 + i * 0.03,
+        delay: headingChars.length * 0.22 + i * 0.024,
         duration: 0.05,
       },
       transitionEnd: { borderRight: "0px solid white" },
