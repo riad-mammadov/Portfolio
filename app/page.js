@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
       <ParticlesComponent id="particles" />
-      <div className="space-y-20 sm:space-y-28">
+      <div className="space-y-16 sm:space-y-28">
         <Navigation />
         <section id="Home">
           <MainSection />
