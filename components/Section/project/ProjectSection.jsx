@@ -77,12 +77,12 @@ function ProjectSection() {
         }`}
       >
         {projectsToShow.map((project, index) => {
-          const shouldShow = showAllProjects || index < 4;
+          const shouldShow = showAllProjects || index < 6;
 
           return (
             <motion.div
               key={project.title}
-              className={`md:block ${shouldShow ? "block" : "hidden"}`}
+              className={`${shouldShow ? "block" : "hidden"}`}
             >
               <ProjectCard {...project} viewMode={viewMode} index={index} />
             </motion.div>
@@ -92,7 +92,7 @@ function ProjectSection() {
 
       {hasMoreProjects && (
         <motion.div
-          className="md:hidden flex justify-center mt-8"
+          className="flex justify-center mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -101,7 +101,7 @@ function ProjectSection() {
             onClick={() => setShowAllProjects(true)}
             className="px-6 py-3 bg-gradient-to-r text-sm from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-2xl text-white font-medium hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300"
           >
-            Load More Projects ({projects.length - 4} more)
+            Load All Projects ({projects.length - 6} more)
           </button>
         </motion.div>
       )}

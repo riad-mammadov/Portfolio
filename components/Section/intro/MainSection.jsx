@@ -18,20 +18,10 @@ function MainSection() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div
-          variants={appear(0.2)}
-          className="inline-flex items-center space-x-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm hover:bg-emerald-500/20 "
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-lg shadow-emerald-400/50"></span>
-          <span className="text-sm text-emerald-300 font-medium">
-            Available for opportunities
-          </span>
-        </motion.div>
-
         <div className="space-y-4">
           <motion.h1
             variants={appear(0.4)}
-            className="text-5xl sm:text-6xl font-bold font-serif z-10 leading-tight"
+            className="text-3xl sm:text-6xl text-left font-bold sm:text-left font-serif z-10 leading-tight"
           >
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">
@@ -41,19 +31,19 @@ function MainSection() {
           </motion.h1>
 
           <motion.div variants={appear(0.6)} className="space-y-2">
-            <h2 className="text-3xl sm:text-3xl lg:text-3xl font-sans font-semibold text-gray-200 z-10">
-              Technologist & Computer Science Graduate
+            <h2 className="text-2xl sm:text-3xl text-left lg:text-3xl sm:text-left font-sans font-semibold text-gray-200 z-10">
+              Developer & Computer Science Graduate
             </h2>
           </motion.div>
         </div>
 
         <motion.p
           variants={appear(0.8)}
-          className="text-gray-300 text-lg md:text-xl font-sans z-10 leading-relaxed max-w-2xl"
+          className="text-gray-300 text-left sm:text-left text-md md:text-xl font-sans z-10 leading-relaxed max-w-2xl"
         >
           As a curious and driven graduate with a background in computer
           science, I’m passionate about building, learning, and contributing to
-          meaningful work - whether it’s in{" "}
+          meaningful work, whether it’s in{" "}
           <span className="text-blue-400 font-semibold"> technology</span> or{" "}
           <span className="text-purple-400 font-semibold">
             collaborating across disciplines
@@ -75,7 +65,7 @@ function MainSection() {
             smooth={true}
             offset={-100}
             duration={500}
-            className="group relative md:min-w-[12rem] hover:cursor-pointer justify-center px-8 py-4 bg-gradient-to-r from-blue-800 to-purple-800  overflow-hidden rounded-2xl inline-flex items-center transition-all duration-300"
+            className="group relative md:min-w-[12rem] hover:cursor-pointer justify-center px-6 py-4 bg-gradient-to-r from-blue-800 to-purple-800  overflow-hidden rounded-2xl inline-flex items-center transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent  to-white/20 transition-transform duration-500 group-hover:translate-x-0 -translate-x-full opacity-90"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -92,7 +82,7 @@ function MainSection() {
             smooth={true}
             offset={-100}
             duration={500}
-            className="group px-8 min-w-40 py-4 rounded-2xl hover:cursor-pointer bg-slate-900/20 backdrop-blur-sm inline-flex items-center justify-center overflow-hidden relative transition-all duration-300 "
+            className="group md:min-w-[12rem] px-6 py-4 rounded-2xl hover:cursor-pointer bg-slate-900/20 backdrop-blur-sm inline-flex items-center justify-center overflow-hidden relative transition-all duration-300 "
           >
             <div className="absolute inset-0 bg-gradient-to-r from-slate-700/30 via-slate-600/40 to-slate-800/30 transition-transform duration-500 group-hover:translate-x-0 translate-x-full"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

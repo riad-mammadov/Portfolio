@@ -93,12 +93,12 @@ function Chat() {
             <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl backdrop-blur-sm border border-white/10">
               <User className="w-6 h-6 text-blue-400" />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold font-serif text-white">
+            <h2 className="text-2xl sm:text-5xl font-bold font-serif text-white">
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 About Me
               </span>
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 hidden md:block">
               <div className="flex items-center gap-2">
                 <TooltipProvider>
                   <Tooltip>
@@ -125,9 +125,8 @@ function Chat() {
             </div>
           </div>
           <p className="text-gray-300 text-md sm:text-lg max-w-2xl mx-auto leading-relaxed mb-4">
-            Curious to learn more? My AI Assistant is here to help! Ask
-            questions about my background, education, skills, or any of the
-            projects I’ve worked on.
+            Curious to learn more? Ask me questions about my background,
+            education, skills, or any of the projects I’ve worked on.
           </p>
         </motion.div>
       </span>
