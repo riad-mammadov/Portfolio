@@ -45,7 +45,7 @@ export const projects = [
   {
     title: "Football Manager Simulation",
     description:
-      "Currently developing a football management simulator, allowing users to manage a team of their choice, including player transfers, match simulations, and financial management. Plan to implement a GUI and more features as i work on it.",
+      "A football management simulator, allowing users to manage a team of their choice, including match simulations.",
     githubUrl: "https://github.com/riad-mammadov/Football-Manager-Simulation",
     techStack: [{ name: "Python", icon: "/python.svg" }],
   },
@@ -111,7 +111,7 @@ export const projects = [
   {
     title: "Python and Algorithms Course",
     description:
-      "Currently completing a 61-hour Udemy course covering Python, Data Structures, and Algorithms, supplemented with personal practice, projects and coding.",
+      "A 61-hour Udemy course covering Python, Data Structures, and Algorithms, supplemented with personal practice, projects and coding.",
     githubUrl: "https://github.com/riad-mammadov/Python-DSA-Course",
     certification: "",
     techStack: [
@@ -136,6 +136,18 @@ export const projects = [
       { name: "Postman", icon: "/postman.svg" },
       { name: "Axios", icon: "/axios.png" },
       { name: "OAuth", icon: "/oauth.png" },
+    ],
+  },
+  {
+    title: "100 Days of Code - The Complete Python Pro Bootcamp",
+    description:
+      "Completing a 100-day hands-on Python course by Angela Yu, covering core programming, object-oriented design, web development with Flask, automation, working with APIs, and deploying full-stack applications. (Started from intermediate level due to prior knowledge)",
+    githubUrl: "https://github.com/riad-mammadov/Python-DSA-Course",
+    certification: "",
+    techStack: [
+      { name: "Python", icon: "/python.svg" },
+      { name: "Flask", icon: "/flask.svg" },
+      { name: "MySQL", icon: "/mysql2.svg" },
     ],
   },
 ];
