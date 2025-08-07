@@ -18,6 +18,15 @@ function MainSection() {
         initial="hidden"
         animate="visible"
       >
+        <motion.div
+          variants={appear(0.2)}
+          className="inline-flex justify-center items-center space-x-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm hover:bg-emerald-500/20 "
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-lg shadow-emerald-400/50"></span>
+          <span className="text-sm text-emerald-300 font-medium ">
+            Available for opportunities
+          </span>
+        </motion.div>
         <div className="space-y-4">
           <motion.h1
             variants={appear(0.4)}
