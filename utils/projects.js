@@ -109,6 +109,18 @@ export const projects = [
     ],
   },
   {
+    title: "100 Days of Code - The Complete Python Pro Bootcamp",
+    description:
+      "Completing a 100-day hands-on Python course by Angela Yu, covering core programming, object-oriented design, web development with Flask, Data Analysis, working with APIs, and data visualisation (+ more). (Started from intermediate level due to prior knowledge)",
+    githubUrl: "https://github.com/riad-mammadov/100-days-of-code",
+    certification: "",
+    techStack: [
+      { name: "Python", icon: "/python.svg" },
+      { name: "Flask", icon: "/flask.svg" },
+      { name: "MySQL", icon: "/mysql2.svg" },
+    ],
+  },
+  {
     title: "Python and Algorithms Course",
     description:
       "A 61-hour Udemy course covering Python, Data Structures, and Algorithms, supplemented with personal practice, projects and coding.",
@@ -136,18 +148,6 @@ export const projects = [
       { name: "Postman", icon: "/postman.svg" },
       { name: "Axios", icon: "/axios.png" },
       { name: "OAuth", icon: "/oauth.png" },
-    ],
-  },
-  {
-    title: "100 Days of Code - The Complete Python Pro Bootcamp",
-    description:
-      "Completing a 100-day hands-on Python course by Angela Yu, covering core programming, object-oriented design, web development with Flask, Data Analysis, working with APIs, and data visualisation. (Started from intermediate level due to prior knowledge)",
-    githubUrl: "https://github.com/riad-mammadov/Python-DSA-Course",
-    certification: "",
-    techStack: [
-      { name: "Python", icon: "/python.svg" },
-      { name: "Flask", icon: "/flask.svg" },
-      { name: "MySQL", icon: "/mysql2.svg" },
     ],
   },
 ];
