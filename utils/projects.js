@@ -141,7 +141,7 @@ export const projects = [
   {
     title: "100 Days of Code - The Complete Python Pro Bootcamp",
     description:
-      "Completing a 100-day hands-on Python course by Angela Yu, covering core programming, object-oriented design, web development with Flask, automation, working with APIs, and deploying full-stack applications. (Started from intermediate level due to prior knowledge)",
+      "Completing a 100-day hands-on Python course by Angela Yu, covering core programming, object-oriented design, web development with Flask, Data Analysis, working with APIs, and data visualisation. (Started from intermediate level due to prior knowledge)",
     githubUrl: "https://github.com/riad-mammadov/Python-DSA-Course",
     certification: "",
     techStack: [
