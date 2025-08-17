@@ -39,7 +39,6 @@ function ContactSection({ heading }) {
           <motion.span
             className="text-blue-400 text-md font-terminal tracking-wider"
             key={index}
-            variants={headingCharVariants}
           >
             {char}
           </motion.span>
@@ -51,7 +50,7 @@ function ContactSection({ heading }) {
         animate="show"
       >
         {contacts.map((contact, index) => (
-          <motion.li key={index} custom={index} variants={charVariants}>
+          <motion.li key={index}>
             {/* maps each item in the contacts array to its logo */}
             <section className="px-2 py-1 flex flex-row gap-2 font-roboto font-semibold text-sm">
               <div className="pl-1 space-y-4">

@@ -11,7 +11,7 @@ function AboutMe({ heading, text }) {
     show: {
       opacity: 1,
       x: 0,
-      transition: { duration: 2 },
+      transition: { duration: 0 },
     },
   };
 
@@ -32,12 +32,11 @@ function AboutMe({ heading, text }) {
 
   return (
     <div className="flex flex-col justify-center items-start">
-      <motion.h1 initial="hidden" animate="show">
+      <motion.h1>
         {headingChars.map((char, index) => (
           <motion.span
             className="text-blue-400 font-terminal tracking-widest text-md"
             key={index}
-            variants={headingCharVariants}
           >
             {char}
           </motion.span>
@@ -49,9 +48,7 @@ function AboutMe({ heading, text }) {
         animate="show"
       >
         {textChars.map((char, index) => (
-          <motion.span key={index} custom={index} variants={charVariants}>
-            {char}
-          </motion.span>
+          <motion.span key={index}>{char}</motion.span>
         ))}
       </motion.p>
     </div>

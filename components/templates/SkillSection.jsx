@@ -39,7 +39,6 @@ function SkillSection({ heading }) {
           <motion.span
             className="text-blue-400 text-md tracking-wider font-terminal"
             key={index}
-            variants={headingCharVariants}
           >
             {char}
           </motion.span>
@@ -52,7 +51,7 @@ function SkillSection({ heading }) {
       >
         {skills.map((skill, index) => (
           // Maps each item in skills array to the terminal, with a staggered effect
-          <motion.li key={index} custom={index} variants={charVariants}>
+          <motion.li key={index}>
             <Button className="px-1 py-0 bg-transparent font-roboto rounded-md text-sm hover:cursor-default font-semibold">
               <img src={skill.img} className="w-3 h-3" />
               <p>{skill.title}</p>
