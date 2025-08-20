@@ -29,6 +29,10 @@ export const skills = [
     img: "/nextjs_icon_dark.svg",
   },
   {
+    title: "FastAPI",
+    img: "/FastAPI.png",
+  },
+  {
     title: "Redux",
     img: "redux.svg",
   },
