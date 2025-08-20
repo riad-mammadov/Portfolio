@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/shadcn/Button";
 
 export default function ProjectCard({
@@ -78,7 +78,7 @@ export default function ProjectCard({
                 >
                   <Link href={liveUrl || certification} target="_blank">
                     <ExternalLink className="w-4 h-4 mr-1" />
-                    {liveUrl ? "Demo" : "Certification"}
+                    {liveUrl ? "Link" : "Certification"}
                   </Link>
                 </Button>
               )}
@@ -155,7 +155,7 @@ export default function ProjectCard({
             >
               <Link href={liveUrl || certification} target="_blank">
                 <ExternalLink className="w-4 h-4 mr-1 " />
-                {liveUrl ? "Demo" : "Certification"}
+                {liveUrl ? "Link" : "Certification"}
               </Link>
             </Button>
           )}
