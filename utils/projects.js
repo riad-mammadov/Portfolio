@@ -14,6 +14,25 @@ export const projects = [
     ],
   },
   {
+    title: "CoverMe - AI Cover Letter Generator",
+    description:
+      "A modern web app that generates personalised cover letters using the Google Gemini API. Supports PDF uploads and offers a simple interface, with no signup required, to help job seekers streamline their application process.",
+    githubUrl: "https://github.com/riad-mammadov/AI-Cover-Letter-Generator",
+    liveUrl: "https://ai-cover-letter-generator-khaki.vercel.app",
+    techStack: [
+      { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
+      { name: "React", icon: "/react.svg" },
+      { name: "FastAPI", icon: "/fastapi.png" },
+      { name: "Python", icon: "/python.svg" },
+      { name: "JavaScript", icon: "/javascript.svg" },
+      { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
+      { name: "Gemini API", icon: "/gemini.png" },
+      { name: "Git", icon: "/git.svg" },
+      { name: "Vercel", icon: "/vercel.svg" },
+      { name: "Render", icon: "/render.jpg" },
+    ],
+  },
+  {
     title: "Serve2U",
     description:
       "Programmed a web application for football fans to order drinks and snacks directly to their seats at football stadiums, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
