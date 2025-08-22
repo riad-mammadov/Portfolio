@@ -1,7 +1,8 @@
 export const projects = [
   {
     title: "Portfolio",
-    description: "My personal portfolio website built with Next.js.",
+    description:
+      "My personal portfolio website built with Next.js, includes an AI assistant powered by the Google Gemini.",
     githubUrl: "https://github.com/riad-mammadov/Portfolio",
     techStack: [
       { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
@@ -35,7 +36,7 @@ export const projects = [
   {
     title: "Serve2U",
     description:
-      "Programmed a web application for football fans to order drinks and snacks directly to their seats at football stadiums, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
+      "Web application for football fans to order drinks and snacks directly to their seats at football stadiums, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
     githubUrl:
       "https://github.com/riad-mammadov/Serve2U-Cloud-Based-Application",
     detailsUrl: "/projects/project-two",
@@ -51,7 +52,7 @@ export const projects = [
   {
     title: "Clinic Express",
     description:
-      "Developed a web based cloud application to manage patient data & book appointments, utilising GCP technologies.",
+      "Web based cloud application to manage patient data & book appointments, utilising GCP technologies.",
     githubUrl: "https://github.com/riad-mammadov/Clinic-Cloud-Application",
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
@@ -64,14 +65,14 @@ export const projects = [
   {
     title: "Football Manager Simulation",
     description:
-      "A football management simulator, allowing users to manage a team of their choice, including match simulations.",
+      "CLI based Football management simulator, allowing users to manage a team of their choice, including match simulations.",
     githubUrl: "https://github.com/riad-mammadov/Football-Manager-Simulation",
     techStack: [{ name: "Python", icon: "/python.svg" }],
   },
   {
     title: "AirVia TMS",
     description:
-      "Built a ticket sales management system to streamline & automate the process of managing ticket sales for a fictional airline.",
+      "Ticket sales management system to streamline & automate the process of managing ticket sales for a fictional airline.",
     githubUrl: "https://github.com/riad-mammadov/AirVia-TicketSalesSystem",
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
@@ -82,14 +83,14 @@ export const projects = [
   {
     title: "Java Game",
     description:
-      "Developed a Java-based platform game featuring multiple levels, animations, and interactive mechanics. Developed with object-oriented programming to handle gameplay logic, and leveraging the CityEngine library for visuals and physics.",
+      "2D Java platform game featuring multiple levels, animations, and interactive mechanics. Developed with object-oriented programming to handle gameplay logic, and leveraging the CityEngine library for visuals and physics.",
     githubUrl: "https://github.com/riad-mammadov/java-game",
     techStack: [{ name: "Java", icon: "/java.svg" }],
   },
   {
     title: "3D Stealth FPS Game",
     description:
-      "Developed a 3D stealth-based FPS game in Unity as my A-Level final project, earning an A*. Built three uniquely designed maps, implemented AI-driven enemy behavior, and scripted mechanics in C#. Created 3D assets and animations using Autodesk Maya to enhance player experience.",
+      "3D stealth-based FPS game in Unity as my A-Level final project, earning an A*. Built three uniquely designed maps, implemented AI-driven enemy behavior, and scripted mechanics in C#. Created 3D assets and animations using Autodesk Maya to enhance player experience.",
     techStack: [
       { name: "Unity", icon: "/unity.svg" },
       { name: "C#", icon: "/csharp.svg" },
@@ -99,7 +100,7 @@ export const projects = [
   {
     title: "QAHub",
     description:
-      "Currently building a hub for muslims to read the Quran, track their progress and test their arabic skills.",
+      "A hub for muslims to read the Quran, track their progress and test their arabic skills.",
     githubUrl: "https://github.com/riad-mammadov/QAHub",
     techStack: [
       { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
