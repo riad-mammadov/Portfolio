@@ -15,15 +15,15 @@ export const projects = [
     ],
   },
   {
-    title: "CoverMe - AI Cover Letter Generator",
+    title: "Cover Letter Generator and CV Review Platform",
     description:
-      "A modern web app that generates personalised cover letters using the Google Gemini API. Supports PDF uploads and offers a simple interface, with no signup required, to help job seekers streamline their application process.",
+      "A modern AI powered web app that generates personalised cover letters and reviews CVs using the Google Gemini API. It supports PDF uploads and offers a clean, no-signup interface designed to help job seekers create and refine their applications effortlessly.",
     githubUrl: "https://github.com/riad-mammadov/AI-Cover-Letter-Generator",
     liveUrl: "https://ai-cover-letter-generator-khaki.vercel.app",
     techStack: [
       { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
       { name: "React", icon: "/react.svg" },
-      { name: "FastAPI", icon: "/fastapi.png" },
+      { name: "FastAPI", icon: "/FastAPI.png" },
       { name: "Python", icon: "/python.svg" },
       { name: "JavaScript", icon: "/javascript.svg" },
       { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
@@ -34,7 +34,7 @@ export const projects = [
     ],
   },
   {
-    title: "Serve2U",
+    title: "Stadium Food Delivery Platform & Staff Dashboard",
     description:
       "Web application for football fans to order drinks and snacks directly to their seats at football stadiums, utilising Stripe API for payments. Also contains a staff dashboard to oversee application and AWS for authentication",
     githubUrl:
@@ -63,11 +63,19 @@ export const projects = [
     ],
   },
   {
-    title: "Football Manager Simulation",
+    title: "FixABLE – Accessible Home Services Platform",
     description:
-      "CLI based Football management simulator, allowing users to manage a team of their choice, including match simulations.",
-    githubUrl: "https://github.com/riad-mammadov/Football-Manager-Simulation",
-    techStack: [{ name: "Python", icon: "/python.svg" }],
+      "Client MVP project built to connect homeowners with local service providers. Developed with a focus on accessibility and user experience, including authentication, real-time messaging, booking, and review systems.",
+    githubUrl: "https://github.com/riad-mammadov/fixable-mvp",
+    detailsUrl: "/projects/fixable",
+    techStack: [
+      { name: "Next.js", icon: "/nextjs.svg" },
+      { name: "React", icon: "/react.svg" },
+      { name: "Tailwind CSS", icon: "/tailwind.svg" },
+      { name: "MySQL", icon: "/mysql2.svg" },
+      { name: "Node.js", icon: "/nodejs.svg" },
+      { name: "JWT", icon: "/jwt.svg" },
+    ],
   },
   {
     title: "AirVia TMS",
@@ -86,6 +94,13 @@ export const projects = [
       "2D Java platform game featuring multiple levels, animations, and interactive mechanics. Developed with object-oriented programming to handle gameplay logic, and leveraging the CityEngine library for visuals and physics.",
     githubUrl: "https://github.com/riad-mammadov/java-game",
     techStack: [{ name: "Java", icon: "/java.svg" }],
+  },
+  {
+    title: "Football Manager Simulation",
+    description:
+      "CLI based Football management simulator, allowing users to manage a team of their choice, including match simulations.",
+    githubUrl: "https://github.com/riad-mammadov/Football-Manager-Simulation",
+    techStack: [{ name: "Python", icon: "/python.svg" }],
   },
   {
     title: "3D Stealth FPS Game",
