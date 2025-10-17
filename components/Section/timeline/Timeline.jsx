@@ -7,24 +7,43 @@ import { useRef } from "react";
 
 const timelineItems = [
   {
+    date: "01/2025 - Present",
+    title: "Developer & Web Maintenance",
+    description:
+      "Maintain and enhance the company’s website, implementing design updates, new features, and content changes to improve performance and user engagement. Reduced third-party costs by 50% and streamlined client enquiries with integrated contact forms.",
+    institution: "Tipentidy",
+    type: "work",
+    skills: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Git",
+      "Web Design",
+      "SEO",
+    ],
+    achievements:
+      "Cut website maintenance costs by ~50% and increased lead conversions by ~25% through UI and functionality improvements.",
+  },
+  {
     date: "09/2024 - Present",
     title: "Freelance Full-Stack Web Developer",
     description:
-      "Delivered responsive web applications and prototypes for clients, increasing their operational efficiency and user engagement. Specialised in JavaScript frameworks and collaborated directly with clients to translate their requirements into technical solutions.",
+      "Built full-stack web applications and MVPs for small businesses, automating manual workflows and improving online visibility. Delivered responsive, SEO-optimised platforms that expanded client reach and reduced manual processes.",
     institution: "Self-Employed",
     type: "work",
     skills: [
-      "React",
       "Next.js",
-      "TypeScript",
+      "React",
+      "FastAPI",
       "Node.js",
-      "PostgreDB",
+      "PostgreSQL",
       "Tailwind CSS",
+      "TypeScript",
       "Git",
-      "Agile",
     ],
     achievements:
-      "Consistently delivered projects on time while expanding my knowledge through hands-on learning",
+      "Developed client projects and migrated a social-media business to a web platform, reducing manual work by 40%.",
   },
   {
     date: "05/2022 - Present",
@@ -37,10 +56,21 @@ const timelineItems = [
       "Resolved technical issues swiftly and efficiently to minimise downtime, ensuring consistent operations and protecting the shop's core revenue stream.",
   },
   {
-    date: "09/2021 - 09/2024",
+    date: "01/2021 - 01/2021",
+    title: "Software Development Discovery Programme",
+    description:
+      "Gained hands-on exposure to KPMG’s software engineering processes, agile methodologies, and technology consulting practices during a competitive placement.",
+    institution: "KPMG",
+    type: "work",
+    skills: ["Agile", "Software Engineering", "Team Collaboration"],
+    achievements:
+      "Selected for a competitive work experience placement exploring real-world software development practices.",
+  },
+  {
+    date: "09/2021 - 01/2025",
     title: "BSc Honours Computer Science (2:1)",
     description:
-      "Graduated with Upper Second-Class Honours in Computer Science. My dissertation involved developing a full-stack ordering platform using JavaScript and PHP, showcasing strong problem-solving and technical proficiency.",
+      "Studied core computer science topics, including Java, C++, Functional Programming, and Cloud Computing. Completed multiple individual and team projects, graduating with a 2:1.",
     institution: "City University of London",
     type: "education",
     skills: [
@@ -52,42 +82,8 @@ const timelineItems = [
       "Database Design",
       "Data Structures & Algorithms",
     ],
-    achievement:
-      "Upper Second-Class Honours (2:1) • Relevant Coursework and Modules: Cloud Computing, Mathematics in Computing, Software Engineering, Algorithms & Data Structures",
-  },
-  {
-    date: "01/2020",
-    title: "Software Development Programme",
-    description:
-      "Selected for competitive Big Four technology programme as part of my work experience, gaining exposure to enterprise level software development practices. Developed understanding of Software engineering fundamentals, and enhanced professional communication skills through workshops.",
-    institution: "KPMG",
-    type: "work",
-    skills: [
-      "Professional Development",
-      "Programming Methodologies",
-      "Client Communication",
-      "Team Collaboration",
-    ],
     achievements:
-      "Received positive feedback from mentors • Built professional network and contacts • Gained insight into the field through a big company",
-  },
-  {
-    date: "09/2019 - 06/2021",
-    title: "A-Levels in Technology and Computing",
-    description:
-      "Achieved an A* in Digital Game Development, with a B in Computer Science and a C in Graphics. This academic foundation showcases my strong technical proficiency, problem-solving capabilities, and a genuine drive to acquire new knowledge, making me well-prepared for university studies",
-    institution: "Stoke Newington Sixth Form",
-    type: "education",
-    achievement:
-      "A* in Digital Game Development • B in Computer Science • Consistent high achiever in STEM subjects",
-    skills: [
-      "Game Development",
-      "Programming Fundamentals",
-      "Programming",
-      "Data Structures & Algorithms",
-      "Computer Graphics",
-      "Problem Solving",
-    ],
+      "Upper Second-Class Honours (2:1) • Relevant Coursework and Modules: Cloud Computing, Mathematics in Computing, Software Engineering, Algorithms & Data Structures",
   },
 ];
 
@@ -150,7 +146,6 @@ export default function Timeline() {
                       ? "bg-cyan-500 ring-4 ring-cyan-500/20"
                       : "bg-purple-500 ring-4 ring-purple-500/20"
                   }
-                  // New logic for dot positioning based on index and breakpoint
                   ${
                     index % 2 === 0
                       ? "left-[-16px] md:right-[-16px] md:left-auto"
@@ -208,7 +203,7 @@ export default function Timeline() {
 
                   {/* Title */}
                   <motion.h3
-                    className="text-lg sm:text-xl font-bold text-center text-white mb-2"
+                    className="text-lg sm:text-xl font-bold text-left text-white mb-2"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -222,7 +217,7 @@ export default function Timeline() {
 
                   {/* Institution */}
                   <motion.p
-                    className="text-slate-400 text-center font-medium mb-3 sm:mb-4 text-sm"
+                    className="text-slate-400 text-left font-medium mb-3 sm:mb-4 text-sm"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
