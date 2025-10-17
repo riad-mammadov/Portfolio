@@ -101,7 +101,7 @@ function ProjectSection() {
             onClick={() => setShowAllProjects(true)}
             className="px-6 py-3 bg-gradient-to-r text-sm from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-2xl text-white font-medium hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300"
           >
-            Load All Projects ({projects.length - 6} more)
+            Show All ({projects.length - 6} more)
           </button>
         </motion.div>
       )}
