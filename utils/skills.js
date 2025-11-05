@@ -5,6 +5,10 @@ export const skills = [
     img: "javascript.svg",
   },
   {
+    title: "TypeScript",
+    img: "typescript.svg",
+  },
+  {
     title: "Python",
     img: "python.svg",
   },

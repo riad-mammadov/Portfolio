@@ -1,20 +1,5 @@
 export const projects = [
   {
-    title: "Portfolio",
-    description:
-      "My personal portfolio website built with Next.js, includes an AI assistant powered by the Google Gemini.",
-    githubUrl: "https://github.com/riad-mammadov/Portfolio",
-    techStack: [
-      { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
-      { name: "React", icon: "/react.svg" },
-      { name: "JavaScript", icon: "/javascript.svg" },
-      { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
-      { name: "Gemini API", icon: "/gemini.png" },
-      { name: "Git", icon: "/git.svg" },
-      { name: "Vercel", icon: "/vercel.svg" },
-    ],
-  },
-  {
     title: "Cover Letter Generator and CV Review Platform",
     description:
       "A modern AI powered web app that generates personalised cover letters and reviews CVs using the Google Gemini API. It supports PDF uploads and offers a clean, no-signup interface designed to help job seekers create and refine their applications effortlessly.",
@@ -25,7 +10,7 @@ export const projects = [
       { name: "React", icon: "/react.svg" },
       { name: "FastAPI", icon: "/FastAPI.png" },
       { name: "Python", icon: "/python.svg" },
-      { name: "JavaScript", icon: "/javascript.svg" },
+      { name: "TypeScript", icon: "/typescript.svg" },
       { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
       { name: "Gemini API", icon: "/gemini.png" },
       { name: "Git", icon: "/git.svg" },
@@ -63,18 +48,32 @@ export const projects = [
     ],
   },
   {
+    title: "Portfolio",
+    description:
+      "My personal portfolio website built with Next.js, includes an AI assistant powered by the Google Gemini.",
+    githubUrl: "https://github.com/riad-mammadov/Portfolio",
+    techStack: [
+      { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
+      { name: "React", icon: "/react.svg" },
+      { name: "JavaScript", icon: "/javascript.svg" },
+      { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
+      { name: "Gemini API", icon: "/gemini.png" },
+      { name: "Git", icon: "/git.svg" },
+      { name: "Vercel", icon: "/vercel.svg" },
+    ],
+  },
+  {
     title: "FixABLE – Accessible Home Services Platform",
     description:
-      "Client MVP project built to connect homeowners with local service providers. Developed with a focus on accessibility and user experience, including authentication, real-time messaging, booking, and review systems.",
+      "Client MVP project built to connect homeowners with local service providers. Developed with a focus on accessibility and user experience, including auth/authz, real-time messaging, booking, and review systems.",
     githubUrl: "https://github.com/riad-mammadov/fixable-mvp",
     detailsUrl: "/projects/fixable",
     techStack: [
-      { name: "Next.js", icon: "/nextjs.svg" },
+      { name: "Next.js", icon: "/nextjs_icon_dark.svg" },
       { name: "React", icon: "/react.svg" },
       { name: "Tailwind CSS", icon: "/tailwind.svg" },
       { name: "MySQL", icon: "/mysql2.svg" },
       { name: "Node.js", icon: "/nodejs.svg" },
-      { name: "JWT", icon: "/jwt.svg" },
     ],
   },
   {
