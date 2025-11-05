@@ -35,7 +35,7 @@ export const projects = [
     ],
   },
   {
-    title: "Clinic Express",
+    title: "Cloud Based Optometry Booking System",
     description:
       "Web based cloud application to manage patient data & book appointments, utilising GCP technologies.",
     githubUrl: "https://github.com/riad-mammadov/Clinic-Cloud-Application",
@@ -63,7 +63,7 @@ export const projects = [
     ],
   },
   {
-    title: "FixABLE – Accessible Home Services Platform",
+    title: "Accessible Home Services Platform",
     description:
       "Client MVP project built to connect homeowners with local service providers. Developed with a focus on accessibility and user experience, including auth/authz, real-time messaging, booking, and review systems.",
     githubUrl: "https://github.com/riad-mammadov/fixable-mvp",
@@ -77,9 +77,9 @@ export const projects = [
     ],
   },
   {
-    title: "AirVia TMS",
+    title: "Airline Ticketing System",
     description:
-      "Ticket sales management system to streamline & automate the process of managing ticket sales for a fictional airline.",
+      "Ticket sales management system to streamline & automate the process of managing ticket sales for a fictional airline. (Team Project).",
     githubUrl: "https://github.com/riad-mammadov/AirVia-TicketSalesSystem",
     techStack: [
       { name: "HTML", icon: "/html5.svg" },
@@ -109,19 +109,6 @@ export const projects = [
       { name: "Unity", icon: "/unity.svg" },
       { name: "C#", icon: "/csharp.svg" },
       { name: "Maya", icon: "/maya.png" },
-    ],
-  },
-  {
-    title: "QAHub",
-    description:
-      "A hub for muslims to read the Quran, track their progress and test their arabic skills.",
-    githubUrl: "https://github.com/riad-mammadov/QAHub",
-    techStack: [
-      { name: "Next.Js", icon: "/nextjs_icon_dark.svg" },
-      { name: "React", icon: "/react.svg" },
-      { name: "JavaScript", icon: "/javascript.svg" },
-      { name: "Tailwind CSS", icon: "/tailwindcss.svg" },
-      { name: "Git", icon: "/git.svg" },
     ],
   },
   {
