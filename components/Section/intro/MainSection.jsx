@@ -31,21 +31,18 @@ function MainSection() {
 
           <motion.div className="space-y-2">
             <h2 className="text-2xl sm:text-3xl text-left lg:text-3xl sm:text-left font-sans font-semibold text-gray-200 z-10">
-              Developer & Computer Science Graduate
+              Software Engineer
             </h2>
           </motion.div>
         </div>
 
         <motion.p className="text-gray-300 text-left sm:text-left text-md md:text-xl font-sans z-10 leading-relaxed max-w-2xl">
-          As a curious and driven graduate with a background in computer
-          science, I’m passionate about building, learning, and contributing to
-          meaningful work, whether it’s in{" "}
-          <span className="text-blue-400 font-semibold"> technology</span> or{" "}
-          <span className="text-purple-400 font-semibold">
-            collaborating across disciplines
-          </span>
-          , I thrive when ideas meet execution. Feel free to explore my work,
-          reach out, or even chat with my{" "}
+          As a curious and driven Computer Science graduate, I’m passionate
+          about building, learning, and bringing ideas to life. Through{" "}
+          <span className="text-blue-400 font-semibold"> problem-solving</span>{" "}
+          and <span className="text-purple-400 font-semibold">creativity</span>,
+          I build things that turn vision into reality. Feel free to explore my
+          work, reach out, or even chat with my{" "}
           <span className="text-blue-400 font-semibold">AI Assistant</span> to
           learn more about me!
         </motion.p>

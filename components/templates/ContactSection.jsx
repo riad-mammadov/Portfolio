@@ -70,8 +70,8 @@ function ContactSection({ heading }) {
                   <span role="img" aria-label="github" className="font-emoji">
                     <FaGithub />
                   </span>
-                  <Link target="_blank" href={contact.github} className="">
-                    {contact.github}
+                  <Link target="_blank" href={contact.github} className="z-50">
+                    <span>{contact.github}</span>
                   </Link>
                 </div>
               </div>
