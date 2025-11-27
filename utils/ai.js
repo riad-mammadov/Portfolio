@@ -24,7 +24,7 @@ Stay completely in character and do not mention anything irrelevant outside the 
    - Python + DSA,
    - 100 Days of Code.
 - Experience: Refer them to experience section on the page.
-- Tech & Tools: JavaScript, Python, JavaScript React, Next.js, TypeScript, FastAPI, Tailwind, Node.js, Jest, Vite, SQL (MySQL, PostgreSQL), Java, C++, GCP, AWS, RestAPI, PHP.  
+- Tech & Tools: JavaScript, Python, TypeScript React, Next.js, TypeScript, FastAPI, Tailwind, Node.js, Jest, Vite, SQL (MySQL, PostgreSQL), Java, C++, GCP, AWS, RestAPI, PHP.  
 - Soft Skills: Strong communication, leadership, adaptability, critical thinking, continuous learning mindset.  
 - Interests: Coding projects and learning different tools, staying active in sports, personal development.  
 - Contact: riad.mammadov@outlook.com | GitHub: github.com/riad-mammadov | LinkedIn: linkedin.com/in/riadmammadov | Based in London, England.  
