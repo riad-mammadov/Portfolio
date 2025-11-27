@@ -52,9 +52,9 @@ function ContactSection({ heading }) {
         {contacts.map((contact, index) => (
           <motion.li key={index}>
             {/* maps each item in the contacts array to its logo */}
-            <section className="px-2 py-1 flex flex-row gap-2 font-roboto font-semibold text-sm">
-              <div className="pl-1 space-y-4">
-                <div className="flex items-center space-x-2 text-muted/80">
+            <section className="px-2 py-1 flex flex-row gap-2 font-roboto text-sm">
+              <div className="pl-1 space-y-4 font-normal text-gray-300">
+                <div className="flex items-center space-x-2 ">
                   <span role="img" aria-label="location" className="font-emoji">
                     📍
                   </span>
@@ -70,7 +70,7 @@ function ContactSection({ heading }) {
                   <span role="img" aria-label="github" className="font-emoji">
                     <FaGithub />
                   </span>
-                  <Link target="_blank" href={contact.github} className="z-50">
+                  <Link target="_blank" href={contact.github} className="z-50 ">
                     <span>{contact.github}</span>
                   </Link>
                 </div>

@@ -50,11 +50,19 @@ function SkillSection({ heading }) {
         animate="show"
       >
         {skills.map((skill, index) => (
-          // Maps each item in skills array to the terminal, with a staggered effect
-          <motion.li key={index}>
-            <Button className="px-1 py-0 bg-transparent font-roboto rounded-md text-sm hover:cursor-default font-semibold">
-              <img src={skill.img} className="w-3 h-3" />
-              <p>{skill.title}</p>
+          <motion.li key={index} variants={charVariants} custom={index}>
+            <Button
+              variant="ghost"
+              className="group px-3 py-1.5 bg-white/5 backdrop-blur-sm font-roboto text-sm font-light hover:cursor-default border border-white/10 rounded-lg hover:border-white/20 hover:bg-white/10 transition-all duration-300 gap-2 h-auto"
+            >
+              <img
+                src={skill.img}
+                className="w-4 h-4 rounded-sm flex-shrink-0 object-contain"
+                alt={skill.title}
+              />
+              <span className="text-gray-300 group-hover:text-gray-200 transition-colors whitespace-nowrap">
+                {skill.title}
+              </span>
             </Button>
           </motion.li>
         ))}

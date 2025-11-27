@@ -35,7 +35,7 @@ function AboutMe({ heading, text }) {
       <motion.h1>
         {headingChars.map((char, index) => (
           <motion.span
-            className="text-blue-400 font-terminal tracking-widest text-md"
+            className="text-blue-400 font-terminal tracking-wider text-md"
             key={index}
           >
             {char}
@@ -43,7 +43,7 @@ function AboutMe({ heading, text }) {
         ))}
       </motion.h1>
       <motion.p
-        className="text-accent pl-3 font-roboto font-semibold text-sm mt-2"
+        className="text-gray-300 pl-3 font-roboto font-normal text-sm mt-2"
         initial="hidden"
         animate="show"
       >
