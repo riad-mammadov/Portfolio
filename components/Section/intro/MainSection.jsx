@@ -14,10 +14,10 @@ function MainSection() {
   return (
     <div className="relative flex sm:flex-row justify-center items-start sm:px-8 overflow-hidden">
       <motion.div className="text-white flex flex-col justify-center items-start space-y-4 px-4 w-full max-w-3xl lg:w-[55%]">
-        <motion.div className="inline-flex justify-center items-center space-x-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm hover:bg-emerald-500/20 ">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-lg shadow-emerald-400/50"></span>
-          <span className="text-sm text-emerald-300 font-medium ">
-            Available for opportunities
+        <motion.div className="inline-flex justify-center items-center space-x-3 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 backdrop-blur-sm hover:bg-indigo-500/20 hover:duration-200">
+          <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse shadow-lg shadow-indigo-400/50"></span>
+          <span className="text-sm text-indigo-300 font-medium ">
+            Currently working full-time 🚀
           </span>
         </motion.div>
         <div className="space-y-4">
@@ -37,8 +37,8 @@ function MainSection() {
         </div>
 
         <motion.p className="text-gray-300 text-left sm:text-left text-md md:text-xl font-sans z-10 leading-relaxed max-w-2xl">
-          As a curious and driven Computer Science graduate, I’m passionate
-          about building, learning, and bringing ideas to life. Through{" "}
+          As a curious and driven Software Engineer, I'm passionate about
+          building, learning, and bringing ideas to life! Through{" "}
           <span className="text-blue-400 font-semibold"> problem-solving</span>{" "}
           and <span className="text-purple-400 font-semibold">creativity</span>,
           I build things that turn vision into reality. Feel free to explore my
@@ -87,8 +87,8 @@ function MainSection() {
       <TerminalWindow>
         <div className="flex-1 rounded-2xl z-10 space-y-6 overflow-hidden">
           <AboutMe
-            text="Riad Mammadov — Exploring Technology with Curiosity, Creativity, and Purpose."
-            heading="$ whoami"
+            text="Riad Mammadov - Software Engineer at team.blue"
+            heading="$ about --me"
           />
           <SkillSection heading="$ skills --list" />
           <ContactSection heading="$ contact --info" />
